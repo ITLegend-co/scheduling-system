@@ -1,0 +1,28 @@
+SMART SCHEDULE REQUEST
+
+You can write naturally or fill in the details below. Delete anything that does not apply.
+
+REQUEST TYPE
+Add / Update / Reschedule / Cancel
+
+EVENT OR TASK
+Title:
+Details:
+Location:
+
+TIMING
+Preferred date:
+Preferred time:
+Duration:
+Deadline (if flexible):
+Dates or times to avoid:
+
+ARRANGEMENT
+Fixed or flexible:
+Priority: Low / Normal / High / Urgent
+Category: Work / Meeting / Personal / Deadline / Travel / Training / Reminder
+People involved:
+Required buffer or travel time:
+
+EXTRA INSTRUCTIONS
+Example: Arrange this in the earliest suitable free slot during working hours. Do not overlap any existing event.

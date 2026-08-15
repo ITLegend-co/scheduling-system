@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "Smart Schedule",
+    "timezone": "Asia/Kuala_Lumpur",
+    "lastUpdated": "2026-08-15T18:21:00+08:00",
+    "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
+  },
+  "settings": {
+    "workingHours": {
+      "start": "09:00",
+      "end": "17:30"
+    },
+    "workDays": [1, 2, 3, 4, 5],
+    "defaultDurationMinutes": 60,
+    "bufferMinutes": 15
+  },
+  "events": []
+}

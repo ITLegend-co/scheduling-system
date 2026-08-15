@@ -1,0 +1,43 @@
+SMART SCHEDULE — CHATGPT UPDATE INSTRUCTIONS
+
+When sending a scheduling request to ChatGPT:
+
+1. Attach your completed SCHEDULE_REQUEST_TEMPLATE.txt or any plain-text scheduling request.
+2. Select the GitHub connector.
+3. Tell ChatGPT:
+
+   Update ITLegend-co/scheduling-system directly. Read data/schedule.json first, arrange my request in a suitable free date and time, validate it, update meta.lastUpdated, generate the calendar feed, and commit the change to main. Do not remove existing events unless I request it.
+
+ARRANGEMENT RULES FOR CHATGPT
+
+- Use the Asia/Kuala_Lumpur timezone unless the request says otherwise.
+- Treat existing confirmed events as fixed.
+- Keep the configured buffer between separate commitments when possible.
+- Place flexible work inside the configured workdays and working hours.
+- Schedule urgent and high-priority items before lower-priority flexible work.
+- Respect deadlines, preferred times, travel time, and dates to avoid.
+- Never create an accidental overlap. Use allowOverlap: true only when explicitly intended.
+- If no suitable slot exists, do not guess. Record the issue in the GitHub reply and ask for an alternative.
+- Give each new event a stable lowercase ID, for example: prepare-monthly-report-2026-08-18.
+- Use ISO date-times with the Malaysia offset, for example: 2026-08-18T09:00:00+08:00.
+- For all-day events, use YYYY-MM-DD and set allDay to true.
+- Update meta.lastUpdated every time the schedule changes.
+- Run: node scripts/validate-schedule.mjs
+- Run: node scripts/generate-ics.mjs
+- Commit only the intended scheduling changes.
+
+EVENT FORMAT
+
+{
+  "id": "unique-lowercase-id",
+  "title": "Event title",
+  "start": "2026-08-18T09:00:00+08:00",
+  "end": "2026-08-18T10:00:00+08:00",
+  "allDay": false,
+  "category": "Work",
+  "priority": "normal",
+  "status": "confirmed",
+  "location": "Optional location",
+  "description": "Optional notes",
+  "allowOverlap": false
+}
