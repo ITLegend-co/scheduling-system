@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-16T14:22:06+08:00",
+    "lastUpdated": "2026-08-17T07:00:00+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -58,6 +58,18 @@
       "allowOverlap": false
     },
     {
+      "id": "task-complete-my-appraisal-2026-08-17",
+      "title": "Complete and Submit My Overdue Appraisal",
+      "start": "2026-08-17T11:45:00+08:00",
+      "end": "2026-08-17T12:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "urgent",
+      "status": "confirmed",
+      "description": "Fill in the appraisal form provided by Management and submit it today. The appraisal was dated 1 April 2026 and its seven-day deadline was 8 April 2026, so this task is overdue.",
+      "allowOverlap": false
+    },
+    {
       "id": "task-change-office-pin-wifi-2026-08-17",
       "title": "Change Office Door PIN and Wi-Fi Password",
       "start": "2026-08-17T13:00:00+08:00",
@@ -79,6 +91,18 @@
       "priority": "urgent",
       "status": "confirmed",
       "description": "Use Fae's confirmed flight details to check baggage pricing and send the information so she can apply to carry the monitor. Complete before 19 August 2026.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-complete-eizzat-appraisal-2026-08-17",
+      "title": "Complete or Follow Up Eizzat's Overdue Appraisal",
+      "start": "2026-08-17T16:15:00+08:00",
+      "end": "2026-08-17T17:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "confirmed",
+      "description": "Complete Eizzat's appraisal or follow up on any missing information. The appraisal was dated 1 June 2026. No original deadline was provided, so complete it by 17 August 2026.",
       "allowOverlap": false
     },
     {
