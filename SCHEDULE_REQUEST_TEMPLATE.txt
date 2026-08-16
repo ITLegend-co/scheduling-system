@@ -1,28 +1,25 @@
-SMART SCHEDULE REQUEST
+**Working hours and day**
 
-You can write naturally or fill in the details below. Delete anything that does not apply.
 
-REQUEST TYPE
-Add / Update / Reschedule / Cancel
 
-EVENT OR TASK
-Title:
-Details:
-Location:
+holiday: lookup sabah holiday
 
-TIMING
-Preferred date:
-Preferred time:
-Duration:
-Deadline (if flexible):
-Dates or times to avoid:
 
-ARRANGEMENT
-Fixed or flexible:
-Priority: Low / Normal / High / Urgent
-Category: Work / Meeting / Personal / Deadline / Travel / Training / Reminder
-People involved:
-Required buffer or travel time:
 
-EXTRA INSTRUCTIONS
-Example: Arrange this in the earliest suitable free slot during working hours. Do not overlap any existing event.
+working time weekday: 8.30am - 5.30pm
+
+
+
+working time Saturday: 8.30am - 1.00pm
+
+
+
+half day: 8.30am - 12.30pm or 12.30pm - 5.30pm
+
+
+
+note: 
+-Saturday alternative, example this Week im working, next week im off, the next week afterthat im working.
+-on half day, is when I apply for leave. only update when I told you i have leave.
+
+
