@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-17T07:00:00+08:00",
+    "lastUpdated": "2026-08-17T07:03:00+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -1079,6 +1079,18 @@
       "allowOverlap": true
     },
     {
+      "id": "appraisal-my-2026-10-01",
+      "title": "My Appraisal – Complete Management Form",
+      "start": "2026-10-01T09:00:00+08:00",
+      "end": "2026-10-01T10:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "confirmed",
+      "description": "Start and complete the appraisal form provided by Management for the next six-month appraisal cycle. Submit it by 8 October 2026, seven days after the appraisal date.",
+      "allowOverlap": false
+    },
+    {
       "id": "meeting-odoo-trial-review-2026-10-01",
       "title": "Odoo Trial Review with Agent",
       "start": "2026-10-01T14:00:00+08:00",
@@ -1221,6 +1233,18 @@
       "status": "confirmed",
       "description": "Regular weekday working hours.",
       "allowOverlap": true
+    },
+    {
+      "id": "deadline-my-appraisal-2026-10-08",
+      "title": "My Appraisal Form Deadline Today",
+      "start": "2026-10-08T09:00:00+08:00",
+      "end": "2026-10-08T09:15:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "urgent",
+      "status": "confirmed",
+      "description": "Final check that the Management appraisal form for the 1 October 2026 appraisal has been completed and submitted.",
+      "allowOverlap": false
     },
     {
       "id": "workout-push-shoulders-2026-10-08",
@@ -2315,6 +2339,18 @@
       "allowOverlap": true
     },
     {
+      "id": "appraisal-eizzat-2026-12-01",
+      "title": "Prepare and Complete Eizzat's Appraisal",
+      "start": "2026-12-01T09:00:00+08:00",
+      "end": "2026-12-01T10:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "confirmed",
+      "description": "Prepare and complete Eizzat's next six-month appraisal. No deadline was supplied, so the schedule sets a seven-day completion deadline of 8 December 2026.",
+      "allowOverlap": false
+    },
+    {
       "id": "workout-lower-core-2026-12-01",
       "title": "Workout – Lower Body and Core",
       "start": "2026-12-01T19:00:00+08:00",
@@ -2445,6 +2481,18 @@
       "status": "confirmed",
       "description": "Regular weekday working hours.",
       "allowOverlap": true
+    },
+    {
+      "id": "deadline-eizzat-appraisal-2026-12-08",
+      "title": "Eizzat's Appraisal Deadline Today",
+      "start": "2026-12-08T09:00:00+08:00",
+      "end": "2026-12-08T09:15:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "urgent",
+      "status": "confirmed",
+      "description": "Final check that Eizzat's appraisal for the 1 December 2026 cycle has been completed and recorded.",
+      "allowOverlap": false
     },
     {
       "id": "workout-lower-core-2026-12-08",
