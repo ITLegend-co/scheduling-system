@@ -2,141 +2,15 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-16T11:21:09+08:00",
+    "lastUpdated": "2026-08-15T18:21:00+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
     "workingHours": {
-      "start": "08:30",
+      "start": "09:00",
       "end": "17:30"
     },
-    "workDays": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "availability": {
-      "weekdays": {
-        "days": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "start": "08:30",
-        "end": "17:30"
-      },
-      "saturday": {
-        "start": "08:30",
-        "end": "13:00",
-        "alternating": true,
-        "referenceWorkingDate": "2026-08-15",
-        "pattern": "working Saturday, then off Saturday"
-      },
-      "halfDayLeave": {
-        "morning": {
-          "start": "08:30",
-          "end": "12:30"
-        },
-        "afternoon": {
-          "start": "12:30",
-          "end": "17:30"
-        },
-        "applyOnlyWhenExplicitlyRequested": true
-      }
-    },
-    "publicHolidayCalendar": {
-      "region": "Sabah, Malaysia",
-      "year": 2026,
-      "source": "https://sabah.gov.my/public-holidays",
-      "excludeFromScheduling": true,
-      "holidays": [
-        {
-          "date": "2026-01-01",
-          "name": "New Year's Day"
-        },
-        {
-          "date": "2026-02-17",
-          "name": "Chinese New Year (Day 1)"
-        },
-        {
-          "date": "2026-02-18",
-          "name": "Chinese New Year (Day 2)"
-        },
-        {
-          "date": "2026-03-21",
-          "name": "Hari Raya Puasa"
-        },
-        {
-          "date": "2026-03-22",
-          "name": "Hari Raya Puasa (Day 2)"
-        },
-        {
-          "date": "2026-03-30",
-          "name": "Sabah Governor's Birthday"
-        },
-        {
-          "date": "2026-04-03",
-          "name": "Good Friday"
-        },
-        {
-          "date": "2026-05-01",
-          "name": "Labour Day"
-        },
-        {
-          "date": "2026-05-27",
-          "name": "Hari Raya Qurban"
-        },
-        {
-          "date": "2026-05-30",
-          "name": "Kaamatan Festival"
-        },
-        {
-          "date": "2026-05-31",
-          "name": "Wesak Day"
-        },
-        {
-          "date": "2026-05-31",
-          "name": "Kaamatan Festival (Day 2)"
-        },
-        {
-          "date": "2026-06-01",
-          "name": "Official Birthday of the Yang di-Pertuan Agong"
-        },
-        {
-          "date": "2026-06-17",
-          "name": "Awal Muharam"
-        },
-        {
-          "date": "2026-08-25",
-          "name": "Maulidur Rasul"
-        },
-        {
-          "date": "2026-08-31",
-          "name": "National Day"
-        },
-        {
-          "date": "2026-09-16",
-          "name": "Malaysia Day"
-        },
-        {
-          "date": "2026-11-08",
-          "name": "Deepavali"
-        },
-        {
-          "date": "2026-12-24",
-          "name": "Christmas Eve"
-        },
-        {
-          "date": "2026-12-25",
-          "name": "Christmas Day"
-        }
-      ]
-    },
+    "workDays": [1, 2, 3, 4, 5],
     "defaultDurationMinutes": 60,
     "bufferMinutes": 15
   },
