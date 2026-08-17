@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-17T09:18:00+08:00",
+    "lastUpdated": "2026-08-17T09:21:00+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -91,18 +91,6 @@
       "priority": "high",
       "status": "confirmed",
       "description": "Meet Elzawati today and ask for the current progress of the KCC bank-account application or setup. Record the status, outstanding requirements, owner, and next action.",
-      "allowOverlap": false
-    },
-    {
-      "id": "task-complete-eizzat-appraisal-2026-08-17",
-      "title": "Complete or Follow Up Eizzat's Overdue Appraisal",
-      "start": "2026-08-17T16:15:00+08:00",
-      "end": "2026-08-17T17:15:00+08:00",
-      "allDay": false,
-      "category": "Work",
-      "priority": "high",
-      "status": "confirmed",
-      "description": "Complete Eizzat's appraisal or follow up on any missing information. The appraisal was dated 1 June 2026. No original deadline was provided, so complete it by 17 August 2026.",
       "allowOverlap": false
     },
     {
