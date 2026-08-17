@@ -8,7 +8,7 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 - Search and category filters
 - Event details with Google Calendar, Outlook, and `.ics` options
 - Public `schedule.ics` feed for automatic calendar subscription updates
-- Form-based Schedule Update Builder with local draft saving and JSON import/export
+- Form-based Schedule Update Builder with the current master profile, local draft saving, and JSON import/export
 - A changes-only JSON format that protects unmentioned schedule events
 - Schedule validation with duplicate-ID, date, and overlap checks
 - GitHub Pages deployment on every commit to `main`
@@ -25,14 +25,14 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 
 ## Update the schedule through ChatGPT
 
-1. Open the [Schedule Update Builder](https://itlegend-co.github.io/scheduling-system/update.html).
-2. Add each new, updated, completed, or removed item and download the JSON file.
+1. Open the [Schedule Update Builder](https://itlegend-co.github.io/scheduling-system/update.html) to view the master profile converted from `help update schedule.txt`.
+2. Select **Create update** on a current item, or add a new, completed, or removed item, then download the changes-only JSON file.
 3. Attach the JSON file to ChatGPT and select the GitHub connector.
 4. Ask ChatGPT to update `ITLegend-co/scheduling-system` directly.
 5. ChatGPT should follow [`CHATGPT_WORKFLOW.txt`](CHATGPT_WORKFLOW.txt), update [`data/schedule.json`](data/schedule.json), validate it, and commit to `main`.
 6. GitHub Actions redeploys the website automatically.
 
-The exported format is documented by [`schedule-update.schema.json`](schedule-update.schema.json). Plain-text requests remain supported as a fallback.
+The current plan is stored in [`data/schedule-profile.json`](data/schedule-profile.json) and documented by [`schedule-profile.schema.json`](schedule-profile.schema.json). The changes-only export is documented by [`schedule-update.schema.json`](schedule-update.schema.json). Plain-text requests remain supported as a fallback.
 
 ## Subscribe your calendar
 

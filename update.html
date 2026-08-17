@@ -32,7 +32,7 @@
         </span>
         <span>
           <strong>Update Builder</strong>
-          <small>Changes only. Existing events stay safe.</small>
+          <small>View your plan and create safe updates.</small>
         </span>
       </a>
 
@@ -52,10 +52,10 @@
       <section class="builder-hero" aria-labelledby="builderTitle">
         <div>
           <p class="eyebrow">SCHEDULE UPDATE BUILDER</p>
-          <h1 id="builderTitle">Tell the schedule what changed.</h1>
+          <h1 id="builderTitle">Your plan, now in JSON.</h1>
           <p>
-            Add only the new information. Download the JSON file and send it to ChatGPT—anything
-            you do not mention will remain unchanged.
+            View the information converted from <em>help update schedule.txt</em>, then create a
+            changes-only JSON file whenever something needs to be updated.
           </p>
         </div>
         <div class="builder-hero__steps" aria-label="Three-step workflow">
@@ -64,6 +64,51 @@
           <span><strong>3</strong> Download JSON</span>
         </div>
       </section>
+
+      <section class="panel profile-panel" aria-labelledby="profileTitle">
+        <div class="profile-panel__heading">
+          <div>
+            <p class="eyebrow">CURRENT PLAN</p>
+            <h2 id="profileTitle">Your existing schedule information</h2>
+            <p id="profileStatus" role="status">Loading the master JSON profile…</p>
+          </div>
+          <div class="profile-panel__actions">
+            <button class="button button--secondary button--compact" id="copyProfileButton" type="button" disabled>
+              Copy master JSON
+            </button>
+            <button class="button button--primary button--compact" id="downloadProfileButton" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+              Download master JSON
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-toolbar">
+          <label class="profile-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+            <span class="sr-only">Search the current plan</span>
+            <input id="profileSearch" type="search" placeholder="Search tasks, meetings, people, or notes" autocomplete="off" />
+          </label>
+          <span class="profile-count" id="profileCount">0 items</span>
+        </div>
+
+        <div class="profile-rules" id="profileRules"></div>
+        <div class="profile-sections" id="profileSections"></div>
+        <p class="profile-empty" id="profileEmpty" hidden>No profile items match this search.</p>
+
+        <details class="json-preview profile-json-preview">
+          <summary>Preview master JSON</summary>
+          <pre id="profileJsonPreview"></pre>
+        </details>
+      </section>
+
+      <div class="builder-section-heading" id="createUpdate">
+        <div>
+          <p class="eyebrow">CREATE AN UPDATE</p>
+          <h2>Add only what changed</h2>
+        </div>
+        <p>Select “Create update” on any current item to prefill this form, or start a new change below.</p>
+      </div>
 
       <section class="builder-grid">
         <article class="panel builder-form-panel">

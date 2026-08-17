@@ -32,8 +32,8 @@ jobs:
       - name: Prepare website and calendar feed
         run: |
           mkdir -p _site/data
-          cp index.html styles.css app.js update.html update.css update.js schedule-update.schema.json _site/
-          cp data/schedule.json _site/data/schedule.json
+          cp index.html styles.css app.js update.html update.css update.js schedule-update.schema.json schedule-profile.schema.json _site/
+          cp data/schedule.json data/schedule-profile.json _site/data/
           node scripts/generate-ics.mjs data/schedule.json _site/schedule.ics
           touch _site/.nojekyll
 

@@ -1,0 +1,273 @@
+{
+  "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
+  "format": "smart-schedule-profile",
+  "version": 1,
+  "updatedAt": "2026-08-17T00:00:00+08:00",
+  "source": {
+    "name": "help update schedule.txt",
+    "convertedFrom": "plain-text schedule instructions"
+  },
+  "timezone": "Asia/Kuala_Lumpur",
+  "instructions": {
+    "preserveUnmentionedEvents": true,
+    "lookupSabahHolidays": true,
+    "autoScheduleTasks": true,
+    "createDeadlineWhenMissing": true,
+    "personalActivitiesNeedDuration": true
+  },
+  "rules": [
+    "If there are no changes, do not change the schedule.",
+    "Saturday work alternates weekly: one Saturday working, the next Saturday off.",
+    "Only add half-day leave when it is explicitly requested.",
+    "Appraisals repeat every six months.",
+    "Arrange suitable time for tasks around existing commitments.",
+    "Create a reasonable deadline for a task when none is supplied."
+  ],
+  "entries": [
+    {
+      "id": "sabah-public-holidays",
+      "section": "Work profile",
+      "type": "work-pattern",
+      "title": "Sabah public holidays",
+      "status": "active",
+      "details": "Look up and observe Sabah public holidays when arranging the schedule."
+    },
+    {
+      "id": "weekday-working-hours",
+      "section": "Work profile",
+      "type": "work-pattern",
+      "title": "Weekday working hours",
+      "status": "active",
+      "startTime": "08:30",
+      "endTime": "17:30",
+      "details": "Normal weekday working hours are 8:30 AM to 5:30 PM."
+    },
+    {
+      "id": "alternating-saturday-working-hours",
+      "section": "Work profile",
+      "type": "work-pattern",
+      "title": "Alternating Saturday working hours",
+      "status": "active",
+      "effectiveDate": "2026-08-21",
+      "firstWorkingSaturday": "2026-08-22",
+      "startTime": "08:30",
+      "endTime": "13:00",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 2
+      },
+      "details": "Starting from 21 August 2026, Saturdays alternate between working and off. Working Saturdays run from 8:30 AM to 1:00 PM."
+    },
+    {
+      "id": "half-day-working-hours",
+      "section": "Work profile",
+      "type": "work-pattern",
+      "title": "Half-day working hours",
+      "status": "active",
+      "windows": [
+        {
+          "startTime": "08:30",
+          "endTime": "12:30"
+        },
+        {
+          "startTime": "12:30",
+          "endTime": "17:30"
+        }
+      ],
+      "details": "A half-day is either 8:30 AM to 12:30 PM or 12:30 PM to 5:30 PM. Only apply it when leave is explicitly provided."
+    },
+    {
+      "id": "leave-2026-08-18",
+      "section": "Work profile",
+      "type": "leave",
+      "title": "On leave",
+      "status": "confirmed",
+      "date": "2026-08-18",
+      "allDay": true,
+      "details": "Full-day leave on 18 August 2026."
+    },
+    {
+      "id": "my-appraisal-2026-04-01",
+      "section": "Work profile",
+      "type": "reminder",
+      "title": "My appraisal",
+      "status": "active",
+      "date": "2026-04-01",
+      "deadline": "2026-04-08",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 6
+      },
+      "details": "Fill in the appraisal form provided by Management. The deadline is seven days after each appraisal date."
+    },
+    {
+      "id": "eizzat-appraisal-2026-06-01",
+      "section": "Work profile",
+      "type": "follow-up",
+      "title": "Eizzat's appraisal",
+      "status": "active",
+      "date": "2026-06-01",
+      "person": "Eizzat",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 6
+      },
+      "details": "Eizzat's appraisal repeats every six months."
+    },
+    {
+      "id": "monitor-request-fae",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "Monitor Request & Recommendation – Fae",
+      "status": "in-progress",
+      "date": "2026-08-19",
+      "deadline": "2026-08-19",
+      "person": "Fae",
+      "relatedDate": "2026-09-07",
+      "details": "Ask which flight Fae will take so the baggage price can be checked and she can apply to carry the monitor herself. Fae's flight to Kota Kinabalu is on 7 September 2026. She has already been contacted; follow up on 19 August to confirm whether the flight is AirAsia. The requested deadline is before 19 August 2026."
+    },
+    {
+      "id": "kp-internet-solution",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "KP Internet Solution",
+      "status": "in-progress",
+      "person": "Aiden Lee",
+      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, suggest U Mobile as backup internet for the MOTOTRBO walkie-talkie system. The Fixed IP application has an issue; Aiden Lee is following up with U Mobile HQ and reported no update yet, so follow up again later. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number."
+    },
+    {
+      "id": "odoo-pos-trial",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Odoo POS",
+      "status": "planned",
+      "date": "2026-09-01",
+      "endDate": "2026-09-30",
+      "details": "Give the Accounts and Technical teams a one-month Odoo trial beginning 1 September 2026. After the trial, hold a meeting with the Odoo agent and both teams to review issues encountered and questions that need to be asked."
+    },
+    {
+      "id": "account-password-changes",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Account and password changes",
+      "status": "planned",
+      "date": "2026-08-17",
+      "deadline": "2026-08-17",
+      "details": "Reset all account passwords connected to Elen's MacBook, update the master file, and email it to Management. Planned for Monday."
+    },
+    {
+      "id": "office-pin-wifi-password-changes",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Office PIN and Wi-Fi password changes",
+      "status": "planned",
+      "date": "2026-08-17",
+      "deadline": "2026-08-17",
+      "details": "Elen's last day was Friday. Change the office door PIN and Wi-Fi password, update the master file, and email it to Management. Planned for Monday."
+    },
+    {
+      "id": "cleanup-inventory",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Cleanup inventory",
+      "status": "planned",
+      "deadline": "2026-08-23",
+      "details": "Complete the inventory cleanup before the next week begins."
+    },
+    {
+      "id": "kcc-bank-account-progress",
+      "section": "Ad hoc tasks",
+      "type": "task",
+      "title": "Ask about KCC bank account progress",
+      "status": "planned",
+      "date": "2026-08-17",
+      "deadline": "2026-08-17",
+      "person": "Elzawati",
+      "details": "Meet Elzawati today and ask about the progress of the KCC bank account."
+    },
+    {
+      "id": "hod-meeting-2026-09-09",
+      "section": "Meetings",
+      "type": "meeting",
+      "title": "HOD meeting",
+      "status": "confirmed",
+      "date": "2026-09-09",
+      "startTime": "10:00",
+      "referenceUrl": "https://github.com/ITLegend-co/presentation.git",
+      "details": "Review the presentation repository and create a preparation reminder one day before the meeting."
+    },
+    {
+      "id": "it-meeting-2026-09-02",
+      "section": "Meetings",
+      "type": "meeting",
+      "title": "IT Meeting",
+      "status": "confirmed",
+      "date": "2026-09-02",
+      "startTime": "15:00",
+      "person": "Eizzat",
+      "referenceUrl": "https://github.com/ITLegend-co/IT-Minutes.git",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 3
+      },
+      "details": "The IT Meeting repeats every three weeks. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes."
+    },
+    {
+      "id": "muscular-climbing-workout",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Workout",
+      "status": "flexible",
+      "details": "Create a workout schedule that builds a more muscular body without restricting climbing ability."
+    },
+    {
+      "id": "games-with-friends",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Games with friends",
+      "status": "flexible",
+      "preferredStartTime": "22:00",
+      "details": "Make time to play games with friends. They are usually free at 10:00 PM, but gaming does not need to happen every day."
+    },
+    {
+      "id": "cleanup-project-2026-08-20",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Cleanup project with Vince and team",
+      "status": "confirmed",
+      "date": "2026-08-20",
+      "endDate": "2026-09-02",
+      "person": "Vince and team",
+      "details": "The project runs for two weeks beginning 20 August 2026. Work after normal working hours; on weekends that are not working Saturdays, use 8:30 AM to 6:00 PM."
+    },
+    {
+      "id": "grab-driving-time",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Grab",
+      "status": "flexible",
+      "details": "Make suitable time for Grab driving."
+    },
+    {
+      "id": "wife-review-klinik-telipok-2026-08-18",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Wife review at Klinik Telipok",
+      "status": "confirmed",
+      "date": "2026-08-18",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "person": "Wife",
+      "location": "Klinik Telipok",
+      "details": "Bring my wife for her review. Estimated duration is two hours."
+    },
+    {
+      "id": "personal-free-time",
+      "section": "Personal",
+      "type": "personal",
+      "title": "Free time",
+      "status": "flexible",
+      "details": "Protect some free time for myself."
+    }
+  ]
+}

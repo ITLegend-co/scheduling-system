@@ -2,7 +2,7 @@ SMART SCHEDULE — CHATGPT UPDATE INSTRUCTIONS
 
 When sending a scheduling request to ChatGPT:
 
-1. Open update.html, add only what changed, and download the JSON update file. A clear plain-text scheduling request is still accepted as a fallback.
+1. Open update.html to view the current master profile. Select Create update on an existing profile item or add only what changed, then download the changes-only JSON update file. A clear plain-text scheduling request is still accepted as a fallback.
 2. Select the GitHub connector.
 3. Tell ChatGPT:
 
@@ -17,6 +17,13 @@ JSON UPDATE FILE RULES
 - For update, complete, or remove, match existingEventId first. If it is missing, match using the exact title and date; ask if the match is ambiguous.
 - Use autoScheduleMissingTimes and createDeadlineWhenMissing from the file when arranging incomplete items.
 - Ignore requestId when generating the final schedule event ID; create or preserve a stable event ID instead.
+
+MASTER PROFILE RULES
+
+- data/schedule-profile.json is the structured replacement for help update schedule.txt and is displayed by update.html.
+- Treat smart-schedule-profile as background context, not as a request to replace data/schedule.json.
+- A smart-schedule-update file contains the user's requested changes. Apply it to the existing schedule and preserve unmentioned events.
+- When a request changes long-term work rules, ongoing tasks, meetings, or personal preferences, update the matching profile entry as well as any affected schedule events.
 
 ARRANGEMENT RULES FOR CHATGPT
 

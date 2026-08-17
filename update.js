@@ -1,12 +1,15 @@
 const STORAGE_KEY = "smart-schedule-update-draft-v1";
 const FORMAT_NAME = "smart-schedule-update";
 const FORMAT_VERSION = 1;
+const PROFILE_FORMAT_NAME = "smart-schedule-profile";
+const PROFILE_URL = "data/schedule-profile.json";
 
 const state = {
   changes: [],
   editingId: null,
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),
+  profile: null,
 };
 
 const elements = {
@@ -32,12 +35,22 @@ const elements = {
   clearDraftButton: document.querySelector("#clearDraftButton"),
   draftStatus: document.querySelector("#draftStatus"),
   toast: document.querySelector("#toast"),
+  profileStatus: document.querySelector("#profileStatus"),
+  profileSearch: document.querySelector("#profileSearch"),
+  profileCount: document.querySelector("#profileCount"),
+  profileRules: document.querySelector("#profileRules"),
+  profileSections: document.querySelector("#profileSections"),
+  profileEmpty: document.querySelector("#profileEmpty"),
+  profileJsonPreview: document.querySelector("#profileJsonPreview"),
+  copyProfileButton: document.querySelector("#copyProfileButton"),
+  downloadProfileButton: document.querySelector("#downloadProfileButton"),
 };
 
 loadDraft();
 bindEvents();
 updateConditionalFields();
 render();
+loadProfile();
 
 function bindEvents() {
   elements.form.addEventListener("submit", submitChange);
@@ -57,6 +70,208 @@ function bindEvents() {
   elements.copyJsonButton.addEventListener("click", copyJson);
   elements.downloadJsonButton.addEventListener("click", downloadJson);
   elements.clearDraftButton.addEventListener("click", clearDraft);
+  elements.profileSearch.addEventListener("input", renderProfile);
+  elements.copyProfileButton.addEventListener("click", copyProfileJson);
+  elements.downloadProfileButton.addEventListener("click", downloadProfileJson);
+}
+
+async function loadProfile() {
+  try {
+    const response = await fetch(`${PROFILE_URL}?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Profile request failed with status ${response.status}`);
+    const profile = await response.json();
+    if (profile.format !== PROFILE_FORMAT_NAME || Number(profile.version) !== 1 || !Array.isArray(profile.entries)) {
+      throw new Error("The master profile JSON has an unsupported format.");
+    }
+
+    state.profile = profile;
+    elements.profileStatus.textContent = `Converted from ${profile.source?.name || "the schedule text file"} · Updated ${formatProfileTimestamp(profile.updatedAt)}`;
+    elements.profileJsonPreview.textContent = JSON.stringify(profile, null, 2);
+    elements.copyProfileButton.disabled = false;
+    elements.downloadProfileButton.disabled = false;
+    renderProfileRules();
+    renderProfile();
+  } catch (error) {
+    elements.profileStatus.textContent = "The master JSON profile could not be loaded. Refresh the page to try again.";
+    elements.profileStatus.classList.add("profile-status--error");
+    elements.profileCount.textContent = "Unavailable";
+    elements.profileEmpty.hidden = false;
+    elements.profileEmpty.textContent = error.message || "Unable to load the profile.";
+  }
+}
+
+function renderProfileRules() {
+  const rules = Array.isArray(state.profile?.rules) ? state.profile.rules : [];
+  if (!rules.length) {
+    elements.profileRules.hidden = true;
+    return;
+  }
+
+  const heading = document.createElement("strong");
+  heading.textContent = "Scheduling rules";
+  const list = document.createElement("div");
+  rules.forEach((rule) => {
+    const item = document.createElement("span");
+    item.textContent = rule;
+    list.append(item);
+  });
+  elements.profileRules.replaceChildren(heading, list);
+  elements.profileRules.hidden = false;
+}
+
+function renderProfile() {
+  if (!state.profile) return;
+  const query = elements.profileSearch.value.trim().toLocaleLowerCase();
+  const entries = state.profile.entries.filter((entry) => !query || JSON.stringify(entry).toLocaleLowerCase().includes(query));
+  const sectionOrder = ["Work profile", "Tasks", "Ad hoc tasks", "Meetings", "Personal"];
+  const sections = sectionOrder
+    .map((name) => [name, entries.filter((entry) => entry.section === name)])
+    .filter(([, items]) => items.length);
+
+  const sectionElements = sections.map(([name, items]) => {
+    const section = document.createElement("section");
+    section.className = "profile-section";
+
+    const heading = document.createElement("div");
+    heading.className = "profile-section__heading";
+    const title = document.createElement("h3");
+    title.textContent = name;
+    const count = document.createElement("span");
+    count.textContent = String(items.length);
+    heading.append(title, count);
+
+    const grid = document.createElement("div");
+    grid.className = "profile-card-grid";
+    grid.append(...items.map(createProfileCard));
+    section.append(heading, grid);
+    return section;
+  });
+
+  elements.profileSections.replaceChildren(...sectionElements);
+  elements.profileCount.textContent = `${entries.length} of ${state.profile.entries.length} items`;
+  elements.profileEmpty.hidden = entries.length > 0;
+}
+
+function createProfileCard(entry) {
+  const card = document.createElement("article");
+  card.className = "profile-card";
+
+  const badges = document.createElement("div");
+  badges.className = "profile-card__badges";
+  badges.append(createBadge(entry.type), createBadge(entry.status, `profile-badge--${entry.status}`));
+
+  const title = document.createElement("h4");
+  title.textContent = entry.title;
+
+  const summary = document.createElement("p");
+  summary.className = "profile-card__summary";
+  summary.textContent = profileEntrySummary(entry);
+
+  const details = document.createElement("p");
+  details.className = "profile-card__details";
+  details.textContent = entry.details;
+
+  const footer = document.createElement("div");
+  footer.className = "profile-card__footer";
+  if (entry.referenceUrl) {
+    const link = document.createElement("a");
+    link.href = entry.referenceUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open reference";
+    footer.append(link);
+  }
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "button button--ghost button--compact profile-card__button";
+  button.textContent = "Create update";
+  button.addEventListener("click", () => prefillFromProfile(entry));
+  footer.append(button);
+
+  card.append(badges, title);
+  if (summary) card.append(summary);
+  card.append(details, footer);
+  return card;
+}
+
+function profileEntrySummary(entry) {
+  const parts = [];
+  const date = entry.date || entry.effectiveDate;
+  if (date) {
+    let dateSummary = formatDate(date);
+    if (entry.endDate && entry.endDate !== date) dateSummary += `–${formatDate(entry.endDate)}`;
+    if (entry.startTime) dateSummary += ` · ${formatTime(entry.startTime)}`;
+    if (entry.endTime) dateSummary += `–${formatTime(entry.endTime)}`;
+    parts.push(dateSummary);
+  } else if (entry.startTime) {
+    let timeSummary = formatTime(entry.startTime);
+    if (entry.endTime) timeSummary += `–${formatTime(entry.endTime)}`;
+    parts.push(timeSummary);
+  }
+  if (entry.deadline) parts.push(`Due ${formatDate(entry.deadline)}`);
+  if (entry.person) parts.push(entry.person);
+  if (entry.location) parts.push(entry.location);
+  if (entry.recurrence) parts.push(formatRecurrence(entry.recurrence));
+  return parts.join(" · ");
+}
+
+function prefillFromProfile(entry) {
+  resetForm(false);
+  setFormValue("action", "update");
+  setFormValue("type", entry.type || "task");
+  setFormValue("title", entry.title);
+  setFormValue("date", entry.date || entry.effectiveDate || "");
+  setFormValue("endDate", entry.endDate || "");
+  setFormValue("startTime", entry.startTime || "");
+  setFormValue("endTime", entry.endTime || "");
+  setFormValue("deadline", entry.deadline || "");
+  setFormValue("priority", entry.priority || "normal");
+  setFormValue("recurrence", recurrenceValue(entry.recurrence));
+  setFormValue("repeatUntil", entry.recurrence?.until || "");
+  setFormValue("person", entry.person || "");
+  setFormValue("location", entry.location || "");
+  setFormValue("referenceUrl", entry.referenceUrl || "");
+  setFormValue("details", profileEntryDetails(entry));
+  elements.formHeading.textContent = `Update: ${entry.title}`;
+  updateConditionalFields();
+  saveDraft();
+  document.querySelector("#createUpdate").scrollIntoView({ behavior: "smooth", block: "start" });
+  document.querySelector("#title").focus({ preventScroll: true });
+  showToast("Current item copied into the update form");
+}
+
+function profileEntryDetails(entry) {
+  const details = [entry.details];
+  if (entry.windows?.length) {
+    details.push(`Time windows: ${entry.windows.map((window) => `${window.startTime}–${window.endTime}`).join(" or ")}.`);
+  }
+  if (entry.preferredStartTime) details.push(`Preferred start time: ${entry.preferredStartTime}.`);
+  if (entry.firstWorkingSaturday) details.push(`First working Saturday: ${entry.firstWorkingSaturday}.`);
+  return details.join("\n\n");
+}
+
+async function copyProfileJson() {
+  if (!state.profile) return;
+  const content = JSON.stringify(state.profile, null, 2);
+  try {
+    await navigator.clipboard.writeText(content);
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = content;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.append(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+  showToast("Master JSON copied");
+}
+
+function downloadProfileJson() {
+  if (!state.profile) return;
+  downloadBlob("schedule-profile.json", `${JSON.stringify(state.profile, null, 2)}\n`, "application/json;charset=utf-8");
+  showToast("Master JSON profile downloaded");
 }
 
 function submitChange(event) {
@@ -114,7 +329,7 @@ function readForm() {
 
 function validateChange(change) {
   if (!change.title) return { message: "Add a clear title for this schedule change.", field: "title" };
-  if ((change.startTime || change.endTime) && !change.date) {
+  if ((change.startTime || change.endTime) && !change.date && change.type !== "work-pattern") {
     return { message: "Choose a date when you provide a start or end time.", field: "date" };
   }
   if (change.endDate && !change.date) {
@@ -562,6 +777,18 @@ function formatTime(value) {
   const [hour, minute] = value.split(":").map(Number);
   const date = new Date(2000, 0, 1, hour, minute);
   return new Intl.DateTimeFormat("en-MY", { hour: "numeric", minute: "2-digit", hour12: true }).format(date);
+}
+
+function formatProfileTimestamp(value) {
+  if (!value) return "date unavailable";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("en-MY", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Kuala_Lumpur",
+  }).format(date);
 }
 
 function localDateKey(date) {
