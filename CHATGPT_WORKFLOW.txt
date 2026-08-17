@@ -2,11 +2,21 @@ SMART SCHEDULE — CHATGPT UPDATE INSTRUCTIONS
 
 When sending a scheduling request to ChatGPT:
 
-1. Attach your completed SCHEDULE_REQUEST_TEMPLATE.txt or any plain-text scheduling request.
+1. Open update.html, add only what changed, and download the JSON update file. A clear plain-text scheduling request is still accepted as a fallback.
 2. Select the GitHub connector.
 3. Tell ChatGPT:
 
    Update ITLegend-co/scheduling-system directly. Read data/schedule.json first, arrange my request in a suitable free date and time, validate it, update meta.lastUpdated, generate the calendar feed, and commit the change to main. Do not remove existing events unless I request it.
+
+JSON UPDATE FILE RULES
+
+- Accept format: "smart-schedule-update" with version: 1.
+- Treat instructions.mode: "changes-only" as mandatory.
+- Preserve every unmentioned event. Never replace the full schedule with the update file.
+- Apply each changes[] item according to action: add, update, complete, or remove.
+- For update, complete, or remove, match existingEventId first. If it is missing, match using the exact title and date; ask if the match is ambiguous.
+- Use autoScheduleMissingTimes and createDeadlineWhenMissing from the file when arranging incomplete items.
+- Ignore requestId when generating the final schedule event ID; create or preserve a stable event ID instead.
 
 ARRANGEMENT RULES FOR CHATGPT
 

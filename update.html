@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta
+      name="description"
+      content="Create a structured JSON request for Smart Schedule without editing text files."
+    />
+    <title>Schedule Update Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="update.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow--one" aria-hidden="true"></div>
+    <div class="background-glow background-glow--two" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Return to Smart Schedule">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+            <path d="m9 14 2 2 4-5" />
+          </svg>
+        </span>
+        <span>
+          <strong>Update Builder</strong>
+          <small>Changes only. Existing events stay safe.</small>
+        </span>
+      </a>
+
+      <div class="topbar__actions">
+        <span class="sync-status sync-status--ready" id="draftStatus">
+          <span class="sync-status__dot"></span>
+          Draft saved locally
+        </span>
+        <a class="button button--secondary button--compact" href="./">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          <span>View schedule</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="builder-shell">
+      <section class="builder-hero" aria-labelledby="builderTitle">
+        <div>
+          <p class="eyebrow">SCHEDULE UPDATE BUILDER</p>
+          <h1 id="builderTitle">Tell the schedule what changed.</h1>
+          <p>
+            Add only the new information. Download the JSON file and send it to ChatGPT—anything
+            you do not mention will remain unchanged.
+          </p>
+        </div>
+        <div class="builder-hero__steps" aria-label="Three-step workflow">
+          <span><strong>1</strong> Fill the form</span>
+          <span><strong>2</strong> Add changes</span>
+          <span><strong>3</strong> Download JSON</span>
+        </div>
+      </section>
+
+      <section class="builder-grid">
+        <article class="panel builder-form-panel">
+          <div class="builder-panel-heading">
+            <div>
+              <p class="eyebrow">NEW CHANGE</p>
+              <h2 id="formHeading">Add a schedule change</h2>
+            </div>
+            <button class="button button--ghost button--compact" id="resetFormButton" type="button">
+              Reset form
+            </button>
+          </div>
+
+          <form id="changeForm" novalidate>
+            <div class="form-section">
+              <div class="form-section__heading">
+                <span>01</span>
+                <div>
+                  <strong>What changed?</strong>
+                  <small>Choose the action first, then describe the item.</small>
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--two">
+                <label class="field">
+                  <span>Action <b>*</b></span>
+                  <select id="action" name="action" required>
+                    <option value="add">Add something new</option>
+                    <option value="update">Update an existing item</option>
+                    <option value="complete">Mark as completed</option>
+                    <option value="remove">Remove an item</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span>Type <b>*</b></span>
+                  <select id="type" name="type" required>
+                    <option value="task">Task</option>
+                    <option value="follow-up">Follow-up</option>
+                    <option value="reminder">Reminder</option>
+                    <option value="meeting">Meeting</option>
+                    <option value="leave">Leave / half-day</option>
+                    <option value="personal">Personal</option>
+                    <option value="work-pattern">Work pattern</option>
+                    <option value="note">General note</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Title <b>*</b></span>
+                <input id="title" name="title" type="text" maxlength="140" placeholder="Example: Follow up with Aiden about Fixed IP" required />
+              </label>
+
+              <label class="field" id="existingIdField" hidden>
+                <span>Existing event ID <em>optional</em></span>
+                <input id="existingEventId" name="existingEventId" type="text" maxlength="180" placeholder="Paste the ID if you know it" />
+                <small>If you do not know the ID, use the exact event title and date.</small>
+              </label>
+            </div>
+
+            <div class="form-section" id="timingSection">
+              <div class="form-section__heading">
+                <span>02</span>
+                <div>
+                  <strong>When should it happen?</strong>
+                  <small>Leave time blank when you want ChatGPT to find a suitable slot.</small>
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--two">
+                <label class="field">
+                  <span>Start / event date</span>
+                  <input id="date" name="date" type="date" />
+                </label>
+                <label class="field">
+                  <span>End date <em>for multi-day items</em></span>
+                  <input id="endDate" name="endDate" type="date" />
+                </label>
+              </div>
+
+              <div class="form-grid form-grid--three form-grid--spaced">
+                <label class="field">
+                  <span>Start time</span>
+                  <input id="startTime" name="startTime" type="time" />
+                </label>
+                <label class="field">
+                  <span>End time</span>
+                  <input id="endTime" name="endTime" type="time" />
+                </label>
+                <label class="field">
+                  <span>Deadline</span>
+                  <input id="deadline" name="deadline" type="date" />
+                </label>
+              </div>
+
+              <div class="form-grid form-grid--three">
+                <label class="field">
+                  <span>Priority</span>
+                  <select id="priority" name="priority">
+                    <option value="normal">Normal</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="low">Low</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Repeat</span>
+                  <select id="recurrence" name="recurrence">
+                    <option value="none">Does not repeat</option>
+                    <option value="daily:1">Daily</option>
+                    <option value="weekly:1">Weekly</option>
+                    <option value="weekly:2">Every 2 weeks</option>
+                    <option value="weekly:3">Every 3 weeks</option>
+                    <option value="monthly:1">Monthly</option>
+                    <option value="monthly:6">Every 6 months</option>
+                    <option value="yearly:1">Yearly</option>
+                  </select>
+                </label>
+                <label class="field" id="repeatUntilField" hidden>
+                  <span>Repeat until</span>
+                  <input id="repeatUntil" name="repeatUntil" type="date" />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section__heading">
+                <span>03</span>
+                <div>
+                  <strong>Add useful details</strong>
+                  <small>These fields help create a clearer, more actionable reminder.</small>
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--two">
+                <label class="field">
+                  <span>Person / contact</span>
+                  <input id="person" name="person" type="text" maxlength="120" placeholder="Example: Aiden Lee" />
+                </label>
+                <label class="field">
+                  <span>Location</span>
+                  <input id="location" name="location" type="text" maxlength="160" placeholder="Example: Klinik Telipok" />
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Reference link</span>
+                <input id="referenceUrl" name="referenceUrl" type="url" maxlength="500" placeholder="https://github.com/..." />
+              </label>
+
+              <label class="field">
+                <span>Details / what to do</span>
+                <textarea id="details" name="details" rows="5" maxlength="2000" placeholder="Explain the status, what needs to be done, and what result you need."></textarea>
+              </label>
+            </div>
+
+            <div class="form-message" id="formMessage" role="alert" hidden></div>
+            <div class="form-actions">
+              <button class="button button--primary" id="addChangeButton" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                Add this change
+              </button>
+              <small>You can add several changes before downloading one JSON file.</small>
+            </div>
+          </form>
+        </article>
+
+        <aside class="builder-side">
+          <article class="panel queue-panel">
+            <div class="builder-panel-heading builder-panel-heading--compact">
+              <div>
+                <p class="eyebrow">UPDATE FILE</p>
+                <h2>Changes to send</h2>
+              </div>
+              <span class="count-badge" id="changeCount">0</span>
+            </div>
+            <div class="change-list" id="changeList"></div>
+            <div class="queue-empty" id="queueEmpty">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+              <strong>No changes added yet</strong>
+              <p>Complete the form and select “Add this change.”</p>
+            </div>
+          </article>
+
+          <article class="panel instruction-panel">
+            <p class="eyebrow">DEFAULT INSTRUCTIONS</p>
+            <h2>Keep the rest untouched</h2>
+            <label class="check-row check-row--locked">
+              <input type="checkbox" checked disabled />
+              <span><strong>Preserve unmentioned events</strong><small>Always enabled for safety.</small></span>
+            </label>
+            <label class="check-row">
+              <input id="autoSchedule" type="checkbox" checked />
+              <span><strong>Find a suitable time when blank</strong><small>Uses your existing schedule and buffers.</small></span>
+            </label>
+            <label class="check-row">
+              <input id="createDeadline" type="checkbox" checked />
+              <span><strong>Create a deadline when missing</strong><small>Only when the item needs one.</small></span>
+            </label>
+            <label class="field field--note">
+              <span>Note for the whole update <em>optional</em></span>
+              <textarea id="requestNote" rows="3" maxlength="1000" placeholder="Example: Do not move my existing meetings."></textarea>
+            </label>
+          </article>
+        </aside>
+      </section>
+
+      <section class="panel export-panel">
+        <div class="export-panel__copy">
+          <p class="eyebrow">READY TO SEND</p>
+          <h2>Download the update file</h2>
+          <p>The file contains only this request—not your full calendar. Send the downloaded JSON file to ChatGPT.</p>
+        </div>
+        <div class="export-panel__actions">
+          <label class="button button--ghost" for="importFile">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14" /></svg>
+            Import JSON
+          </label>
+          <input id="importFile" type="file" accept="application/json,.json" hidden />
+          <button class="button button--secondary" id="copyJsonButton" type="button">Copy JSON</button>
+          <button class="button button--primary" id="downloadJsonButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+            Download JSON
+          </button>
+        </div>
+        <details class="json-preview">
+          <summary>Preview generated JSON</summary>
+          <pre id="jsonPreview"></pre>
+        </details>
+        <button class="clear-draft-button" id="clearDraftButton" type="button">Clear the entire draft</button>
+      </section>
+    </main>
+
+    <footer class="footer builder-footer">
+      <p>Your unfinished draft is stored only in this browser.</p>
+      <a href="./">Return to Smart Schedule</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="update.js" defer></script>
+  </body>
+</html>

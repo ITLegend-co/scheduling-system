@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://itlegend-co.github.io/scheduling-system/schedule-update.schema.json",
+  "title": "Smart Schedule update request",
+  "description": "A changes-only request exported by the Smart Schedule Update Builder.",
+  "type": "object",
+  "required": [
+    "format",
+    "version",
+    "createdAt",
+    "updatedAt",
+    "timezone",
+    "instructions",
+    "changes"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "format": {
+      "const": "smart-schedule-update"
+    },
+    "version": {
+      "const": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instructions": {
+      "type": "object",
+      "required": [
+        "mode",
+        "preserveUnmentionedEvents",
+        "autoScheduleMissingTimes",
+        "createDeadlineWhenMissing"
+      ],
+      "properties": {
+        "mode": {
+          "const": "changes-only"
+        },
+        "preserveUnmentionedEvents": {
+          "const": true
+        },
+        "autoScheduleMissingTimes": {
+          "type": "boolean"
+        },
+        "createDeadlineWhenMissing": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "change": {
+      "type": "object",
+      "required": [
+        "requestId",
+        "action",
+        "type",
+        "title",
+        "priority"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "add",
+            "update",
+            "complete",
+            "remove"
+          ]
+        },
+        "type": {
+          "enum": [
+            "task",
+            "follow-up",
+            "reminder",
+            "meeting",
+            "leave",
+            "personal",
+            "work-pattern",
+            "note"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        },
+        "existingEventId": {
+          "type": "string",
+          "maxLength": 180
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "startTime": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+        },
+        "endTime": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date"
+        },
+        "priority": {
+          "enum": [
+            "low",
+            "normal",
+            "high",
+            "urgent"
+          ]
+        },
+        "recurrence": {
+          "type": "object",
+          "required": [
+            "frequency"
+          ],
+          "properties": {
+            "frequency": {
+              "enum": [
+                "none",
+                "daily",
+                "weekly",
+                "monthly",
+                "yearly"
+              ]
+            },
+            "interval": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "until": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "additionalProperties": false
+        },
+        "person": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "referenceUrl": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 500
+        },
+        "details": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

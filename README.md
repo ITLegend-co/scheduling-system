@@ -1,6 +1,6 @@
 # Smart Schedule
 
-A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. Send a plain-text request to ChatGPT, let it arrange a suitable free slot, and commit the updated schedule. GitHub Pages then publishes the website and a subscribable calendar feed.
+A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. Build a changes-only JSON request, send it to ChatGPT, let it arrange suitable free slots, and commit the updated schedule. GitHub Pages then publishes the website and a subscribable calendar feed.
 
 ## What is included
 
@@ -8,9 +8,11 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 - Search and category filters
 - Event details with Google Calendar, Outlook, and `.ics` options
 - Public `schedule.ics` feed for automatic calendar subscription updates
+- Form-based Schedule Update Builder with local draft saving and JSON import/export
+- A changes-only JSON format that protects unmentioned schedule events
 - Schedule validation with duplicate-ID, date, and overlap checks
 - GitHub Pages deployment on every commit to `main`
-- A reusable text template and ChatGPT update instructions
+- A reusable JSON Schema and ChatGPT update instructions
 
 ## Publish the website
 
@@ -23,11 +25,14 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 
 ## Update the schedule through ChatGPT
 
-1. Fill in [`SCHEDULE_REQUEST_TEMPLATE.txt`](SCHEDULE_REQUEST_TEMPLATE.txt), or create any clear `.txt` request.
-2. Attach the file to ChatGPT and select the GitHub connector.
-3. Ask ChatGPT to update `ITLegend-co/scheduling-system` directly.
-4. ChatGPT should follow [`CHATGPT_WORKFLOW.txt`](CHATGPT_WORKFLOW.txt), update [`data/schedule.json`](data/schedule.json), validate it, and commit to `main`.
-5. GitHub Actions redeploys the website automatically.
+1. Open the [Schedule Update Builder](https://itlegend-co.github.io/scheduling-system/update.html).
+2. Add each new, updated, completed, or removed item and download the JSON file.
+3. Attach the JSON file to ChatGPT and select the GitHub connector.
+4. Ask ChatGPT to update `ITLegend-co/scheduling-system` directly.
+5. ChatGPT should follow [`CHATGPT_WORKFLOW.txt`](CHATGPT_WORKFLOW.txt), update [`data/schedule.json`](data/schedule.json), validate it, and commit to `main`.
+6. GitHub Actions redeploys the website automatically.
+
+The exported format is documented by [`schedule-update.schema.json`](schedule-update.schema.json). Plain-text requests remain supported as a fallback.
 
 ## Subscribe your calendar
 
