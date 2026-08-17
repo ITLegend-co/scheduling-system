@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-17T07:03:00+08:00",
+    "lastUpdated": "2026-08-17T09:18:00+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -41,8 +41,8 @@
       "allDay": false,
       "category": "Work",
       "priority": "urgent",
-      "status": "confirmed",
-      "description": "Ask Fae which flight she will take to KK on 7 September 2026. Needed before researching baggage cost. Complete before 19 August 2026.",
+      "status": "completed",
+      "description": "Completed on 17 August 2026: contacted Fae about her flight to KK on 7 September 2026. Follow up again on 19 August to confirm whether the flight is AirAsia.",
       "allowOverlap": false
     },
     {
@@ -82,15 +82,15 @@
       "allowOverlap": false
     },
     {
-      "id": "task-check-fae-baggage-cost-2026-08-17",
-      "title": "Check Fae's Flight Baggage Cost",
+      "id": "adhoc-meet-elzawati-kcc-bank-account-2026-08-17",
+      "title": "Meet Elzawati About KCC Bank Account",
       "start": "2026-08-17T15:00:00+08:00",
-      "end": "2026-08-17T16:00:00+08:00",
+      "end": "2026-08-17T15:30:00+08:00",
       "allDay": false,
       "category": "Work",
-      "priority": "urgent",
+      "priority": "high",
       "status": "confirmed",
-      "description": "Use Fae's confirmed flight details to check baggage pricing and send the information so she can apply to carry the monitor. Complete before 19 August 2026.",
+      "description": "Meet Elzawati today and ask for the current progress of the KCC bank-account application or setup. Record the status, outstanding requirements, owner, and next action.",
       "allowOverlap": false
     },
     {
@@ -143,6 +143,18 @@
       "allowOverlap": true
     },
     {
+      "id": "reminder-follow-up-fae-airasia-2026-08-19",
+      "title": "Follow Up with Fae to Confirm AirAsia Flight",
+      "start": "2026-08-19T08:30:00+08:00",
+      "end": "2026-08-19T08:45:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "urgent",
+      "status": "confirmed",
+      "description": "Follow up with Fae and confirm whether her flight to KK on 7 September 2026 is with AirAsia. Obtain the exact flight and baggage details needed for the monitor plan.",
+      "allowOverlap": false
+    },
+    {
       "id": "task-inventory-cleanup-2026-08-19",
       "title": "Inventory Cleanup",
       "start": "2026-08-19T09:00:00+08:00",
@@ -152,6 +164,18 @@
       "priority": "high",
       "status": "confirmed",
       "description": "Clean and organize the inventory records and physical inventory. Target completion before the week of 24 August 2026.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-check-fae-baggage-cost-2026-08-19",
+      "title": "Check Fae's Flight Baggage Cost",
+      "start": "2026-08-19T11:45:00+08:00",
+      "end": "2026-08-19T12:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "urgent",
+      "status": "confirmed",
+      "description": "After confirming Fae's airline and flight details, check the baggage price and send the information so she can apply to carry the monitor on her 7 September 2026 flight to KK.",
       "allowOverlap": false
     },
     {
