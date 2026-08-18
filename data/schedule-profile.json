@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-18T16:36:11+08:00",
+  "updatedAt": "2026-08-18T16:46:30+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -238,7 +238,7 @@
       "date": "2026-08-20",
       "endDate": "2026-09-02",
       "person": "Vince and team",
-      "details": "The project runs for two weeks beginning 20 August 2026. Work after normal working hours; on weekends that are not working Saturdays, use 8:30 AM to 6:00 PM."
+      "details": "The project runs for two weeks beginning 20 August 2026. Work after normal working hours; on weekends that are not working Saturdays, use 8:30 AM to 6:00 PM; on public holidays, use 8:30 AM to 6:30 PM."
     },
     {
       "id": "grab-driving-time",
