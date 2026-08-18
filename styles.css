@@ -429,6 +429,15 @@ dialog h2 {
   border-color: var(--line);
 }
 
+.install-app-button {
+  color: var(--mint);
+  border-color: rgba(98, 230, 189, 0.2);
+}
+
+.install-app-button[hidden] {
+  display: none;
+}
+
 .icon-button {
   width: 36px;
   height: 36px;
@@ -920,6 +929,75 @@ dialog article {
   color: var(--muted);
   font-size: 0.68rem;
   text-align: center;
+}
+
+.install-dialog {
+  width: min(470px, calc(100% - 30px));
+}
+
+.install-dialog__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.install-dialog__icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  place-items: center;
+  color: var(--mint);
+  background: rgba(98, 230, 189, 0.08);
+  border: 1px solid rgba(98, 230, 189, 0.12);
+  border-radius: 17px;
+}
+
+.install-dialog__icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.install-dialog h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+}
+
+.install-dialog ol {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: install-step;
+}
+
+.install-dialog li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  color: var(--muted-strong);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  counter-increment: install-step;
+}
+
+.install-dialog li::before {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #07120f;
+  background: var(--mint);
+  border-radius: 9px;
+  content: counter(install-step);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.install-dialog__done {
+  width: 100%;
 }
 
 .toast {

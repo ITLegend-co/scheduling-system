@@ -8,7 +8,14 @@
       name="description"
       content="Create a structured JSON request for Smart Schedule without editing text files."
     />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Smart Schedule" />
     <title>Schedule Update Builder</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,6 +48,10 @@
           <span class="sync-status__dot"></span>
           Draft saved locally
         </span>
+        <button class="button button--secondary button--compact install-app-button" id="installAppButton" type="button" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7 10l5 5 5-5M7 21h10a2 2 0 0 0 2-2v-2M5 17v2a2 2 0 0 0 2 2" /></svg>
+          <span>Install app</span>
+        </button>
         <a class="button button--secondary button--compact" href="./">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
           <span>View schedule</span>
@@ -351,6 +362,7 @@
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="pwa.js" defer></script>
     <script src="update.js" defer></script>
   </body>
 </html>

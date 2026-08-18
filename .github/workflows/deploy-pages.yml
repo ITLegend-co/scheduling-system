@@ -29,10 +29,14 @@ jobs:
       - name: Validate schedule data
         run: node scripts/validate-schedule.mjs
 
+      - name: Validate installable app assets
+        run: node scripts/validate-pwa.mjs
+
       - name: Prepare website and calendar feed
         run: |
-          mkdir -p _site/data
-          cp index.html styles.css app.js update.html update.css update.js schedule-update.schema.json schedule-profile.schema.json _site/
+          mkdir -p _site/data _site/icons
+          cp index.html styles.css app.js update.html update.css update.js pwa.js service-worker.js offline.html manifest.webmanifest schedule-update.schema.json schedule-profile.schema.json _site/
+          cp icons/app-icon.svg icons/*.png _site/icons/
           cp data/schedule.json data/schedule-profile.json _site/data/
           node scripts/generate-ics.mjs data/schedule.json _site/schedule.ics
           touch _site/.nojekyll

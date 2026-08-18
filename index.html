@@ -8,7 +8,14 @@
       name="description"
       content="A clear, mobile-friendly schedule that stays in sync with a subscribable calendar feed."
     />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Smart Schedule" />
     <title>Smart Schedule</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,6 +47,10 @@
           <span class="sync-status__dot"></span>
           Loading schedule
         </span>
+        <button class="button button--secondary button--compact install-app-button" id="installAppButton" type="button" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7 10l5 5 5-5M7 21h10a2 2 0 0 0 2-2v-2M5 17v2a2 2 0 0 0 2 2" /></svg>
+          <span>Install app</span>
+        </button>
         <a class="button button--primary button--compact" href="update.html">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 5v14M5 12h14" />
@@ -208,6 +219,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    <script src="pwa.js" defer></script>
     <script src="app.js" defer></script>
   </body>
 </html>

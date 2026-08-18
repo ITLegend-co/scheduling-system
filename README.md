@@ -8,6 +8,8 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 - Search and category filters
 - Event details with Google Calendar, Outlook, and `.ics` options
 - Public `schedule.ics` feed for automatic calendar subscription updates
+- Installable Progressive Web App for Android and iPhone home screens
+- Offline app-shell and last-saved schedule access
 - Form-based Schedule Update Builder with the current master profile, local draft saving, and JSON import/export
 - A changes-only JSON format that protects unmentioned schedule events
 - Schedule validation with duplicate-ID, date, and overlap checks
@@ -33,6 +35,15 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 6. GitHub Actions redeploys the website automatically.
 
 The current plan is stored in [`data/schedule-profile.json`](data/schedule-profile.json) and documented by [`schedule-profile.schema.json`](schedule-profile.schema.json). The changes-only export is documented by [`schedule-update.schema.json`](schedule-update.schema.json). Plain-text requests remain supported as a fallback.
+
+## Install on a smartphone
+
+Open `https://itlegend-co.github.io/scheduling-system/` on the phone while online at least once.
+
+- **Android:** Select **Install app** in Smart Schedule or use the browser menu → **Install app**.
+- **iPhone/iPad:** Open the site in Safari, select **Share** → **Add to Home Screen** → **Add**.
+
+The installed app opens the calendar in standalone mode. The calendar and Update Builder app shell are cached for offline access, while schedule and profile data use the latest online copy when available and fall back to the last cached copy when offline.
 
 ## Subscribe your calendar
 
@@ -74,6 +85,7 @@ Supported priorities: `low`, `normal`, `high`, `urgent`.
 
 ```bash
 node scripts/validate-schedule.mjs
+node scripts/validate-pwa.mjs
 node scripts/generate-ics.mjs
 python -m http.server 8000
 ```

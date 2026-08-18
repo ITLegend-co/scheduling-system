@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Smart Schedule · Offline</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .offline-shell {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .offline-card {
+        width: min(460px, 100%);
+        padding: 34px;
+        text-align: center;
+      }
+
+      .offline-card .brand__mark {
+        margin: 0 auto 22px;
+      }
+
+      .offline-card h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .offline-card p {
+        margin: 13px 0 24px;
+        color: var(--muted-strong);
+        line-height: 1.65;
+      }
+
+      .offline-card .button {
+        display: inline-flex;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="offline-shell">
+      <article class="panel offline-card">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /><path d="m9 14 2 2 4-5" /></svg>
+        </span>
+        <p class="eyebrow">OFFLINE MODE</p>
+        <h1>No internet connection</h1>
+        <p>The installed app can show previously cached schedule pages. Reconnect to receive the latest GitHub update.</p>
+        <a class="button button--primary" href="./">Open saved schedule</a>
+      </article>
+    </main>
+  </body>
+</html>
