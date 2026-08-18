@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-18T14:31:39+08:00",
+    "lastUpdated": "2026-08-18T14:42:58+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -3255,6 +3255,30 @@
       "status": "planned",
       "location": "Klinik Telipok",
       "description": "Bring my wife to Klinik Telipok for her review after the blood test on 9 February 2027. The time is provisional and retains the previous two-hour review duration.",
+      "allowOverlap": false
+    },
+    {
+      "id": "reminder-apply-leave-wife-blood-test-2027-01-26",
+      "title": "Apply for Leave – Wife's Blood Test",
+      "start": "2027-01-26T09:00:00+08:00",
+      "end": "2027-01-26T09:15:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "normal",
+      "status": "confirmed",
+      "description": "Apply for leave for my wife's blood test on 9 February 2027. This reminder is scheduled exactly two weeks before the appointment connected to her Klinik Telipok review.",
+      "allowOverlap": false
+    },
+    {
+      "id": "reminder-apply-leave-wife-klinik-review-2027-02-02",
+      "title": "Apply for Leave – Wife's Klinik Telipok Review",
+      "start": "2027-02-02T09:00:00+08:00",
+      "end": "2027-02-02T09:15:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "normal",
+      "status": "confirmed",
+      "description": "Apply for leave for my wife's review at Klinik Telipok on 16 February 2027. This reminder is scheduled exactly two weeks before the appointment.",
       "allowOverlap": false
     }
   ]
