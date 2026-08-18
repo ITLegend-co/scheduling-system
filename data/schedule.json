@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-18T12:53:35+08:00",
+    "lastUpdated": "2026-08-18T14:31:39+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -3230,6 +3230,31 @@
       "priority": "low",
       "status": "planned",
       "description": "Meet with Ros to discuss Pamella's request for a software or system that helps Admin track items sent to other locations, including who checked each item. Agree on the scope, responsible person, and next action. Target completion deadline: 21 August 2026.",
+      "allowOverlap": false
+    },
+    {
+      "id": "wife-blood-test-2027-02-09",
+      "title": "Wife's Blood Test",
+      "start": "2027-02-09T08:00:00+08:00",
+      "end": "2027-02-09T09:00:00+08:00",
+      "allDay": false,
+      "category": "Personal",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Bring my wife for her blood test before the Klinik Telipok review on 16 February 2027. The time is provisional because no appointment time was supplied.",
+      "allowOverlap": false
+    },
+    {
+      "id": "wife-review-klinik-telipok-2027-02-16",
+      "title": "Wife's Review at Klinik Telipok",
+      "start": "2027-02-16T14:00:00+08:00",
+      "end": "2027-02-16T16:00:00+08:00",
+      "allDay": false,
+      "category": "Personal",
+      "priority": "normal",
+      "status": "planned",
+      "location": "Klinik Telipok",
+      "description": "Bring my wife to Klinik Telipok for her review after the blood test on 9 February 2027. The time is provisional and retains the previous two-hour review duration.",
       "allowOverlap": false
     }
   ]
