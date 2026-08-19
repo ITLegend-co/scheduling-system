@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-19T13:46:28+08:00",
+  "updatedAt": "2026-08-19T14:06:32+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -31,32 +31,6 @@
       "title": "Sabah public holidays",
       "status": "active",
       "details": "Look up and observe Sabah public holidays when arranging the schedule."
-    },
-    {
-      "id": "weekday-working-hours",
-      "section": "Work profile",
-      "type": "work-pattern",
-      "title": "Weekday working hours",
-      "status": "active",
-      "startTime": "08:30",
-      "endTime": "17:30",
-      "details": "Normal weekday working hours are 8:30 AM to 5:30 PM. A reminder is scheduled two hours before each workday begins."
-    },
-    {
-      "id": "alternating-saturday-working-hours",
-      "section": "Work profile",
-      "type": "work-pattern",
-      "title": "Alternating Saturday working hours",
-      "status": "active",
-      "effectiveDate": "2026-08-21",
-      "firstWorkingSaturday": "2026-08-22",
-      "startTime": "08:30",
-      "endTime": "13:00",
-      "recurrence": {
-        "frequency": "weekly",
-        "interval": 2
-      },
-      "details": "Starting from 21 August 2026, Saturdays alternate between working and off. Working Saturdays run from 8:30 AM to 1:00 PM. A reminder is scheduled two hours before each working Saturday begins."
     },
     {
       "id": "half-day-working-hours",
