@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-19T10:05:15+08:00",
+  "updatedAt": "2026-08-19T13:46:28+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -353,6 +353,18 @@
       "deadline": "2026-08-21",
       "location": "KK Office",
       "details": "Research how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a live-weather webcam for external viewers through a paid subscription. Assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps."
+    },
+    {
+      "id": "kcc-main-committee-meeting-2026-08-27",
+      "section": "Meetings",
+      "type": "meeting",
+      "title": "KCC Main Committee Meeting",
+      "status": "planned",
+      "date": "2026-08-27",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "location": "KK Office",
+      "details": "Main Committee meeting for KCC committee members only. On 26 August 2026 from 3:00 PM to 4:00 PM, prepare the KCC Treasurer's required items and checklist, including the cash box and any other treasury equipment or documents."
     }
   ]
 }
