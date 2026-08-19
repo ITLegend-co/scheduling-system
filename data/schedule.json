@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-18T16:46:30+08:00",
+    "lastUpdated": "2026-08-19T10:05:15+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -4528,6 +4528,19 @@
       "status": "confirmed",
       "description": "Public-holiday cleanup project session for National Day. Complete the corrected two-week project by 2 September 2026.",
       "allowOverlap": true
+    },
+    {
+      "id": "task-research-cctv-live-weather-webcam-2026-08-19",
+      "title": "Research CCTV Live-Weather Webcam Installation",
+      "start": "2026-08-19T13:00:00+08:00",
+      "end": "2026-08-19T14:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "location": "KK Office",
+      "description": "Research options for using the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut as a live-weather webcam that other people can view through a paid subscription. Assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps. Target deadline: 21 August 2026.",
+      "allowOverlap": false
     }
   ]
 }

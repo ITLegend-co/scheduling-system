@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-18T16:46:30+08:00",
+  "updatedAt": "2026-08-19T10:05:15+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -340,6 +340,19 @@
       "person": "Wife",
       "location": "Klinik Telipok",
       "details": "Apply for leave for my wife's review at Klinik Telipok on 16 February 2027. This reminder is exactly two weeks before the review."
+    },
+    {
+      "id": "cctv-live-weather-webcam-research",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Research CCTV live-weather webcam installation",
+      "status": "planned",
+      "date": "2026-08-19",
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "deadline": "2026-08-21",
+      "location": "KK Office",
+      "details": "Research how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a live-weather webcam for external viewers through a paid subscription. Assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps."
     }
   ]
 }
