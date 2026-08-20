@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-19T14:06:32+08:00",
+    "lastUpdated": "2026-08-21T00:18:34+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -1985,15 +1985,15 @@
       "allowOverlap": false
     },
     {
-      "id": "reminder-discuss-pamella-software-request-2026-08-20",
+      "id": "reminder-discuss-pamella-software-request-2026-08-21",
       "title": "Discuss Pamella's New Software Request with Ros",
-      "start": "2026-08-20T11:00:00+08:00",
-      "end": "2026-08-20T11:45:00+08:00",
+      "start": "2026-08-21T09:00:00+08:00",
+      "end": "2026-08-21T09:45:00+08:00",
       "allDay": false,
       "category": "Reminder",
       "priority": "low",
       "status": "planned",
-      "description": "Meet with Ros to discuss Pamella's request for a software or system that helps Admin track items sent to other locations, including who checked each item. Agree on the scope, responsible person, and next action. Target completion deadline: 21 August 2026.",
+      "description": "Rescheduled from 20 August because Ros was unavailable at the original time. Meet with Ros to discuss Pamella's request for a software or system that helps Admin track items sent to other locations, including who checked each item. Agree on the scope, responsible person, and next action. Target completion deadline: 21 August 2026.",
       "allowOverlap": false
     },
     {
@@ -2106,6 +2106,19 @@
       "status": "planned",
       "location": "KK Office",
       "description": "Kinabalu Climbing Club Main Committee meeting for committee members only. Review committee matters and confirm the treasury items and requirements prepared the previous day.",
+      "allowOverlap": false
+    },
+    {
+      "id": "reminder-bring-hammer-2026-08-21",
+      "title": "Bring Hammer",
+      "start": "2026-08-21T07:30:00+08:00",
+      "end": "2026-08-21T07:45:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "normal",
+      "status": "confirmed",
+      "location": "Home (UUC, Kota Kinabalu)",
+      "description": "Remember to bring the hammer before leaving home for work at Menara MAA.",
       "allowOverlap": false
     }
   ]
