@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-21T00:18:34+08:00",
+    "lastUpdated": "2026-08-21T10:31:14+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -70,18 +70,6 @@
       "allowOverlap": false
     },
     {
-      "id": "adhoc-meet-elzawati-kcc-bank-account-2026-08-17",
-      "title": "Meet Elzawati About KCC Bank Account",
-      "start": "2026-08-17T15:00:00+08:00",
-      "end": "2026-08-17T15:30:00+08:00",
-      "allDay": false,
-      "category": "Work",
-      "priority": "high",
-      "status": "confirmed",
-      "description": "Meet Elzawati today and ask for the current progress of the KCC bank-account application or setup. Record the status, outstanding requirements, owner, and next action.",
-      "allowOverlap": false
-    },
-    {
       "id": "leave-2026-08-18",
       "title": "On Leave",
       "start": "2026-08-18",
@@ -119,15 +107,15 @@
       "allowOverlap": false
     },
     {
-      "id": "task-inventory-cleanup-2026-08-19",
+      "id": "task-inventory-cleanup-2026-08-21",
       "title": "Inventory Cleanup",
-      "start": "2026-08-19T09:00:00+08:00",
-      "end": "2026-08-19T11:30:00+08:00",
+      "start": "2026-08-21T14:15:00+08:00",
+      "end": "2026-08-21T16:45:00+08:00",
       "allDay": false,
       "category": "Work",
       "priority": "high",
-      "status": "confirmed",
-      "description": "Clean and organize the inventory records and physical inventory. Target completion before the week of 24 August 2026.",
+      "status": "planned",
+      "description": "Continue and finish the inventory cleanup, including the inventory records and physical inventory. The previous session did not complete the work. Final deadline: 23 August 2026.",
       "allowOverlap": false
     },
     {
@@ -2070,16 +2058,16 @@
       "allowOverlap": true
     },
     {
-      "id": "task-research-cctv-live-weather-webcam-2026-08-19",
+      "id": "task-research-cctv-live-weather-webcam-2026-08-21",
       "title": "Research CCTV Live-Weather Webcam Installation",
-      "start": "2026-08-19T13:00:00+08:00",
-      "end": "2026-08-19T14:00:00+08:00",
+      "start": "2026-08-21T13:00:00+08:00",
+      "end": "2026-08-21T14:00:00+08:00",
       "allDay": false,
       "category": "Work",
       "priority": "normal",
       "status": "planned",
       "location": "KK Office",
-      "description": "Research options for using the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut as a live-weather webcam that other people can view through a paid subscription. Assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps. Target deadline: 21 August 2026.",
+      "description": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, bandwidth, power reliability, costs, and implementation steps. Deadline: 21 August 2026.",
       "allowOverlap": false
     },
     {
@@ -2119,6 +2107,31 @@
       "status": "confirmed",
       "location": "Home (UUC, Kota Kinabalu)",
       "description": "Remember to bring the hammer before leaving home for work at Menara MAA.",
+      "allowOverlap": false
+    },
+    {
+      "id": "follow-up-confirm-fae-monitor-courier-owner-2026-08-21",
+      "title": "Confirm Fae Monitor Courier Responsibility with Ros",
+      "start": "2026-08-21T10:45:00+08:00",
+      "end": "2026-08-21T11:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "description": "Confirm with Ros whether Admin or IT will handle sending Fae's monitor by courier. If Admin will handle it, confirm who must submit the request and record the responsible person and next action. Fae returns to Kuala Lumpur on 16 September 2026.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-send-fae-monitor-by-courier-2026-09-13",
+      "title": "Send Fae's Monitor by Courier",
+      "start": "2026-09-13T10:15:00+08:00",
+      "end": "2026-09-13T11:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Planned courier handover for Fae's monitor, three days before her flight to Kuala Lumpur on 16 September 2026. Proceed according to the responsibility confirmed with Ros. Use the recommended courier arrangement because it can cover the full value of the monitor.",
       "allowOverlap": false
     }
   ]
