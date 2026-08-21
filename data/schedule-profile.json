@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-21T00:18:34+08:00",
+  "updatedAt": "2026-08-21T10:31:14+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -94,11 +94,11 @@
       "type": "follow-up",
       "title": "Monitor Request & Recommendation – Fae",
       "status": "in-progress",
-      "date": "2026-08-19",
-      "deadline": "2026-08-19",
+      "date": "2026-08-21",
+      "deadline": "2026-09-13",
       "person": "Fae",
       "relatedDate": "2026-09-07",
-      "details": "Ask which flight Fae will take so the baggage price can be checked and she can apply to carry the monitor herself. Fae's flight to Kota Kinabalu is on 7 September 2026. She has already been contacted; follow up on 19 August to confirm whether the flight is AirAsia. The requested deadline is before 19 August 2026."
+      "details": "Fae travels to Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Recommend an AirAsia ticket and sending the monitor by courier because the courier arrangement can cover the full value of the item. On 21 August, confirm with Ros whether Admin or IT will handle the courier and, if Admin handles it, who must submit the request. Planned courier handover: 13 September 2026, three days before Fae's return flight."
     },
     {
       "id": "kp-internet-solution",
@@ -144,20 +144,12 @@
       "section": "Tasks",
       "type": "task",
       "title": "Cleanup inventory",
-      "status": "planned",
+      "status": "in-progress",
       "deadline": "2026-08-23",
-      "details": "Complete the inventory cleanup before the next week begins."
-    },
-    {
-      "id": "kcc-bank-account-progress",
-      "section": "Ad hoc tasks",
-      "type": "task",
-      "title": "Ask about KCC bank account progress",
-      "status": "planned",
-      "date": "2026-08-17",
-      "deadline": "2026-08-17",
-      "person": "Elzawati",
-      "details": "Meet Elzawati today and ask about the progress of the KCC bank account."
+      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory by 23 August 2026.",
+      "date": "2026-08-21",
+      "startTime": "14:15",
+      "endTime": "16:45"
     },
     {
       "id": "hod-meeting-2026-09-09",
@@ -320,13 +312,13 @@
       "section": "Tasks",
       "type": "task",
       "title": "Research CCTV live-weather webcam installation",
-      "status": "planned",
-      "date": "2026-08-19",
+      "status": "in-progress",
+      "date": "2026-08-21",
       "startTime": "13:00",
       "endTime": "14:00",
       "deadline": "2026-08-21",
       "location": "KK Office",
-      "details": "Research how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a live-weather webcam for external viewers through a paid subscription. Assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps."
+      "details": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps."
     },
     {
       "id": "kcc-main-committee-meeting-2026-08-27",
