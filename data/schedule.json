@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-21T10:31:14+08:00",
+    "lastUpdated": "2026-08-22T07:26:46+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -2084,16 +2084,16 @@
       "allowOverlap": false
     },
     {
-      "id": "meeting-kcc-main-committee-2026-08-27",
+      "id": "meeting-kcc-main-committee-2026-08-28",
       "title": "KCC Main Committee Meeting",
-      "start": "2026-08-27T15:00:00+08:00",
-      "end": "2026-08-27T16:00:00+08:00",
+      "start": "2026-08-28T15:00:00+08:00",
+      "end": "2026-08-28T16:00:00+08:00",
       "allDay": false,
       "category": "Meeting",
       "priority": "normal",
       "status": "planned",
       "location": "KK Office",
-      "description": "Kinabalu Climbing Club Main Committee meeting for committee members only. Review committee matters and confirm the treasury items and requirements prepared the previous day.",
+      "description": "Kinabalu Climbing Club Main Committee meeting for committee members only. Review committee matters and confirm the treasury items and requirements prepared on 26 August 2026.",
       "allowOverlap": false
     },
     {
