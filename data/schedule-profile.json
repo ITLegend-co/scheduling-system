@@ -560,6 +560,138 @@
       },
       "person": "Adly and Eizzat",
       "details": "Review cybersecurity controls, user access, accounts, permissions, and improvement priorities."
+    },
+    {
+      "id": "subscription-renewal-alarm-system",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Alarm System",
+      "status": "confirmed",
+      "date": "2026-09-03",
+      "deadline": "2026-10-03",
+      "relatedDate": "2026-10-03",
+      "person": "IT",
+      "details": "Remind one month before expiry. Supplier: Global Surveillance Enterprise. Annual cost: RM 760.00. Users: 2 users. Assigned to: IT. Expiry: 2026-10-03."
+    },
+    {
+      "id": "subscription-renewal-info-tech-hrms",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Info-Tech HRMS",
+      "status": "confirmed",
+      "date": "2026-09-16",
+      "deadline": "2026-10-16",
+      "relatedDate": "2026-10-16",
+      "person": "Aron",
+      "details": "Remind one month before expiry. Supplier: Info-Tech. Annual cost: RM 1,088.64. Users: 28 users. Assigned to: Aron. Expiry: 2026-10-16."
+    },
+    {
+      "id": "subscription-renewal-sql-payroll",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – SQL Payroll",
+      "status": "confirmed",
+      "date": "2027-01-17",
+      "deadline": "2027-02-17",
+      "relatedDate": "2027-02-17",
+      "person": "Management",
+      "details": "Remind one month before expiry. Supplier: GoLink. Annual cost: RM 2,560.00. Users: 2 users. Assigned to: Management. Expiry: 2027-02-17."
+    },
+    {
+      "id": "subscription-renewal-ipserverone-email",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – IPServerOne Email",
+      "status": "confirmed",
+      "date": "2027-04-20",
+      "deadline": "2027-05-20",
+      "relatedDate": "2027-05-20",
+      "person": "Madam I-Gek",
+      "details": "Remind one month before expiry. Supplier: IPServerOne. Annual cost: RM 4,497.93. Users: 1 user. Assigned to: Madam I-Gek. Expiry: 2027-05-20."
+    },
+    {
+      "id": "subscription-renewal-photography-plan-20gb",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Photography Plan (20GB)",
+      "status": "confirmed",
+      "date": "2027-06-01",
+      "deadline": "2027-07-01",
+      "relatedDate": "2027-07-01",
+      "person": "Social Media",
+      "details": "Remind one month before expiry. Supplier: Adobe. Annual cost: RM 345.33. Users: 1 user. Assigned to: Social Media. Expiry: 2027-07-01."
+    },
+    {
+      "id": "subscription-renewal-illustrator",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Illustrator",
+      "status": "confirmed",
+      "date": "2027-06-01",
+      "deadline": "2027-07-01",
+      "relatedDate": "2027-07-01",
+      "person": "Social Media",
+      "details": "Remind one month before expiry. Supplier: Adobe. Annual cost: RM 760.16. Users: 1 user. Assigned to: Social Media. Expiry: 2027-07-01."
+    },
+    {
+      "id": "subscription-renewal-capcut-pro",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – CapCut Pro",
+      "status": "confirmed",
+      "date": "2027-06-01",
+      "deadline": "2027-07-01",
+      "relatedDate": "2027-07-01",
+      "person": "Social Media",
+      "details": "Remind one month before expiry. Supplier: CapCut. Annual cost: RM 209.00. Users: 1 user. Assigned to: Social Media. Expiry: 2027-07-01."
+    },
+    {
+      "id": "subscription-renewal-linktree",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Linktree",
+      "status": "confirmed",
+      "date": "2027-06-01",
+      "deadline": "2027-07-01",
+      "relatedDate": "2027-07-01",
+      "person": "Social Media",
+      "details": "Remind one month before expiry. Supplier: Linktree. Annual cost: RM 336.00. Users: 1 user. Assigned to: Social Media. Expiry: 2027-07-01."
+    },
+    {
+      "id": "subscription-renewal-microsoft-365-business-standard",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – Microsoft 365 Business Standard",
+      "status": "confirmed",
+      "date": "2027-06-08",
+      "deadline": "2027-07-08",
+      "relatedDate": "2027-07-08",
+      "person": "Adly",
+      "details": "Remind one month before expiry. Supplier: Microsoft. Annual cost: RM 4,975.56. Users: 10 users. Assigned to: Adly. Expiry: 2027-07-08."
+    },
+    {
+      "id": "subscription-renewal-dyndns",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – DynDNS",
+      "status": "confirmed",
+      "date": "2027-09-22",
+      "deadline": "2027-10-22",
+      "relatedDate": "2027-10-22",
+      "person": "IT",
+      "details": "Remind one month before expiry. Supplier: DynDNS. Annual cost: RM 401.70. Users: 1 user. Assigned to: IT. Expiry: 2027-10-22."
+    },
+    {
+      "id": "subscription-renewal-trendmicro",
+      "section": "Subscription Renewal Reminders",
+      "type": "reminder",
+      "title": "Renewal Reminder – TrendMicro",
+      "status": "confirmed",
+      "date": "2028-07-16",
+      "deadline": "2028-08-16",
+      "relatedDate": "2028-08-16",
+      "person": "IT",
+      "details": "Remind one month before expiry. Supplier: TrendMicro. Annual cost: RM 7,560.00. Users: 28 users. Assigned to: IT. Expiry: 2028-08-16."
     }
   ],
   "format": "smart-schedule-profile",
@@ -583,6 +715,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-22T11:36:44+08:00",
+  "updatedAt": "2026-08-22T11:55:06+08:00",
   "version": 1
 }
