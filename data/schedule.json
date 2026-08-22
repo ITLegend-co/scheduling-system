@@ -2,7 +2,7 @@
   "meta": {
     "title": "Smart Schedule",
     "timezone": "Asia/Kuala_Lumpur",
-    "lastUpdated": "2026-08-22T07:26:46+08:00",
+    "lastUpdated": "2026-08-22T09:36:13+08:00",
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics"
   },
   "settings": {
@@ -2132,6 +2132,19 @@
       "priority": "high",
       "status": "planned",
       "description": "Planned courier handover for Fae's monitor, three days before her flight to Kuala Lumpur on 16 September 2026. Proceed according to the responsibility confirmed with Ros. Use the recommended courier arrangement because it can cover the full value of the monitor.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-repair-pantry-window-alarm-sensor-2026-08-22",
+      "title": "Repair Pantry Window Alarm Sensor",
+      "start": "2026-08-22T09:45:00+08:00",
+      "end": "2026-08-22T11:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "location": "KK Office – Pantry Window",
+      "description": "Investigate and correct the pantry-window alarm sensor. The alarm could be armed while the window was slightly open because the sensor detected it as closed. Rewire and reposition the sensor below the window so that even a slightly open window is detected as open. Target completion: 22 August 2026.",
       "allowOverlap": false
     }
   ]
