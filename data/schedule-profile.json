@@ -2,7 +2,7 @@
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
   "format": "smart-schedule-profile",
   "version": 1,
-  "updatedAt": "2026-08-22T07:26:46+08:00",
+  "updatedAt": "2026-08-22T09:36:13+08:00",
   "source": {
     "name": "help update schedule.txt",
     "convertedFrom": "plain-text schedule instructions"
@@ -344,6 +344,20 @@
       "deadline": "2026-08-21",
       "location": "Home (UUC, Kota Kinabalu)",
       "details": "Remember to bring the hammer before leaving home for work at Menara MAA."
+    },
+    {
+      "id": "pantry-window-alarm-sensor-2026-08-22",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Alarm Issue – Pantry Window Sensor",
+      "status": "planned",
+      "date": "2026-08-22",
+      "startTime": "09:45",
+      "endTime": "11:15",
+      "deadline": "2026-08-22",
+      "location": "KK Office – Pantry Window",
+      "person": "Aron, Karen, and Ros",
+      "details": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed, although it detects the window when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open."
     }
   ]
 }
