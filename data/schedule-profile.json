@@ -1,19 +1,574 @@
 {
   "$schema": "https://itlegend-co.github.io/scheduling-system/schedule-profile.schema.json",
+  "entries": [
+    {
+      "details": "Look up and observe Sabah public holidays when arranging the schedule.",
+      "id": "sabah-public-holidays",
+      "section": "Work profile",
+      "status": "active",
+      "title": "Sabah public holidays",
+      "type": "work-pattern"
+    },
+    {
+      "details": "A half-day is either 8:30 AM to 12:30 PM or 12:30 PM to 5:30 PM. Only apply it when leave is explicitly provided.",
+      "id": "half-day-working-hours",
+      "section": "Work profile",
+      "status": "active",
+      "title": "Half-day working hours",
+      "type": "work-pattern",
+      "windows": [
+        {
+          "endTime": "12:30",
+          "startTime": "08:30"
+        },
+        {
+          "endTime": "17:30",
+          "startTime": "12:30"
+        }
+      ]
+    },
+    {
+      "allDay": true,
+      "date": "2026-08-18",
+      "details": "Full-day leave on 18 August 2026.",
+      "id": "leave-2026-08-18",
+      "section": "Work profile",
+      "status": "confirmed",
+      "title": "On leave",
+      "type": "leave"
+    },
+    {
+      "date": "2026-04-01",
+      "deadline": "2026-04-08",
+      "details": "Fill in the appraisal form provided by Management. The deadline is seven days after each appraisal date.",
+      "id": "my-appraisal-2026-04-01",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 6
+      },
+      "section": "Work profile",
+      "status": "active",
+      "title": "My appraisal",
+      "type": "reminder"
+    },
+    {
+      "date": "2026-06-01",
+      "details": "Eizzat's appraisal repeats every six months.",
+      "id": "eizzat-appraisal-2026-06-01",
+      "person": "Eizzat",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 6
+      },
+      "section": "Work profile",
+      "status": "active",
+      "title": "Eizzat's appraisal",
+      "type": "follow-up"
+    },
+    {
+      "date": "2026-08-21",
+      "deadline": "2026-09-13",
+      "details": "Fae travels to Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Recommend an AirAsia ticket and sending the monitor by courier because the courier arrangement can cover the full value of the item. On 21 August, confirm with Ros whether Admin or IT will handle the courier and, if Admin handles it, who must submit the request. Planned courier handover: 13 September 2026, three days before Fae's return flight.",
+      "id": "monitor-request-fae",
+      "person": "Fae",
+      "relatedDate": "2026-09-07",
+      "section": "Tasks",
+      "status": "in-progress",
+      "title": "Monitor Request & Recommendation – Fae",
+      "type": "follow-up"
+    },
+    {
+      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, suggest U Mobile as backup internet for the MOTOTRBO walkie-talkie system. The Fixed IP application has an issue; Aiden Lee is following up with U Mobile HQ and reported no update yet, so follow up again later. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
+      "id": "kp-internet-solution",
+      "person": "Aiden Lee",
+      "section": "Tasks",
+      "status": "in-progress",
+      "title": "KP Internet Solution",
+      "type": "follow-up"
+    },
+    {
+      "date": "2026-09-01",
+      "details": "Give the Accounts and Technical teams a one-month Odoo trial beginning 1 September 2026. After the trial, hold a meeting with the Odoo agent and both teams to review issues encountered and questions that need to be asked.",
+      "endDate": "2026-09-30",
+      "id": "odoo-pos-trial",
+      "section": "Tasks",
+      "status": "planned",
+      "title": "Odoo POS",
+      "type": "task"
+    },
+    {
+      "date": "2026-08-17",
+      "deadline": "2026-08-17",
+      "details": "Reset all account passwords connected to Elen's MacBook, update the master file, and email it to Management. Planned for Monday.",
+      "id": "account-password-changes",
+      "section": "Tasks",
+      "status": "planned",
+      "title": "Account and password changes",
+      "type": "task"
+    },
+    {
+      "date": "2026-08-17",
+      "deadline": "2026-08-17",
+      "details": "Elen's last day was Friday. Change the office door PIN and Wi-Fi password, update the master file, and email it to Management. Planned for Monday.",
+      "id": "office-pin-wifi-password-changes",
+      "section": "Tasks",
+      "status": "planned",
+      "title": "Office PIN and Wi-Fi password changes",
+      "type": "task"
+    },
+    {
+      "date": "2026-08-21",
+      "deadline": "2026-08-23",
+      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory by 23 August 2026.",
+      "endTime": "16:45",
+      "id": "cleanup-inventory",
+      "section": "Tasks",
+      "startTime": "14:15",
+      "status": "in-progress",
+      "title": "Cleanup inventory",
+      "type": "task"
+    },
+    {
+      "date": "2026-09-09",
+      "details": "Review the presentation repository and create a preparation reminder one day before the meeting.",
+      "id": "hod-meeting-2026-09-09",
+      "referenceUrl": "https://github.com/ITLegend-co/presentation.git",
+      "section": "Meetings",
+      "startTime": "10:00",
+      "status": "confirmed",
+      "title": "HOD meeting",
+      "type": "meeting"
+    },
+    {
+      "date": "2026-09-02",
+      "details": "The IT Meeting repeats every three weeks. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes.",
+      "id": "it-meeting-2026-09-02",
+      "person": "Eizzat",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 3
+      },
+      "referenceUrl": "https://github.com/ITLegend-co/IT-Minutes.git",
+      "section": "Meetings",
+      "startTime": "15:00",
+      "status": "confirmed",
+      "title": "IT Meeting",
+      "type": "meeting"
+    },
+    {
+      "details": "Create a workout schedule that builds a more muscular body without restricting climbing ability.",
+      "id": "muscular-climbing-workout",
+      "section": "Personal",
+      "status": "flexible",
+      "title": "Workout",
+      "type": "personal"
+    },
+    {
+      "details": "Make time to play games with friends. They are usually free at 10:00 PM, but gaming does not need to happen every day.",
+      "id": "games-with-friends",
+      "preferredStartTime": "22:00",
+      "section": "Personal",
+      "status": "flexible",
+      "title": "Games with friends",
+      "type": "personal"
+    },
+    {
+      "date": "2026-08-20",
+      "details": "The project runs for two weeks beginning 20 August 2026. Work after normal working hours; on weekends that are not working Saturdays, use 8:30 AM to 6:00 PM; on public holidays, use 8:30 AM to 6:30 PM.",
+      "endDate": "2026-09-02",
+      "id": "cleanup-project-2026-08-20",
+      "person": "Vince and team",
+      "section": "Personal",
+      "status": "confirmed",
+      "title": "Cleanup project with Vince and team",
+      "type": "personal"
+    },
+    {
+      "details": "Make suitable time for Grab driving.",
+      "id": "grab-driving-time",
+      "section": "Personal",
+      "status": "flexible",
+      "title": "Grab",
+      "type": "personal"
+    },
+    {
+      "date": "2027-02-16",
+      "details": "Bring my wife to Klinik Telipok for her review after her blood test on 9 February 2027. The review time is provisional and retains the previous two-hour duration.",
+      "endTime": "16:00",
+      "id": "wife-review-klinik-telipok-2027-02-16",
+      "location": "Klinik Telipok",
+      "person": "Wife",
+      "relatedDate": "2027-02-09",
+      "section": "Personal",
+      "startTime": "14:00",
+      "status": "planned",
+      "title": "Wife review at Klinik Telipok",
+      "type": "personal"
+    },
+    {
+      "date": "2027-02-09",
+      "details": "Bring my wife for her blood test before the Klinik Telipok review on 16 February 2027. The time is provisional because no appointment time was supplied.",
+      "endTime": "09:00",
+      "id": "wife-blood-test-2027-02-09",
+      "person": "Wife",
+      "relatedDate": "2027-02-16",
+      "section": "Personal",
+      "startTime": "08:00",
+      "status": "planned",
+      "title": "Wife blood test",
+      "type": "personal"
+    },
+    {
+      "details": "Protect some free time for myself.",
+      "id": "personal-free-time",
+      "section": "Personal",
+      "status": "flexible",
+      "title": "Free time",
+      "type": "personal"
+    },
+    {
+      "date": "2026-08-21",
+      "details": "Clean and organize the personal desk every Friday before finishing work.",
+      "endTime": "17:30",
+      "id": "personal-desk-cleanup",
+      "location": "KK Office",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 1
+      },
+      "section": "Personal",
+      "startTime": "17:00",
+      "status": "active",
+      "title": "Personal Desk Clean Up",
+      "type": "reminder"
+    },
+    {
+      "date": "2026-08-21",
+      "deadline": "2026-08-21",
+      "details": "The original 20 August meeting did not happen because Ros was unavailable. Rescheduled to meet Ros on 21 August 2026 to discuss Pamella's request for a software or system that helps Admin track items sent to other locations and record who checked each item. Agree on the scope, responsible person, and next action.",
+      "endTime": "09:45",
+      "id": "pamella-new-software-request",
+      "person": "Pamella and Ros",
+      "section": "Tasks",
+      "startTime": "09:00",
+      "status": "planned",
+      "title": "New Software Request by Pamella",
+      "type": "reminder"
+    },
+    {
+      "date": "2027-01-26",
+      "deadline": "2027-01-26",
+      "details": "Apply for leave for my wife's blood test on 9 February 2027. The appointment is connected to her Klinik Telipok review, and this reminder is exactly two weeks before the blood test.",
+      "endTime": "09:15",
+      "id": "apply-leave-wife-blood-test-2027-01-26",
+      "person": "Wife",
+      "relatedDate": "2027-02-09",
+      "section": "Personal",
+      "startTime": "09:00",
+      "status": "confirmed",
+      "title": "Apply for leave – Wife's blood test",
+      "type": "reminder"
+    },
+    {
+      "date": "2027-02-02",
+      "deadline": "2027-02-02",
+      "details": "Apply for leave for my wife's review at Klinik Telipok on 16 February 2027. This reminder is exactly two weeks before the review.",
+      "endTime": "09:15",
+      "id": "apply-leave-wife-klinik-review-2027-02-02",
+      "location": "Klinik Telipok",
+      "person": "Wife",
+      "relatedDate": "2027-02-16",
+      "section": "Personal",
+      "startTime": "09:00",
+      "status": "confirmed",
+      "title": "Apply for leave – Wife's Klinik Telipok review",
+      "type": "reminder"
+    },
+    {
+      "date": "2026-08-21",
+      "deadline": "2026-08-21",
+      "details": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps.",
+      "endTime": "14:00",
+      "id": "cctv-live-weather-webcam-research",
+      "location": "KK Office",
+      "section": "Tasks",
+      "startTime": "13:00",
+      "status": "in-progress",
+      "title": "Research CCTV live-weather webcam installation",
+      "type": "task"
+    },
+    {
+      "date": "2026-08-28",
+      "details": "Main Committee meeting for KCC committee members only. On 26 August 2026 from 3:00 PM to 4:00 PM, prepare the KCC Treasurer's required items and checklist, including the cash box and any other treasury equipment or documents.",
+      "endTime": "16:00",
+      "id": "kcc-main-committee-meeting-2026-08-28",
+      "location": "KK Office",
+      "section": "Meetings",
+      "startTime": "15:00",
+      "status": "planned",
+      "title": "KCC Main Committee Meeting",
+      "type": "meeting"
+    },
+    {
+      "date": "2026-08-21",
+      "deadline": "2026-08-21",
+      "details": "Remember to bring the hammer before leaving home for work at Menara MAA.",
+      "endTime": "07:45",
+      "id": "bring-hammer-2026-08-21",
+      "location": "Home (UUC, Kota Kinabalu)",
+      "section": "Tasks",
+      "startTime": "07:30",
+      "status": "confirmed",
+      "title": "Bring Hammer",
+      "type": "reminder"
+    },
+    {
+      "date": "2026-08-22",
+      "deadline": "2026-08-22",
+      "details": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed, although it detects the window when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open.",
+      "endTime": "11:15",
+      "id": "pantry-window-alarm-sensor-2026-08-22",
+      "location": "KK Office – Pantry Window",
+      "person": "Aron, Karen, and Ros",
+      "section": "Tasks",
+      "startTime": "09:45",
+      "status": "planned",
+      "title": "Alarm Issue – Pantry Window Sensor",
+      "type": "task"
+    },
+    {
+      "id": "recurring-it-daily-operations",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Daily IT Operations Check",
+      "status": "active",
+      "date": "2026-08-24",
+      "endDate": "2026-12-31",
+      "startTime": "08:30",
+      "endTime": "09:00",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 1
+      },
+      "weekdays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "person": "Adly and Eizzat",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "details": "Daily checklist: Eizzat reviews new support requests; Adly assigns and monitors IT tasks; both monitor critical issues; Adly checks active-project progress and blockers; urgent vendor follow-up is handled only when required. Public holidays are skipped."
+    },
+    {
+      "id": "recurring-it-weekly-planning",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Weekly IT Issues and Task Planning",
+      "status": "active",
+      "date": "2026-08-24",
+      "endDate": "2026-12-31",
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Every Monday: review unresolved IT issues, prioritise important cases, and plan and assign the week's IT tasks."
+    },
+    {
+      "id": "recurring-it-weekly-midweek-review",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Midweek Project and NAS Review",
+      "status": "active",
+      "date": "2026-08-26",
+      "endDate": "2026-12-31",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Every Wednesday: Adly reviews project progress and blockers; Eizzat checks important NAS storage status and reports capacity or health concerns."
+    },
+    {
+      "id": "recurring-it-weekly-friday-review",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Weekly Network Review and IT Progress Update",
+      "status": "active",
+      "date": "2026-08-28",
+      "endDate": "2026-12-31",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "recurrence": {
+        "frequency": "weekly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Every Friday: review major network or recurring IT issues and prepare the weekly IT progress update."
+    },
+    {
+      "id": "recurring-it-monthly-operations",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Monthly IT Operations and Security Review",
+      "status": "active",
+      "date": "2026-08-24",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Review IT support trends, IPServerOne email requirements, and TrendMicro security status."
+    },
+    {
+      "id": "recurring-it-monthly-systems",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Monthly NAS, Microsoft 365 and Subscription Review",
+      "status": "active",
+      "date": "2026-08-26",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates."
+    },
+    {
+      "id": "recurring-it-monthly-assets",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Monthly Equipment and Asset Review",
+      "status": "active",
+      "date": "2026-08-27",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Review IT equipment and procurement requirements and ensure asset inventory changes are updated across all locations."
+    },
+    {
+      "id": "recurring-it-quarterly-ppm",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Quarterly Preventive Maintenance Review",
+      "status": "active",
+      "date": "2026-09-28",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 3
+      },
+      "person": "Adly and Eizzat",
+      "location": "KK / Kundasang / Pendant Hut",
+      "details": "Plan and review quarterly PPM for KK, Kundasang, and Pendant Hut. Confirm scope, access, outstanding work, and follow-up actions."
+    },
+    {
+      "id": "recurring-it-quarterly-hardware",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Quarterly Hardware and Equipment Inspection",
+      "status": "active",
+      "date": "2026-09-29",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 3
+      },
+      "person": "Eizzat, monitored by Adly",
+      "location": "All Locations",
+      "details": "Inspect desktop and laptop condition, printers and scanners, monitors, and other IT equipment."
+    },
+    {
+      "id": "recurring-it-quarterly-infrastructure",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Quarterly NAS, Network and Recurring-Issue Review",
+      "status": "active",
+      "date": "2026-09-30",
+      "endDate": "2026-12-31",
+      "recurrence": {
+        "frequency": "monthly",
+        "interval": 3
+      },
+      "person": "Adly and Eizzat",
+      "location": "All Locations",
+      "details": "Inspect NAS health and storage, review network infrastructure, and analyse recurring IT problems."
+    },
+    {
+      "id": "recurring-it-yearly-assets",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Yearly IT Asset and Replacement Review",
+      "status": "active",
+      "date": "2026-12-07",
+      "recurrence": {
+        "frequency": "yearly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Review the full IT asset inventory and equipment replacement requirements for PCs, laptops, monitors, and other hardware."
+    },
+    {
+      "id": "recurring-it-yearly-budget",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Yearly IT Budget and Subscription Review",
+      "status": "active",
+      "date": "2026-12-08",
+      "recurrence": {
+        "frequency": "yearly",
+        "interval": 1
+      },
+      "person": "Adly",
+      "details": "Prepare the yearly IT budget and review software subscriptions and renewals to prevent service interruption."
+    },
+    {
+      "id": "recurring-it-yearly-projects",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Yearly IT Project Review and Roadmap",
+      "status": "active",
+      "date": "2026-12-09",
+      "recurrence": {
+        "frequency": "yearly",
+        "interval": 1
+      },
+      "person": "Adly",
+      "details": "Review IT projects completed during the year and plan next year's IT projects and roadmap."
+    },
+    {
+      "id": "recurring-it-yearly-security",
+      "section": "IT Recurring Tasks",
+      "type": "task",
+      "title": "Yearly Cybersecurity and Access Review",
+      "status": "active",
+      "date": "2026-12-10",
+      "recurrence": {
+        "frequency": "yearly",
+        "interval": 1
+      },
+      "person": "Adly and Eizzat",
+      "details": "Review cybersecurity controls, user access, accounts, permissions, and improvement priorities."
+    }
+  ],
   "format": "smart-schedule-profile",
-  "version": 1,
-  "updatedAt": "2026-08-22T09:36:13+08:00",
-  "source": {
-    "name": "help update schedule.txt",
-    "convertedFrom": "plain-text schedule instructions"
-  },
-  "timezone": "Asia/Kuala_Lumpur",
   "instructions": {
-    "preserveUnmentionedEvents": true,
-    "lookupSabahHolidays": true,
     "autoScheduleTasks": true,
     "createDeadlineWhenMissing": true,
-    "personalActivitiesNeedDuration": true
+    "lookupSabahHolidays": true,
+    "personalActivitiesNeedDuration": true,
+    "preserveUnmentionedEvents": true
   },
   "rules": [
     "If there are no changes, do not change the schedule.",
@@ -23,341 +578,11 @@
     "Arrange suitable time for tasks around existing commitments.",
     "Create a reasonable deadline for a task when none is supplied."
   ],
-  "entries": [
-    {
-      "id": "sabah-public-holidays",
-      "section": "Work profile",
-      "type": "work-pattern",
-      "title": "Sabah public holidays",
-      "status": "active",
-      "details": "Look up and observe Sabah public holidays when arranging the schedule."
-    },
-    {
-      "id": "half-day-working-hours",
-      "section": "Work profile",
-      "type": "work-pattern",
-      "title": "Half-day working hours",
-      "status": "active",
-      "windows": [
-        {
-          "startTime": "08:30",
-          "endTime": "12:30"
-        },
-        {
-          "startTime": "12:30",
-          "endTime": "17:30"
-        }
-      ],
-      "details": "A half-day is either 8:30 AM to 12:30 PM or 12:30 PM to 5:30 PM. Only apply it when leave is explicitly provided."
-    },
-    {
-      "id": "leave-2026-08-18",
-      "section": "Work profile",
-      "type": "leave",
-      "title": "On leave",
-      "status": "confirmed",
-      "date": "2026-08-18",
-      "allDay": true,
-      "details": "Full-day leave on 18 August 2026."
-    },
-    {
-      "id": "my-appraisal-2026-04-01",
-      "section": "Work profile",
-      "type": "reminder",
-      "title": "My appraisal",
-      "status": "active",
-      "date": "2026-04-01",
-      "deadline": "2026-04-08",
-      "recurrence": {
-        "frequency": "monthly",
-        "interval": 6
-      },
-      "details": "Fill in the appraisal form provided by Management. The deadline is seven days after each appraisal date."
-    },
-    {
-      "id": "eizzat-appraisal-2026-06-01",
-      "section": "Work profile",
-      "type": "follow-up",
-      "title": "Eizzat's appraisal",
-      "status": "active",
-      "date": "2026-06-01",
-      "person": "Eizzat",
-      "recurrence": {
-        "frequency": "monthly",
-        "interval": 6
-      },
-      "details": "Eizzat's appraisal repeats every six months."
-    },
-    {
-      "id": "monitor-request-fae",
-      "section": "Tasks",
-      "type": "follow-up",
-      "title": "Monitor Request & Recommendation – Fae",
-      "status": "in-progress",
-      "date": "2026-08-21",
-      "deadline": "2026-09-13",
-      "person": "Fae",
-      "relatedDate": "2026-09-07",
-      "details": "Fae travels to Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Recommend an AirAsia ticket and sending the monitor by courier because the courier arrangement can cover the full value of the item. On 21 August, confirm with Ros whether Admin or IT will handle the courier and, if Admin handles it, who must submit the request. Planned courier handover: 13 September 2026, three days before Fae's return flight."
-    },
-    {
-      "id": "kp-internet-solution",
-      "section": "Tasks",
-      "type": "follow-up",
-      "title": "KP Internet Solution",
-      "status": "in-progress",
-      "person": "Aiden Lee",
-      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, suggest U Mobile as backup internet for the MOTOTRBO walkie-talkie system. The Fixed IP application has an issue; Aiden Lee is following up with U Mobile HQ and reported no update yet, so follow up again later. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number."
-    },
-    {
-      "id": "odoo-pos-trial",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Odoo POS",
-      "status": "planned",
-      "date": "2026-09-01",
-      "endDate": "2026-09-30",
-      "details": "Give the Accounts and Technical teams a one-month Odoo trial beginning 1 September 2026. After the trial, hold a meeting with the Odoo agent and both teams to review issues encountered and questions that need to be asked."
-    },
-    {
-      "id": "account-password-changes",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Account and password changes",
-      "status": "planned",
-      "date": "2026-08-17",
-      "deadline": "2026-08-17",
-      "details": "Reset all account passwords connected to Elen's MacBook, update the master file, and email it to Management. Planned for Monday."
-    },
-    {
-      "id": "office-pin-wifi-password-changes",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Office PIN and Wi-Fi password changes",
-      "status": "planned",
-      "date": "2026-08-17",
-      "deadline": "2026-08-17",
-      "details": "Elen's last day was Friday. Change the office door PIN and Wi-Fi password, update the master file, and email it to Management. Planned for Monday."
-    },
-    {
-      "id": "cleanup-inventory",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Cleanup inventory",
-      "status": "in-progress",
-      "deadline": "2026-08-23",
-      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory by 23 August 2026.",
-      "date": "2026-08-21",
-      "startTime": "14:15",
-      "endTime": "16:45"
-    },
-    {
-      "id": "hod-meeting-2026-09-09",
-      "section": "Meetings",
-      "type": "meeting",
-      "title": "HOD meeting",
-      "status": "confirmed",
-      "date": "2026-09-09",
-      "startTime": "10:00",
-      "referenceUrl": "https://github.com/ITLegend-co/presentation.git",
-      "details": "Review the presentation repository and create a preparation reminder one day before the meeting."
-    },
-    {
-      "id": "it-meeting-2026-09-02",
-      "section": "Meetings",
-      "type": "meeting",
-      "title": "IT Meeting",
-      "status": "confirmed",
-      "date": "2026-09-02",
-      "startTime": "15:00",
-      "person": "Eizzat",
-      "referenceUrl": "https://github.com/ITLegend-co/IT-Minutes.git",
-      "recurrence": {
-        "frequency": "weekly",
-        "interval": 3
-      },
-      "details": "The IT Meeting repeats every three weeks. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes."
-    },
-    {
-      "id": "muscular-climbing-workout",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Workout",
-      "status": "flexible",
-      "details": "Create a workout schedule that builds a more muscular body without restricting climbing ability."
-    },
-    {
-      "id": "games-with-friends",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Games with friends",
-      "status": "flexible",
-      "preferredStartTime": "22:00",
-      "details": "Make time to play games with friends. They are usually free at 10:00 PM, but gaming does not need to happen every day."
-    },
-    {
-      "id": "cleanup-project-2026-08-20",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Cleanup project with Vince and team",
-      "status": "confirmed",
-      "date": "2026-08-20",
-      "endDate": "2026-09-02",
-      "person": "Vince and team",
-      "details": "The project runs for two weeks beginning 20 August 2026. Work after normal working hours; on weekends that are not working Saturdays, use 8:30 AM to 6:00 PM; on public holidays, use 8:30 AM to 6:30 PM."
-    },
-    {
-      "id": "grab-driving-time",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Grab",
-      "status": "flexible",
-      "details": "Make suitable time for Grab driving."
-    },
-    {
-      "id": "wife-review-klinik-telipok-2027-02-16",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Wife review at Klinik Telipok",
-      "status": "planned",
-      "date": "2027-02-16",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "relatedDate": "2027-02-09",
-      "person": "Wife",
-      "location": "Klinik Telipok",
-      "details": "Bring my wife to Klinik Telipok for her review after her blood test on 9 February 2027. The review time is provisional and retains the previous two-hour duration."
-    },
-    {
-      "id": "wife-blood-test-2027-02-09",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Wife blood test",
-      "status": "planned",
-      "date": "2027-02-09",
-      "startTime": "08:00",
-      "endTime": "09:00",
-      "relatedDate": "2027-02-16",
-      "person": "Wife",
-      "details": "Bring my wife for her blood test before the Klinik Telipok review on 16 February 2027. The time is provisional because no appointment time was supplied."
-    },
-    {
-      "id": "personal-free-time",
-      "section": "Personal",
-      "type": "personal",
-      "title": "Free time",
-      "status": "flexible",
-      "details": "Protect some free time for myself."
-    },
-    {
-      "id": "personal-desk-cleanup",
-      "section": "Personal",
-      "type": "reminder",
-      "title": "Personal Desk Clean Up",
-      "status": "active",
-      "date": "2026-08-21",
-      "startTime": "17:00",
-      "endTime": "17:30",
-      "location": "KK Office",
-      "recurrence": {
-        "frequency": "weekly",
-        "interval": 1
-      },
-      "details": "Clean and organize the personal desk every Friday before finishing work."
-    },
-    {
-      "id": "pamella-new-software-request",
-      "section": "Tasks",
-      "type": "reminder",
-      "title": "New Software Request by Pamella",
-      "status": "planned",
-      "date": "2026-08-21",
-      "startTime": "09:00",
-      "endTime": "09:45",
-      "deadline": "2026-08-21",
-      "person": "Pamella and Ros",
-      "details": "The original 20 August meeting did not happen because Ros was unavailable. Rescheduled to meet Ros on 21 August 2026 to discuss Pamella's request for a software or system that helps Admin track items sent to other locations and record who checked each item. Agree on the scope, responsible person, and next action."
-    },
-    {
-      "id": "apply-leave-wife-blood-test-2027-01-26",
-      "section": "Personal",
-      "type": "reminder",
-      "title": "Apply for leave – Wife's blood test",
-      "status": "confirmed",
-      "date": "2027-01-26",
-      "startTime": "09:00",
-      "endTime": "09:15",
-      "deadline": "2027-01-26",
-      "relatedDate": "2027-02-09",
-      "person": "Wife",
-      "details": "Apply for leave for my wife's blood test on 9 February 2027. The appointment is connected to her Klinik Telipok review, and this reminder is exactly two weeks before the blood test."
-    },
-    {
-      "id": "apply-leave-wife-klinik-review-2027-02-02",
-      "section": "Personal",
-      "type": "reminder",
-      "title": "Apply for leave – Wife's Klinik Telipok review",
-      "status": "confirmed",
-      "date": "2027-02-02",
-      "startTime": "09:00",
-      "endTime": "09:15",
-      "deadline": "2027-02-02",
-      "relatedDate": "2027-02-16",
-      "person": "Wife",
-      "location": "Klinik Telipok",
-      "details": "Apply for leave for my wife's review at Klinik Telipok on 16 February 2027. This reminder is exactly two weeks before the review."
-    },
-    {
-      "id": "cctv-live-weather-webcam-research",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Research CCTV live-weather webcam installation",
-      "status": "in-progress",
-      "date": "2026-08-21",
-      "startTime": "13:00",
-      "endTime": "14:00",
-      "deadline": "2026-08-21",
-      "location": "KK Office",
-      "details": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps."
-    },
-    {
-      "id": "kcc-main-committee-meeting-2026-08-28",
-      "section": "Meetings",
-      "type": "meeting",
-      "title": "KCC Main Committee Meeting",
-      "status": "planned",
-      "date": "2026-08-28",
-      "startTime": "15:00",
-      "endTime": "16:00",
-      "location": "KK Office",
-      "details": "Main Committee meeting for KCC committee members only. On 26 August 2026 from 3:00 PM to 4:00 PM, prepare the KCC Treasurer's required items and checklist, including the cash box and any other treasury equipment or documents."
-    },
-    {
-      "id": "bring-hammer-2026-08-21",
-      "section": "Tasks",
-      "type": "reminder",
-      "title": "Bring Hammer",
-      "status": "confirmed",
-      "date": "2026-08-21",
-      "startTime": "07:30",
-      "endTime": "07:45",
-      "deadline": "2026-08-21",
-      "location": "Home (UUC, Kota Kinabalu)",
-      "details": "Remember to bring the hammer before leaving home for work at Menara MAA."
-    },
-    {
-      "id": "pantry-window-alarm-sensor-2026-08-22",
-      "section": "Tasks",
-      "type": "task",
-      "title": "Alarm Issue – Pantry Window Sensor",
-      "status": "planned",
-      "date": "2026-08-22",
-      "startTime": "09:45",
-      "endTime": "11:15",
-      "deadline": "2026-08-22",
-      "location": "KK Office – Pantry Window",
-      "person": "Aron, Karen, and Ros",
-      "details": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed, although it detects the window when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open."
-    }
-  ]
+  "source": {
+    "convertedFrom": "plain-text schedule instructions",
+    "name": "help update schedule.txt"
+  },
+  "timezone": "Asia/Kuala_Lumpur",
+  "updatedAt": "2026-08-22T11:36:44+08:00",
+  "version": 1
 }
