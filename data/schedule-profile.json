@@ -298,12 +298,12 @@
       "id": "recurring-it-daily-operations",
       "section": "IT Recurring Tasks",
       "type": "task",
-      "title": "Daily IT Operations Check",
+      "title": "Daily IT Support Summary Report",
       "status": "active",
       "date": "2026-08-24",
       "endDate": "2026-12-31",
-      "startTime": "08:30",
-      "endTime": "09:00",
+      "startTime": "17:00",
+      "endTime": "17:30",
       "recurrence": {
         "frequency": "weekly",
         "interval": 1
@@ -315,9 +315,9 @@
         "Thursday",
         "Friday"
       ],
-      "person": "Adly and Eizzat",
+      "person": "Adly, with updates from Eizzat",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "details": "Daily checklist: Eizzat reviews new support requests; Adly assigns and monitors IT tasks; both monitor critical issues; Adly checks active-project progress and blockers; urgent vendor follow-up is handled only when required. Public holidays are skipped."
+      "details": "Every weekday at 5:00 PM, compile all IT support work handled that day and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Public holidays are skipped."
     },
     {
       "id": "recurring-it-weekly-planning",
@@ -686,6 +686,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-24T14:32:00+08:00",
+  "updatedAt": "2026-08-24T17:00:00+08:00",
   "version": 1
 }
