@@ -66,9 +66,9 @@
       "type": "follow-up"
     },
     {
-      "date": "2026-08-21",
+      "date": "2026-09-08",
       "deadline": "2026-09-13",
-      "details": "Fae travels to Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Recommend an AirAsia ticket and sending the monitor by courier because the courier arrangement can cover the full value of the item. On 21 August, confirm with Ros whether Admin or IT will handle the courier and, if Admin handles it, who must submit the request. Planned courier handover: 13 September 2026, three days before Fae's return flight.",
+      "details": "Fae arrives in Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Discuss the monitor shipment with her on 8 September, agree when it should be sent to Kuala Lumpur, and account for her off day before the planned courier handover. Courier is recommended because it can cover the full value of the monitor.",
       "id": "monitor-request-fae",
       "person": "Fae",
       "relatedDate": "2026-09-07",
@@ -78,17 +78,22 @@
       "type": "follow-up"
     },
     {
-      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, suggest U Mobile as backup internet for the MOTOTRBO walkie-talkie system. The Fixed IP application has an issue; Aiden Lee is following up with U Mobile HQ and reported no update yet, so follow up again later. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
+      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, consider U Mobile as backup internet for the MOTOTRBO walkie-talkie system. Configure the KP Fixed IP remotely on 27 August 2026, test it, and record any remaining issue for Aiden Lee or U Mobile HQ. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
       "id": "kp-internet-solution",
       "person": "Aiden Lee",
       "section": "Tasks",
       "status": "in-progress",
       "title": "KP Internet Solution",
-      "type": "follow-up"
+      "type": "follow-up",
+      "date": "2026-08-27",
+      "deadline": "2026-08-28",
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "location": "Remote – KP"
     },
     {
       "date": "2026-09-01",
-      "details": "Give the Accounts and Technical teams a one-month Odoo trial beginning 1 September 2026. After the trial, hold a meeting with the Odoo agent and both teams to review issues encountered and questions that need to be asked.",
+      "details": "Give the Accounts and Technical teams a one-month Odoo trial beginning 1 September 2026. Email the Accounts team one week before the trial starts. After the trial, meet the Odoo agent and both teams to review issues encountered and questions that need to be asked.",
       "endDate": "2026-09-30",
       "id": "odoo-pos-trial",
       "section": "Tasks",
@@ -97,33 +102,13 @@
       "type": "task"
     },
     {
-      "date": "2026-08-17",
-      "deadline": "2026-08-17",
-      "details": "Reset all account passwords connected to Elen's MacBook, update the master file, and email it to Management. Planned for Monday.",
-      "id": "account-password-changes",
-      "section": "Tasks",
-      "status": "planned",
-      "title": "Account and password changes",
-      "type": "task"
-    },
-    {
-      "date": "2026-08-17",
-      "deadline": "2026-08-17",
-      "details": "Elen's last day was Friday. Change the office door PIN and Wi-Fi password, update the master file, and email it to Management. Planned for Monday.",
-      "id": "office-pin-wifi-password-changes",
-      "section": "Tasks",
-      "status": "planned",
-      "title": "Office PIN and Wi-Fi password changes",
-      "type": "task"
-    },
-    {
-      "date": "2026-08-21",
-      "deadline": "2026-08-23",
-      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory by 23 August 2026.",
-      "endTime": "16:45",
+      "date": "2026-08-26",
+      "deadline": "2026-08-28",
+      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory this week, by 28 August 2026.",
+      "endTime": "15:00",
       "id": "cleanup-inventory",
       "section": "Tasks",
-      "startTime": "14:15",
+      "startTime": "13:00",
       "status": "in-progress",
       "title": "Cleanup inventory",
       "type": "task"
@@ -308,33 +293,6 @@
       "status": "planned",
       "title": "KCC Main Committee Meeting",
       "type": "meeting"
-    },
-    {
-      "date": "2026-08-21",
-      "deadline": "2026-08-21",
-      "details": "Remember to bring the hammer before leaving home for work at Menara MAA.",
-      "endTime": "07:45",
-      "id": "bring-hammer-2026-08-21",
-      "location": "Home (UUC, Kota Kinabalu)",
-      "section": "Tasks",
-      "startTime": "07:30",
-      "status": "confirmed",
-      "title": "Bring Hammer",
-      "type": "reminder"
-    },
-    {
-      "date": "2026-08-22",
-      "deadline": "2026-08-22",
-      "details": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed, although it detects the window when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open.",
-      "endTime": "11:15",
-      "id": "pantry-window-alarm-sensor-2026-08-22",
-      "location": "KK Office – Pantry Window",
-      "person": "Aron, Karen, and Ros",
-      "section": "Tasks",
-      "startTime": "09:45",
-      "status": "planned",
-      "title": "Alarm Issue – Pantry Window Sensor",
-      "type": "task"
     },
     {
       "id": "recurring-it-daily-operations",
@@ -692,6 +650,19 @@
       "relatedDate": "2028-08-16",
       "person": "IT",
       "details": "Remind one month before expiry. Supplier: TrendMicro. Annual cost: RM 7,560.00. Users: 28 users. Assigned to: IT. Expiry: 2028-08-16."
+    },
+    {
+      "date": "2026-08-24",
+      "deadline": "2026-08-24",
+      "details": "Email the Accounts team to remind them that the one-month Odoo trial starts next week on 1 September 2026.",
+      "endTime": "16:15",
+      "id": "email-accounts-odoo-trial-reminder-2026-08-24",
+      "person": "Accounts team",
+      "section": "Tasks",
+      "startTime": "16:00",
+      "status": "planned",
+      "title": "Email Accounts – Odoo Trial Starts Next Week",
+      "type": "reminder"
     }
   ],
   "format": "smart-schedule-profile",
@@ -715,6 +686,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-22T11:55:06+08:00",
+  "updatedAt": "2026-08-24T14:32:00+08:00",
   "version": 1
 }
