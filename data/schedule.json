@@ -300,14 +300,14 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates. Responsible: Adly and Eizzat.",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-08-26T10:15:00+08:00",
       "id": "recurring-it-monthly-systems-2026-08-26",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-08-26T09:15:00+08:00",
       "status": "planned",
-      "title": "Monthly NAS, Microsoft 365 and Subscription Review"
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -576,14 +576,14 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates. Responsible: Adly and Eizzat.",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-09-01T15:00:00+08:00",
       "id": "recurring-it-monthly-systems-2026-09-01",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-09-01T14:00:00+08:00",
       "status": "planned",
-      "title": "Monthly NAS, Microsoft 365 and Subscription Review"
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -1757,14 +1757,14 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates. Responsible: Adly and Eizzat.",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-10-06T10:15:00+08:00",
       "id": "recurring-it-monthly-systems-2026-10-06",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-10-06T09:15:00+08:00",
       "status": "planned",
-      "title": "Monthly NAS, Microsoft 365 and Subscription Review"
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -2563,14 +2563,14 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates. Responsible: Adly and Eizzat.",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-11-03T11:00:00+08:00",
       "id": "recurring-it-monthly-systems-2026-11-03",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-11-03T10:00:00+08:00",
       "status": "planned",
-      "title": "Monthly NAS, Microsoft 365 and Subscription Review"
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -3369,14 +3369,14 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review NAS capacity and health, Microsoft 365 accounts and licences, and important software or service expiry dates. Responsible: Adly and Eizzat.",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-12-01T14:00:00+08:00",
       "id": "recurring-it-monthly-systems-2026-12-01",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-12-01T13:00:00+08:00",
       "status": "planned",
-      "title": "Monthly NAS, Microsoft 365 and Subscription Review"
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -4491,5 +4491,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-08-24T17:00:00+08:00"
+  "updatedAt": "2026-08-26T09:00:00+08:00"
 }
