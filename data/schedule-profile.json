@@ -340,7 +340,7 @@
       "id": "recurring-it-weekly-midweek-review",
       "section": "IT Recurring Tasks",
       "type": "task",
-      "title": "Midweek Project and NAS Review",
+      "title": "Midweek Project Review",
       "status": "active",
       "date": "2026-08-26",
       "endDate": "2026-12-31",
@@ -350,8 +350,8 @@
         "frequency": "weekly",
         "interval": 1
       },
-      "person": "Adly and Eizzat",
-      "details": "Every Wednesday: Adly reviews project progress and blockers; Eizzat checks important NAS storage status and reports capacity or health concerns."
+      "person": "Adly",
+      "details": "Every Wednesday: review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required."
     },
     {
       "id": "recurring-it-weekly-friday-review",
@@ -686,6 +686,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-26T09:00:00+08:00",
+  "updatedAt": "2026-08-26T15:00:00+08:00",
   "version": 1
 }
