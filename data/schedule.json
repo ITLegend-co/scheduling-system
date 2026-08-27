@@ -377,11 +377,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-08-27T10:15:00+08:00",
+      "end": "2026-08-27T09:30:00+08:00",
       "id": "recurring-it-monthly-assets-2026-08-27",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-08-27T09:15:00+08:00",
+      "start": "2026-08-27T08:30:00+08:00",
       "status": "planned",
       "title": "Monthly Equipment and Asset Review"
     },
@@ -4468,6 +4468,19 @@
       "status": "confirmed",
       "description": "One-month advance renewal reminder. Expiry: 2028-08-16. Supplier: TrendMicro. Cost: RM 7,560.00 annually. Users: 28 users. Assigned to: IT. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
       "allowOverlap": true
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "First meeting for the KCC Youth Level Assessment. Agenda: feedback and review; members' tasks and responsibilities; competition format; tentative planning; and AOB. Microsoft Teams: https://teams.microsoft.com/meet/430733151389674?p=LFvr9pA8H5cpQqJbW2. Meeting ID: 430 733 151 389 674. Passcode: w5Lf6b9P.",
+      "end": "2026-08-27T11:00:00+08:00",
+      "id": "meeting-kcc-youth-level-assessment-first-2026-08-27",
+      "location": "Microsoft Teams",
+      "priority": "normal",
+      "start": "2026-08-27T10:00:00+08:00",
+      "status": "planned",
+      "title": "KCC Youth Level Assessment – First Meeting"
     }
   ],
   "meta": {
@@ -4491,5 +4504,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-08-26T15:00:00+08:00"
+  "updatedAt": "2026-08-27T09:09:27+08:00"
 }
