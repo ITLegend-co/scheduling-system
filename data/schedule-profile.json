@@ -663,6 +663,18 @@
       "status": "planned",
       "title": "Email Accounts – Odoo Trial Starts Next Week",
       "type": "reminder"
+    },
+    {
+      "date": "2026-08-27",
+      "details": "First meeting for the KCC Youth Level Assessment. Agenda: feedback and review; members' tasks and responsibilities; competition format; tentative planning; and AOB. Microsoft Teams: https://teams.microsoft.com/meet/430733151389674?p=LFvr9pA8H5cpQqJbW2. Meeting ID: 430 733 151 389 674. Passcode: w5Lf6b9P.",
+      "endTime": "11:00",
+      "id": "kcc-youth-level-assessment-first-meeting-2026-08-27",
+      "location": "Microsoft Teams",
+      "section": "Meetings",
+      "startTime": "10:00",
+      "status": "planned",
+      "title": "KCC Youth Level Assessment – First Meeting",
+      "type": "meeting"
     }
   ],
   "format": "smart-schedule-profile",
@@ -686,6 +698,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-26T15:00:00+08:00",
+  "updatedAt": "2026-08-27T09:09:27+08:00",
   "version": 1
 }
