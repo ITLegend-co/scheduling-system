@@ -216,10 +216,19 @@ function profileEntrySummary(entry) {
 }
 
 function prefillFromProfile(entry) {
+  const queuedChange = state.changes.find((change) => sameUpdateTarget(change, {
+    action: "update",
+    type: entry.type || "task",
+    title: entry.title,
+    existingEventId: entry.id || "",
+  }));
+
   resetForm(false);
+  state.editingId = queuedChange?.requestId || null;
   setFormValue("action", "update");
   setFormValue("type", entry.type || "task");
   setFormValue("title", entry.title);
+  setFormValue("existingEventId", entry.id || queuedChange?.existingEventId || "");
   setFormValue("date", entry.date || entry.effectiveDate || "");
   setFormValue("endDate", entry.endDate || "");
   setFormValue("startTime", entry.startTime || "");
@@ -233,11 +242,12 @@ function prefillFromProfile(entry) {
   setFormValue("referenceUrl", entry.referenceUrl || "");
   setFormValue("details", profileEntryDetails(entry));
   elements.formHeading.textContent = `Update: ${entry.title}`;
+  elements.addChangeButton.lastChild.textContent = queuedChange ? " Save this change" : " Add this change";
   updateConditionalFields();
   saveDraft();
   document.querySelector("#createUpdate").scrollIntoView({ behavior: "smooth", block: "start" });
   document.querySelector("#title").focus({ preventScroll: true });
-  showToast("Current item copied into the update form");
+  showToast(queuedChange ? "Pending change refreshed with the current task details" : "Current item copied into the update form");
 }
 
 function profileEntryDetails(entry) {
@@ -290,8 +300,15 @@ function submitChange(event) {
     if (index !== -1) state.changes[index] = { ...change, requestId: state.editingId };
     showToast("Change updated");
   } else {
-    state.changes.push(change);
-    showToast("Change added to the JSON file");
+    const existingIndex = state.changes.findIndex((item) => sameUpdateTarget(item, change));
+    if (existingIndex !== -1) {
+      const requestId = state.changes[existingIndex].requestId;
+      state.changes[existingIndex] = { ...change, requestId };
+      showToast("Existing task update replaced");
+    } else {
+      state.changes.push(change);
+      showToast("Change added to the JSON file");
+    }
   }
 
   state.updatedAt = new Date().toISOString();
@@ -349,6 +366,23 @@ function validateChange(change) {
     }
   }
   return null;
+}
+
+function sameUpdateTarget(first, second) {
+  if (first?.action !== "update" || second?.action !== "update") return false;
+
+  const firstId = normalizeTargetValue(first.existingEventId);
+  const secondId = normalizeTargetValue(second.existingEventId);
+  if (firstId && secondId) return firstId === secondId;
+
+  return (
+    normalizeTargetValue(first.type) === normalizeTargetValue(second.type) &&
+    normalizeTargetValue(first.title) === normalizeTargetValue(second.title)
+  );
+}
+
+function normalizeTargetValue(value) {
+  return String(value || "").trim().toLocaleLowerCase();
 }
 
 function updateConditionalFields() {
