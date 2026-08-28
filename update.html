@@ -362,6 +362,16 @@
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        let refreshingForUpdate = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (refreshingForUpdate) return;
+          refreshingForUpdate = true;
+          window.location.reload();
+        });
+      }
+    </script>
     <script src="pwa.js" defer></script>
     <script src="update.js" defer></script>
   </body>
