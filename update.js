@@ -216,12 +216,14 @@ function profileEntrySummary(entry) {
 }
 
 function prefillFromProfile(entry) {
-  const queuedChange = state.changes.find((change) => sameUpdateTarget(change, {
+  const target = {
     action: "update",
     type: entry.type || "task",
     title: entry.title,
     existingEventId: entry.id || "",
-  }));
+  };
+  const matchingQueuedChanges = state.changes.filter((change) => sameUpdateTarget(change, target));
+  const queuedChange = matchingQueuedChanges[matchingQueuedChanges.length - 1] || null;
 
   resetForm(false);
   state.editingId = queuedChange?.requestId || null;
@@ -241,13 +243,26 @@ function prefillFromProfile(entry) {
   setFormValue("location", entry.location || "");
   setFormValue("referenceUrl", entry.referenceUrl || "");
   setFormValue("details", profileEntryDetails(entry));
+
+  if (queuedChange) {
+    replaceMatchingUpdates(readForm(), queuedChange.requestId);
+    state.updatedAt = new Date().toISOString();
+    render();
+  }
+
   elements.formHeading.textContent = `Update: ${entry.title}`;
   elements.addChangeButton.lastChild.textContent = queuedChange ? " Save this change" : " Add this change";
   updateConditionalFields();
   saveDraft();
   document.querySelector("#createUpdate").scrollIntoView({ behavior: "smooth", block: "start" });
   document.querySelector("#title").focus({ preventScroll: true });
-  showToast(queuedChange ? "Pending change refreshed with the current task details" : "Current item copied into the update form");
+  showToast(
+    queuedChange
+      ? matchingQueuedChanges.length > 1
+        ? "Pending duplicates merged and refreshed with the current task details"
+        : "Pending change refreshed with the current task details"
+      : "Current item copied into the update form",
+  );
 }
 
 function profileEntryDetails(entry) {
@@ -297,14 +312,22 @@ function submitChange(event) {
 
   if (state.editingId) {
     const index = state.changes.findIndex((item) => item.requestId === state.editingId);
-    if (index !== -1) state.changes[index] = { ...change, requestId: state.editingId };
-    showToast("Change updated");
+    let mergedCount = 0;
+    if (index !== -1) {
+      const replacement = { ...change, requestId: state.editingId };
+      if (replacement.action === "update") {
+        mergedCount = replaceMatchingUpdates(replacement, state.editingId);
+      } else {
+        state.changes[index] = replacement;
+      }
+    }
+    showToast(mergedCount > 1 ? "Change updated and duplicate task updates merged" : "Change updated");
   } else {
     const existingIndex = state.changes.findIndex((item) => sameUpdateTarget(item, change));
     if (existingIndex !== -1) {
       const requestId = state.changes[existingIndex].requestId;
-      state.changes[existingIndex] = { ...change, requestId };
-      showToast("Existing task update replaced");
+      const mergedCount = replaceMatchingUpdates({ ...change, requestId }, requestId);
+      showToast(mergedCount > 1 ? "Existing task updates merged and replaced" : "Existing task update replaced");
     } else {
       state.changes.push(change);
       showToast("Change added to the JSON file");
@@ -383,6 +406,21 @@ function sameUpdateTarget(first, second) {
 
 function normalizeTargetValue(value) {
   return String(value || "").trim().toLocaleLowerCase();
+}
+
+function replaceMatchingUpdates(change, requestId = change.requestId) {
+  if (change?.action !== "update") return 0;
+
+  const matchingIndexes = state.changes
+    .map((item, index) => sameUpdateTarget(item, change) ? index : -1)
+    .filter((index) => index !== -1);
+  if (!matchingIndexes.length) return 0;
+
+  const insertIndex = matchingIndexes[0];
+  const matchingIndexSet = new Set(matchingIndexes);
+  state.changes = state.changes.filter((_, index) => !matchingIndexSet.has(index));
+  state.changes.splice(insertIndex, 0, { ...change, requestId });
+  return matchingIndexes.length;
 }
 
 function updateConditionalFields() {
