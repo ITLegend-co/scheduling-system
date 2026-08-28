@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2026-08-28-1";
+const CACHE_VERSION = "2026-08-28-2";
 const STATIC_CACHE = `smart-schedule-static-${CACHE_VERSION}`;
 const DATA_CACHE = `smart-schedule-data-${CACHE_VERSION}`;
 const APP_SHELL = [
@@ -63,6 +63,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  if (request.destination === "script" || request.destination === "style") {
+    event.respondWith(networkFirstAsset(request));
+    return;
+  }
+
   event.respondWith(cacheFirst(request));
 });
 
@@ -94,6 +99,18 @@ async function networkFirstData(request) {
         status: 503,
         headers: { "Content-Type": "application/json" },
       });
+  }
+}
+
+async function networkFirstAsset(request) {
+  const cache = await caches.open(STATIC_CACHE);
+  try {
+    const response = await fetch(request);
+    if (response.ok) await cache.put(request, response.clone());
+    return response;
+  } catch {
+    return (await cache.match(request, { ignoreSearch: true }))
+      || new Response("Offline", { status: 503, statusText: "Offline" });
   }
 }
 
