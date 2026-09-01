@@ -268,7 +268,7 @@
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-08-26T09:15:00+08:00",
-      "status": "planned",
+      "status": "completed",
       "title": "Monthly Subscription Review"
     },
     {
@@ -332,7 +332,7 @@
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
       "start": "2026-08-27T08:30:00+08:00",
-      "status": "planned",
+      "status": "completed",
       "title": "Monthly Equipment and Asset Review"
     },
     {
@@ -523,19 +523,6 @@
       "title": "Weekly IT Issues and Task Planning"
     },
     {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
-      "end": "2026-09-01T15:00:00+08:00",
-      "id": "recurring-it-monthly-systems-2026-09-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-01T14:00:00+08:00",
-      "status": "planned",
-      "title": "Monthly Subscription Review"
-    },
-    {
       "id": "task-alarm-issue-pantry-window-sensor-2026-09-01",
       "title": "Alarm Issue",
       "start": "2026-09-01T15:15:00+08:00",
@@ -659,19 +646,6 @@
       "status": "confirmed",
       "description": "One-month advance renewal reminder. Expiry: 2026-10-03. Supplier: Global Surveillance Enterprise. Cost: RM 760.00 annually. Users: 2 users. Assigned to: IT. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
       "allowOverlap": true
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-09-03T10:15:00+08:00",
-      "id": "recurring-it-monthly-assets-2026-09-03",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-03T09:15:00+08:00",
-      "status": "planned",
-      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -1479,6 +1453,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
+      "end": "2026-09-28T11:15:00+08:00",
+      "id": "recurring-it-monthly-systems-2026-09-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-28T10:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Subscription Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "Plan and review quarterly PPM for KK, Kundasang, and Pendant Hut. Confirm scope, access, outstanding work, and follow-up actions. Responsible: Adly and Eizzat.",
       "end": "2026-09-28T15:00:00+08:00",
       "id": "recurring-it-quarterly-ppm-2026-09-28",
@@ -1500,6 +1487,19 @@
       "start": "2026-09-28T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-09-29T10:15:00+08:00",
+      "id": "recurring-it-monthly-assets-2026-09-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-29T09:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -1613,19 +1613,6 @@
       "start": "2026-10-01T14:00:00+08:00",
       "status": "confirmed",
       "title": "Odoo Trial Review with Agent"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-10-01T16:45:00+08:00",
-      "id": "recurring-it-monthly-assets-2026-10-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-01T15:45:00+08:00",
-      "status": "planned",
-      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -1765,19 +1752,6 @@
       "start": "2026-10-05T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
-      "end": "2026-10-06T10:15:00+08:00",
-      "id": "recurring-it-monthly-systems-2026-10-06",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-06T09:15:00+08:00",
-      "status": "planned",
-      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -2361,6 +2335,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
+      "end": "2026-10-26T14:00:00+08:00",
+      "id": "recurring-it-monthly-systems-2026-10-06",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-26T13:00:00+08:00",
+      "status": "planned",
+      "title": "Monthly Subscription Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-10-26T17:30:00+08:00",
       "id": "recurring-it-daily-operations-2026-10-26",
@@ -2369,6 +2356,19 @@
       "start": "2026-10-26T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-10-27T10:15:00+08:00",
+      "id": "recurring-it-monthly-assets-2026-10-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-27T09:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -2576,19 +2576,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
-      "end": "2026-11-03T11:00:00+08:00",
-      "id": "recurring-it-monthly-systems-2026-11-03",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-03T10:00:00+08:00",
-      "status": "planned",
-      "title": "Monthly Subscription Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-11-03T17:30:00+08:00",
       "id": "recurring-it-daily-operations-2026-11-03",
@@ -2647,19 +2634,6 @@
       "start": "2026-11-04T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-11-05T10:15:00+08:00",
-      "id": "recurring-it-monthly-assets-2026-11-05",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-05T09:15:00+08:00",
-      "status": "planned",
-      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -3244,6 +3218,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
+      "end": "2026-11-26T10:15:00+08:00",
+      "id": "recurring-it-monthly-systems-2026-11-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-26T09:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Subscription Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-11-26T17:30:00+08:00",
       "id": "recurring-it-daily-operations-2026-11-26",
@@ -3277,6 +3264,19 @@
       "start": "2026-11-27T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-11-27T11:30:00+08:00",
+      "id": "recurring-it-monthly-assets-2026-11-05",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-27T10:30:00+08:00",
+      "status": "planned",
+      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -3382,19 +3382,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
-      "end": "2026-12-01T14:00:00+08:00",
-      "id": "recurring-it-monthly-systems-2026-12-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-01T13:00:00+08:00",
-      "status": "planned",
-      "title": "Monthly Subscription Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-12-01T17:30:00+08:00",
       "id": "recurring-it-daily-operations-2026-12-01",
@@ -3441,19 +3428,6 @@
       "start": "2026-12-02T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-12-03T10:15:00+08:00",
-      "id": "recurring-it-monthly-assets-2026-12-03",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-03T09:15:00+08:00",
-      "status": "planned",
-      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -4188,6 +4162,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
+      "end": "2026-12-28T11:15:00+08:00",
+      "id": "recurring-it-monthly-systems-2026-12-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-28T10:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Subscription Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "Plan and review quarterly PPM for KK, Kundasang, and Pendant Hut. Confirm scope, access, outstanding work, and follow-up actions. Responsible: Adly and Eizzat.",
       "end": "2026-12-28T15:00:00+08:00",
       "id": "recurring-it-quarterly-ppm-2026-12-28",
@@ -4222,6 +4209,19 @@
       "start": "2026-12-28T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-12-29T10:15:00+08:00",
+      "id": "recurring-it-monthly-assets-2026-12-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-29T09:15:00+08:00",
+      "status": "planned",
+      "title": "Monthly Equipment and Asset Review"
     },
     {
       "allDay": false,
@@ -4498,7 +4498,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-01T10:17:23.220+08:00",
+    "lastUpdated": "2026-09-01T10:27:06.853+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
@@ -4517,5 +4517,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-09-01T10:17:23.220+08:00"
+  "updatedAt": "2026-09-01T10:27:06.853+08:00"
 }

@@ -404,14 +404,16 @@
       "type": "task",
       "title": "Monthly Subscription Review",
       "status": "active",
-      "date": "2026-08-26",
+      "date": "2026-09-28",
       "endDate": "2026-12-31",
       "recurrence": {
         "frequency": "monthly",
         "interval": 1
       },
       "person": "Adly and Eizzat",
-      "details": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions."
+      "details": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. The August review was completed on 26 August 2026; the next review is scheduled approximately one calendar month later.",
+      "startTime": "10:15",
+      "endTime": "11:15"
     },
     {
       "id": "recurring-it-monthly-assets",
@@ -419,14 +421,16 @@
       "type": "task",
       "title": "Monthly Equipment and Asset Review",
       "status": "active",
-      "date": "2026-08-27",
+      "date": "2026-09-29",
       "endDate": "2026-12-31",
       "recurrence": {
         "frequency": "monthly",
         "interval": 1
       },
       "person": "Adly and Eizzat",
-      "details": "Review IT equipment and procurement requirements and ensure asset inventory changes are updated across all locations."
+      "details": "Review IT equipment and procurement requirements and ensure asset inventory changes are updated across all locations. The August review was completed on 27 August 2026; the next review is scheduled approximately one calendar month later.",
+      "startTime": "09:15",
+      "endTime": "10:15"
     },
     {
       "id": "recurring-it-quarterly-ppm",
@@ -704,13 +708,14 @@
     "Only add half-day leave when it is explicitly requested.",
     "Appraisals repeat every six months.",
     "Arrange suitable time for tasks around existing commitments.",
-    "Create a reasonable deadline for a task when none is supplied."
+    "Create a reasonable deadline for a task when none is supplied.",
+    "Monthly recurring tasks must be scheduled approximately one calendar month after the previous occurrence; if the matching date is a weekend or public holiday, move it to the nearest suitable free working day."
   ],
   "source": {
     "convertedFrom": "plain-text schedule instructions",
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-01T10:17:23.220+08:00",
+  "updatedAt": "2026-09-01T10:27:06.853+08:00",
   "version": 1
 }
