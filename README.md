@@ -13,6 +13,7 @@ A responsive schedule website designed for a simple ChatGPT-to-GitHub workflow. 
 - Form-based Schedule Update Builder with the current master profile, local draft saving, and JSON import/export
 - A changes-only JSON format that protects unmentioned schedule events
 - Schedule validation with duplicate-ID, date, and overlap checks
+- Firebase Realtime Database delivery with public read-only access and automatic GitHub synchronization
 - GitHub Pages deployment on every commit to `main`
 - A reusable JSON Schema and ChatGPT update instructions
 
@@ -44,6 +45,18 @@ Open `https://itlegend-co.github.io/scheduling-system/` on the phone while onlin
 - **iPhone/iPad:** Open the site in Safari, select **Share** → **Add to Home Screen** → **Add**.
 
 The installed app opens the calendar in standalone mode. The calendar and Update Builder app shell are cached for offline access, while schedule and profile data use the latest online copy when available and fall back to the last cached copy when offline.
+
+## Firebase synchronization
+
+The published calendar reads `smartSchedule/schedule` from the Firebase Realtime Database project `schedule-d2ce8` and listens for live changes. The Update Builder reads `smartSchedule/profile`. If Firebase is unavailable, both pages fall back to the versioned JSON files bundled with the PWA.
+
+Every successful push to `main` validates the schedule, then the GitHub Actions workflow uses the repository secret `FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8` to:
+
+1. Deploy read-only public rules for the schedule and profile paths.
+2. Synchronize `data/schedule.json` and `data/schedule-profile.json` to Firebase.
+3. Record the source commit and synchronization timestamp.
+
+The private service-account JSON must remain only in GitHub Actions Secrets. Never commit it to the repository or place it in browser code.
 
 ## Subscribe your calendar
 

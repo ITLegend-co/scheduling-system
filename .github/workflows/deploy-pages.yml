@@ -35,7 +35,7 @@ jobs:
       - name: Prepare website and calendar feed
         run: |
           mkdir -p _site/data _site/icons
-          cp index.html styles.css app.js update.html update.css update.js pwa.js service-worker.js offline.html manifest.webmanifest schedule-update.schema.json schedule-profile.schema.json _site/
+          cp index.html styles.css app.js update.html update.css update.js firebase-client.js pwa.js service-worker.js offline.html manifest.webmanifest schedule-update.schema.json schedule-profile.schema.json _site/
           cp icons/app-icon.svg icons/*.png _site/icons/
           cp data/schedule.json data/schedule-profile.json _site/data/
           node scripts/generate-ics.mjs data/schedule.json _site/schedule.ics
@@ -48,6 +48,29 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  sync-firebase:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Firebase Admin SDK
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund firebase-admin@14.3.0
+
+      - name: Synchronize schedule and security rules
+        env:
+          FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8 }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/sync-firebase.mjs
 
   deploy:
     environment:

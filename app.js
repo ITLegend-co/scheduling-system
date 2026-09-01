@@ -80,27 +80,56 @@ loadSchedule();
 
 async function loadSchedule() {
   try {
+    const firebase = await import("./firebase-client.js");
+    const schedule = await firebase.readSchedule();
+    applySchedule(schedule, " Live schedule connected");
+
+    firebase.watchSchedule(
+      (nextSchedule) => {
+        try {
+          applySchedule(nextSchedule, " Live schedule connected");
+        } catch (error) {
+          console.error("Firebase returned an invalid schedule.", error);
+        }
+      },
+      (error) => console.warn("Firebase schedule listener stopped.", error),
+    );
+  } catch (firebaseError) {
+    console.warn("Firebase schedule unavailable; loading the published backup.", firebaseError);
+    await loadBackupSchedule();
+  }
+}
+
+async function loadBackupSchedule() {
+  try {
     const response = await fetch(`data/schedule.json?v=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Schedule returned ${response.status}`);
-
-    state.schedule = await response.json();
-    state.events = [...(state.schedule.events || [])]
-      .map(normalizeEvent)
-      .sort((a, b) => a.startDate - b.startDate);
-
-    applyMetadata();
-    renderFilters();
-    renderCalendar();
-    renderAgenda();
-    renderStats();
-
-    elements.syncStatus.classList.add("sync-status--ready");
-    elements.syncStatus.lastChild.textContent = " Schedule loaded";
+    applySchedule(await response.json(), " Schedule loaded from backup");
   } catch (error) {
     console.error(error);
     elements.syncStatus.lastChild.textContent = " Unable to load schedule";
-    elements.calendarGrid.innerHTML = '<p class="load-error">The schedule could not be loaded. Please check data/schedule.json.</p>';
+    elements.calendarGrid.innerHTML = '<p class="load-error">The schedule could not be loaded from Firebase or data/schedule.json.</p>';
   }
+}
+
+function applySchedule(schedule, statusText) {
+  if (!schedule || !Array.isArray(schedule.events)) {
+    throw new Error("Schedule data must contain an events array.");
+  }
+
+  state.schedule = schedule;
+  state.events = [...schedule.events]
+    .map(normalizeEvent)
+    .sort((a, b) => a.startDate - b.startDate);
+
+  applyMetadata();
+  renderFilters();
+  renderCalendar();
+  renderAgenda();
+  renderStats();
+
+  elements.syncStatus.classList.add("sync-status--ready");
+  elements.syncStatus.lastChild.textContent = statusText;
 }
 
 function normalizeEvent(event) {

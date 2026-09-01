@@ -44,7 +44,7 @@ for (const page of ["index.html", "update.html"]) {
   check(!duplicates.length, `${page} has duplicate IDs: ${duplicates.join(", ")}`);
 }
 
-for (const path of ["pwa.js", "service-worker.js", "offline.html", "icons/app-icon.svg"]) {
+for (const path of ["firebase-client.js", "pwa.js", "service-worker.js", "offline.html", "icons/app-icon.svg"]) {
   check(exists(path), `${path} is missing`);
 }
 
@@ -56,6 +56,7 @@ for (const path of [
   "./styles.css",
   "./app.js",
   "./update.js",
+  "./firebase-client.js",
   "./pwa.js",
   "./manifest.webmanifest",
   "./data/schedule.json",
@@ -65,7 +66,7 @@ for (const path of [
 }
 
 const workflow = readText(".github/workflows/deploy-pages.yml");
-for (const asset of ["manifest.webmanifest", "service-worker.js", "pwa.js", "offline.html", "_site/icons"]) {
+for (const asset of ["manifest.webmanifest", "service-worker.js", "firebase-client.js", "pwa.js", "offline.html", "_site/icons"]) {
   check(workflow.includes(asset), `Deployment workflow does not publish ${asset}`);
 }
 

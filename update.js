@@ -77,27 +77,57 @@ function bindEvents() {
 
 async function loadProfile() {
   try {
+    const firebase = await import("./firebase-client.js");
+    const profile = await firebase.readProfile();
+    applyProfile(profile, "Firebase");
+
+    firebase.watchProfile(
+      (nextProfile) => {
+        try {
+          applyProfile(nextProfile, "Firebase");
+        } catch (error) {
+          console.error("Firebase returned an invalid schedule profile.", error);
+        }
+      },
+      (error) => console.warn("Firebase profile listener stopped.", error),
+    );
+  } catch (firebaseError) {
+    console.warn("Firebase profile unavailable; loading the published backup.", firebaseError);
+    await loadBackupProfile();
+  }
+}
+
+async function loadBackupProfile() {
+  try {
     const response = await fetch(`${PROFILE_URL}?v=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`Profile request failed with status ${response.status}`);
-    const profile = await response.json();
-    if (profile.format !== PROFILE_FORMAT_NAME || Number(profile.version) !== 1 || !Array.isArray(profile.entries)) {
-      throw new Error("The master profile JSON has an unsupported format.");
-    }
-
-    state.profile = profile;
-    elements.profileStatus.textContent = `Converted from ${profile.source?.name || "the schedule text file"} · Updated ${formatProfileTimestamp(profile.updatedAt)}`;
-    elements.profileJsonPreview.textContent = JSON.stringify(profile, null, 2);
-    elements.copyProfileButton.disabled = false;
-    elements.downloadProfileButton.disabled = false;
-    renderProfileRules();
-    renderProfile();
+    applyProfile(await response.json(), "Backup JSON");
   } catch (error) {
-    elements.profileStatus.textContent = "The master JSON profile could not be loaded. Refresh the page to try again.";
-    elements.profileStatus.classList.add("profile-status--error");
-    elements.profileCount.textContent = "Unavailable";
-    elements.profileEmpty.hidden = false;
-    elements.profileEmpty.textContent = error.message || "Unable to load the profile.";
+    showProfileLoadError(error);
   }
+}
+
+function applyProfile(profile, sourceLabel) {
+  if (profile.format !== PROFILE_FORMAT_NAME || Number(profile.version) !== 1 || !Array.isArray(profile.entries)) {
+    throw new Error("The master profile JSON has an unsupported format.");
+  }
+
+  state.profile = profile;
+  elements.profileStatus.classList.remove("profile-status--error");
+  elements.profileStatus.textContent = `${sourceLabel} · Updated ${formatProfileTimestamp(profile.updatedAt)}`;
+  elements.profileJsonPreview.textContent = JSON.stringify(profile, null, 2);
+  elements.copyProfileButton.disabled = false;
+  elements.downloadProfileButton.disabled = false;
+  renderProfileRules();
+  renderProfile();
+}
+
+function showProfileLoadError(error) {
+  elements.profileStatus.textContent = "The master JSON profile could not be loaded. Refresh the page to try again.";
+  elements.profileStatus.classList.add("profile-status--error");
+  elements.profileCount.textContent = "Unavailable";
+  elements.profileEmpty.hidden = false;
+  elements.profileEmpty.textContent = error.message || "Unable to load the profile.";
 }
 
 function renderProfileRules() {
