@@ -68,7 +68,7 @@
     {
       "date": "2026-09-08",
       "deadline": "2026-09-13",
-      "details": "Fae arrives in Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Discuss the monitor shipment with her on 8 September, agree when it should be sent to Kuala Lumpur, and account for her off day before the planned courier handover. Courier is recommended because it can cover the full value of the monitor.",
+      "details": "Fae arrives in Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Discuss the monitor shipment with her on 8 September, agree when it should be sent to her place in Kuala Lumpur, and account for her off day before the planned courier handover. Courier is recommended because it can cover the full value of the monitor.",
       "id": "monitor-request-fae",
       "person": "Fae",
       "relatedDate": "2026-09-07",
@@ -78,15 +78,15 @@
       "type": "follow-up"
     },
     {
-      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, consider U Mobile as backup internet for the MOTOTRBO walkie-talkie system. Configure the KP Fixed IP remotely on 27 August 2026, test it, and record any remaining issue for Aiden Lee or U Mobile HQ. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
+      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, consider U Mobile as backup internet for the MOTOTRBO walkie-talkie system. Configure the KP Fixed IP remotely on 2 September 2026, test remote access and service stability, and record any remaining issue for Aiden Lee or U Mobile HQ. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
       "id": "kp-internet-solution",
       "person": "Aiden Lee",
       "section": "Tasks",
       "status": "in-progress",
       "title": "KP Internet Solution",
       "type": "follow-up",
-      "date": "2026-08-27",
-      "deadline": "2026-08-28",
+      "date": "2026-09-02",
+      "deadline": "2026-09-02",
       "startTime": "13:00",
       "endTime": "14:00",
       "location": "Remote – KP"
@@ -102,15 +102,28 @@
       "type": "task"
     },
     {
-      "date": "2026-08-26",
-      "deadline": "2026-08-28",
-      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory this week, by 28 August 2026.",
+      "date": "2026-09-03",
+      "deadline": "2026-09-03",
+      "details": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory on 3 September 2026.",
       "endTime": "15:00",
       "id": "cleanup-inventory",
       "section": "Tasks",
       "startTime": "13:00",
       "status": "in-progress",
       "title": "Cleanup inventory",
+      "type": "task"
+    },
+    {
+      "date": "2026-09-01",
+      "deadline": "2026-09-01",
+      "details": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed but detects it when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open.",
+      "endTime": "16:45",
+      "id": "alarm-issue-pantry-window-sensor",
+      "location": "KK Office – Pantry Window",
+      "section": "Tasks",
+      "startTime": "15:15",
+      "status": "planned",
+      "title": "Alarm Issue",
       "type": "task"
     },
     {
@@ -228,14 +241,14 @@
       "type": "reminder"
     },
     {
-      "date": "2026-08-21",
-      "deadline": "2026-08-21",
-      "details": "The original 20 August meeting did not happen because Ros was unavailable. Rescheduled to meet Ros on 21 August 2026 to discuss Pamella's request for a software or system that helps Admin track items sent to other locations and record who checked each item. Agree on the scope, responsible person, and next action.",
-      "endTime": "09:45",
+      "date": "2026-09-02",
+      "deadline": "2026-09-02",
+      "details": "Pamella did not respond to the earlier email about arranging a discussion for the requested Admin item-tracking software. Follow up with Pamella again by email and record the next action.",
+      "endTime": "10:45",
       "id": "pamella-new-software-request",
       "person": "Pamella and Ros",
       "section": "Tasks",
-      "startTime": "09:00",
+      "startTime": "10:30",
       "status": "planned",
       "title": "New Software Request by Pamella",
       "type": "reminder"
@@ -270,10 +283,10 @@
       "type": "reminder"
     },
     {
-      "date": "2026-08-21",
-      "deadline": "2026-08-21",
-      "details": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps.",
-      "endTime": "14:00",
+      "date": "2026-09-04",
+      "deadline": "2026-09-04",
+      "details": "Research how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut can provide continuous 24-hour viewing through an EZVIZ subscription. Confirm the available subscription plan and assess public viewing, access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps.",
+      "endTime": "14:30",
       "id": "cctv-live-weather-webcam-research",
       "location": "KK Office",
       "section": "Tasks",
@@ -698,6 +711,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-08-27T09:09:27+08:00",
+  "updatedAt": "2026-09-01T10:17:23.220+08:00",
   "version": 1
 }

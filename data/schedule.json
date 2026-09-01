@@ -112,18 +112,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Rescheduled from 20 August because Ros was unavailable at the original time. Meet with Ros to discuss Pamella's request for a software or system that helps Admin track items sent to other locations, including who checked each item. Agree on the scope, responsible person, and next action. Target completion deadline: 21 August 2026.",
-      "end": "2026-08-21T09:45:00+08:00",
-      "id": "reminder-discuss-pamella-software-request-2026-08-21",
-      "priority": "low",
-      "start": "2026-08-21T09:00:00+08:00",
-      "status": "planned",
-      "title": "Discuss Pamella's New Software Request with Ros"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Confirm with Ros whether Admin or IT will handle sending Fae's monitor by courier. If Admin will handle it, confirm who must submit the request and record the responsible person and next action. Fae returns to Kuala Lumpur on 16 September 2026.",
       "end": "2026-08-21T11:15:00+08:00",
@@ -133,19 +121,6 @@
       "start": "2026-08-21T10:45:00+08:00",
       "status": "planned",
       "title": "Confirm Fae Monitor Courier Responsibility with Ros"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Continue researching how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut could operate as a 24-hour live-weather webcam for external viewers through paid subscription access. Confirm whether EZVIZ supports continuous 24-hour viewing and assess public viewing, subscription/access control, streaming method, privacy and security, bandwidth, power reliability, costs, and implementation steps. Deadline: 21 August 2026.",
-      "end": "2026-08-21T14:00:00+08:00",
-      "id": "task-research-cctv-live-weather-webcam-2026-08-21",
-      "location": "KK Office",
-      "priority": "normal",
-      "start": "2026-08-21T13:00:00+08:00",
-      "status": "planned",
-      "title": "Research CCTV Live-Weather Webcam Installation"
     },
     {
       "allDay": false,
@@ -200,19 +175,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-08-24T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-08-24",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-08-24T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-08-24T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-08-24",
@@ -246,6 +208,19 @@
       "start": "2026-08-24T16:00:00+08:00",
       "status": "planned",
       "title": "Email Accounts – Odoo Trial Starts Next Week"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-08-24T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-08-24",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-08-24T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -287,19 +262,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-08-26T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-08-26",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-08-26T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-08-26T10:15:00+08:00",
       "id": "recurring-it-monthly-systems-2026-08-26",
@@ -308,18 +270,6 @@
       "start": "2026-08-26T09:15:00+08:00",
       "status": "planned",
       "title": "Monthly Subscription Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory this week. Updated deadline: 28 August 2026.",
-      "end": "2026-08-26T15:00:00+08:00",
-      "id": "task-inventory-cleanup-2026-08-26",
-      "priority": "high",
-      "start": "2026-08-26T13:00:00+08:00",
-      "status": "planned",
-      "title": "Inventory Cleanup"
     },
     {
       "allDay": false,
@@ -351,6 +301,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-08-26T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-08-26",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-08-26T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "After-work cleanup project session. Complete the corrected two-week project by 2 September 2026.",
       "end": "2026-08-26T21:00:00+08:00",
       "id": "cleanup-project-2026-08-26",
@@ -358,6 +321,32 @@
       "start": "2026-08-26T18:30:00+08:00",
       "status": "confirmed",
       "title": "Cleanup Project with Vince and Team"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-08-27T09:30:00+08:00",
+      "id": "recurring-it-monthly-assets-2026-08-27",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-08-27T08:30:00+08:00",
+      "status": "planned",
+      "title": "Monthly Equipment and Asset Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "First meeting for the KCC Youth Level Assessment. Agenda: feedback and review; members' tasks and responsibilities; competition format; tentative planning; and AOB. Microsoft Teams: https://teams.microsoft.com/meet/430733151389674?p=LFvr9pA8H5cpQqJbW2. Meeting ID: 430 733 151 389 674. Passcode: w5Lf6b9P.",
+      "end": "2026-08-27T11:00:00+08:00",
+      "id": "meeting-kcc-youth-level-assessment-first-2026-08-27",
+      "location": "Microsoft Teams",
+      "priority": "normal",
+      "start": "2026-08-27T10:00:00+08:00",
+      "status": "planned",
+      "title": "KCC Youth Level Assessment – First Meeting"
     },
     {
       "allDay": false,
@@ -376,32 +365,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-08-27T09:30:00+08:00",
-      "id": "recurring-it-monthly-assets-2026-08-27",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-08-27T08:30:00+08:00",
-      "status": "planned",
-      "title": "Monthly Equipment and Asset Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Remotely configure the Fixed IP at KP. Verify the U Mobile connection, apply the Fixed IP settings, test remote access and service stability, and record any remaining issue for Aiden Lee or U Mobile HQ.",
-      "end": "2026-08-27T14:00:00+08:00",
-      "id": "task-configure-kp-fixed-ip-remotely-2026-08-27",
-      "location": "Remote – KP",
-      "priority": "high",
-      "start": "2026-08-27T13:00:00+08:00",
-      "status": "planned",
-      "title": "Configure KP Fixed IP Remotely"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "After-work cleanup project session. Complete the corrected two-week project by 2 September 2026.",
       "end": "2026-08-27T21:00:00+08:00",
       "id": "cleanup-project-2026-08-27",
@@ -409,19 +372,6 @@
       "start": "2026-08-27T18:30:00+08:00",
       "status": "confirmed",
       "title": "Cleanup Project with Vince and Team"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-08-28T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-08-28",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-08-28T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -461,6 +411,19 @@
       "start": "2026-08-28T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-08-28T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-08-28",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-08-28T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -550,19 +513,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-01T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-01T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-09-01T13:45:00+08:00",
       "id": "recurring-it-weekly-planning-2026-09-01",
@@ -586,6 +536,32 @@
       "title": "Monthly Subscription Review"
     },
     {
+      "id": "task-alarm-issue-pantry-window-sensor-2026-09-01",
+      "title": "Alarm Issue",
+      "start": "2026-09-01T15:15:00+08:00",
+      "end": "2026-09-01T16:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "location": "KK Office – Pantry Window",
+      "description": "Aron reported that Karen found the pantry window open even though the office alarm had been armed after Ros last closed the office. Testing found that the sensor reports a slightly open window as closed but detects it when opened wider. Rewire and reposition the sensor below the window so that a slightly open window is correctly detected as open.",
+      "allowOverlap": false
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-01T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-01T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -596,19 +572,6 @@
       "start": "2026-09-01T18:30:00+08:00",
       "status": "confirmed",
       "title": "Cleanup Project with Vince and Team"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-02T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-02",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-02T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -626,6 +589,31 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Pamella did not respond to the earlier email about arranging a discussion for the requested Admin item-tracking software. Follow up with Pamella again by email and record the next action.",
+      "end": "2026-09-02T10:45:00+08:00",
+      "id": "reminder-discuss-pamella-software-request-2026-08-21",
+      "priority": "normal",
+      "start": "2026-09-02T10:30:00+08:00",
+      "status": "planned",
+      "title": "Follow Up with Pamella – Software Request"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Remotely configure the Fixed IP at KP. Verify the U Mobile connection, apply the Fixed IP settings, test remote access and service stability, and record any remaining issue for Aiden Lee or U Mobile HQ.",
+      "end": "2026-09-02T14:00:00+08:00",
+      "id": "task-configure-kp-fixed-ip-remotely-2026-08-27",
+      "location": "Remote – KP",
+      "priority": "normal",
+      "start": "2026-09-02T13:00:00+08:00",
+      "status": "planned",
+      "title": "Configure KP Fixed IP Remotely"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Meeting",
       "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
       "end": "2026-09-02T16:30:00+08:00",
@@ -634,6 +622,19 @@
       "start": "2026-09-02T15:00:00+08:00",
       "status": "confirmed",
       "title": "IT Meeting"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-02T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-02",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-02T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -663,19 +664,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-03T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-03",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-03T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review IT equipment and procurement requirements, and ensure IT asset inventory changes are updated across all locations. Responsible: Adly and Eizzat.",
       "end": "2026-09-03T10:15:00+08:00",
       "id": "recurring-it-monthly-assets-2026-09-03",
@@ -684,6 +672,31 @@
       "start": "2026-09-03T09:15:00+08:00",
       "status": "planned",
       "title": "Monthly Equipment and Asset Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "The inventory cleanup is still unfinished. Continue and complete the inventory records and physical inventory on 3 September 2026.",
+      "end": "2026-09-03T15:00:00+08:00",
+      "id": "task-inventory-cleanup-2026-08-26",
+      "priority": "normal",
+      "start": "2026-09-03T13:00:00+08:00",
+      "status": "planned",
+      "title": "Inventory Cleanup"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-03T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-03T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -701,19 +714,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-04T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-04",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-04T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-09-04T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-09-04",
@@ -722,6 +722,19 @@
       "start": "2026-09-04T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Research how the existing EZVIZ CCTV at Sayat-Sayat/Pendant Hut can provide continuous 24-hour viewing through an EZVIZ subscription. Confirm the available subscription plan and assess public viewing, access control, streaming method, privacy and security, internet bandwidth, power reliability, costs, and implementation steps.",
+      "end": "2026-09-04T14:30:00+08:00",
+      "id": "task-research-cctv-live-weather-webcam-2026-08-21",
+      "location": "KK Office",
+      "priority": "normal",
+      "start": "2026-09-04T13:00:00+08:00",
+      "status": "planned",
+      "title": "Research CCTV Live-Weather Webcam Installation"
     },
     {
       "allDay": false,
@@ -735,6 +748,19 @@
       "start": "2026-09-04T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-04T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-04",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-04T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -788,19 +814,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-07T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-07",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-07T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-09-07T13:45:00+08:00",
       "id": "recurring-it-weekly-planning-2026-09-07",
@@ -828,11 +841,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-08T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-08",
+      "end": "2026-09-07T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-07",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-09-08T17:00:00+08:00",
+      "start": "2026-09-07T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -840,11 +853,11 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Fae arrives in Kota Kinabalu on 7 September 2026. Discuss the monitor shipment with her the following day, agree when it should be sent to Kuala Lumpur, and account for her off day before the planned courier handover.",
+      "description": "Fae arrives in Kota Kinabalu on 7 September 2026 and returns to Kuala Lumpur on 16 September 2026. Discuss the monitor shipment with her on 8 September, agree when it should be sent to her place in Kuala Lumpur, and account for her off day before the planned courier handover. Courier is recommended because it can cover the full value of the monitor.",
       "end": "2026-09-08T09:45:00+08:00",
       "id": "follow-up-discuss-fae-monitor-shipping-2026-09-08",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "high",
+      "priority": "normal",
       "start": "2026-09-08T09:15:00+08:00",
       "status": "planned",
       "title": "Discuss Monitor Shipping with Fae"
@@ -864,6 +877,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-08T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-08",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-08T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-09-08T20:00:00+08:00",
@@ -872,19 +898,6 @@
       "start": "2026-09-08T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-09T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-09",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-09T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -916,6 +929,19 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-09T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-09",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-09T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-09-10T17:30:00+08:00",
       "id": "recurring-it-daily-operations-2026-09-10",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
@@ -935,19 +961,6 @@
       "start": "2026-09-10T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-11T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-11",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-11T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -974,6 +987,19 @@
       "start": "2026-09-11T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-11T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-11",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-11T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1039,19 +1065,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-14T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-14",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-14T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-09-14T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-09-14",
@@ -1060,6 +1073,19 @@
       "start": "2026-09-14T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-14T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-14",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-14T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1114,19 +1140,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-17T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-17",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-17T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-09-17T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-09-17",
@@ -1139,6 +1152,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-17T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-17",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-17T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: presses or push-ups, lateral raises, rotator-cuff work, and scapular stability. Keep one to two repetitions in reserve.",
       "end": "2026-09-17T20:00:00+08:00",
@@ -1147,19 +1173,6 @@
       "start": "2026-09-17T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-18T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-18",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-18T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1186,6 +1199,19 @@
       "start": "2026-09-18T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-18T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-18",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-18T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1227,19 +1253,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-21T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-21",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-21T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-09-21T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-09-21",
@@ -1248,6 +1261,19 @@
       "start": "2026-09-21T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-21T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-21",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-21T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1290,19 +1316,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-23T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-23",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-23T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-09-23T10:15:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-09-23",
@@ -1323,6 +1336,19 @@
       "start": "2026-09-23T15:00:00+08:00",
       "status": "confirmed",
       "title": "IT Meeting"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-23T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-23",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-23T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1353,19 +1379,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-25T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-25",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-25T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-09-25T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-09-25",
@@ -1387,6 +1400,19 @@
       "start": "2026-09-25T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-25T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-25",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-25T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1440,19 +1466,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-28T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-28",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-28T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-09-28T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-09-28",
@@ -1480,11 +1493,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-29T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-29",
+      "end": "2026-09-28T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-28",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-09-29T17:00:00+08:00",
+      "start": "2026-09-28T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -1516,6 +1529,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-29T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-29",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-29T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-09-29T20:00:00+08:00",
@@ -1524,19 +1550,6 @@
       "start": "2026-09-29T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-30T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-09-30",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-09-30T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1568,6 +1581,19 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-30T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-09-30",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-30T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
       "description": "Start and complete the appraisal form provided by Management for the next six-month appraisal cycle. Submit it by 8 October 2026, seven days after the appraisal date.",
       "end": "2026-10-01T10:00:00+08:00",
       "id": "appraisal-my-2026-10-01",
@@ -1575,19 +1601,6 @@
       "start": "2026-10-01T09:00:00+08:00",
       "status": "confirmed",
       "title": "My Appraisal – Complete Management Form"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-01T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-01T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1617,6 +1630,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-01T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-01T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: presses or push-ups, lateral raises, rotator-cuff work, and scapular stability. Keep one to two repetitions in reserve.",
       "end": "2026-10-01T20:00:00+08:00",
@@ -1625,19 +1651,6 @@
       "start": "2026-10-01T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-02T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-02",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-02T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1664,6 +1677,19 @@
       "start": "2026-10-02T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-02T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-02",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-02T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1705,19 +1731,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-05T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-05",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-05T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-10-05T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-10-05",
@@ -1745,11 +1758,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-06T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-06",
+      "end": "2026-10-05T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-05",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-10-06T17:00:00+08:00",
+      "start": "2026-10-05T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -1769,6 +1782,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-06T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-06",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-06T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-10-06T20:00:00+08:00",
@@ -1782,19 +1808,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-07T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-07",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-07T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-10-07T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-10-07",
@@ -1803,6 +1816,19 @@
       "start": "2026-10-07T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-07T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-07",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-07T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1845,19 +1871,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-09T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-09",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-09T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-10-09T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-10-09",
@@ -1879,6 +1892,19 @@
       "start": "2026-10-09T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-09T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-09",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-09T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1932,19 +1958,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-12T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-12",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-12T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-10-12T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-10-12",
@@ -1953,6 +1966,19 @@
       "start": "2026-10-12T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-12T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-12",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-12T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -1995,19 +2021,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-14T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-14",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-14T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-10-14T10:15:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-10-14",
@@ -2028,6 +2041,19 @@
       "start": "2026-10-14T15:00:00+08:00",
       "status": "confirmed",
       "title": "IT Meeting"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-14T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-14",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-14T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2058,19 +2084,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-16T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-16",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-16T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-10-16T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-10-16",
@@ -2092,6 +2105,19 @@
       "start": "2026-10-16T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-16T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-16",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-16T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2133,19 +2159,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-19T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-19",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-19T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-10-19T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-10-19",
@@ -2154,6 +2167,19 @@
       "start": "2026-10-19T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-19T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-19",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-19T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2184,19 +2210,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-21T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-21",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-21T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-10-21T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-10-21",
@@ -2205,6 +2218,19 @@
       "start": "2026-10-21T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-21T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-21",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-21T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2235,19 +2261,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-23T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-23",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-23T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-10-23T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-10-23",
@@ -2269,6 +2282,19 @@
       "start": "2026-10-23T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-23T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-23",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-23T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2322,19 +2348,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-26T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-26",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-26T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-10-26T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-10-26",
@@ -2343,6 +2356,19 @@
       "start": "2026-10-26T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-26T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-26",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-26T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2373,19 +2399,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-28T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-28",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-28T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-10-28T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-10-28",
@@ -2394,6 +2407,19 @@
       "start": "2026-10-28T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-28T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-28",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-28T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2424,19 +2450,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-10-30T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-10-30",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-10-30T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-10-30T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-10-30",
@@ -2458,6 +2471,19 @@
       "start": "2026-10-30T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-10-30T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-10-30",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-10-30T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2499,19 +2525,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-02T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-02",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-02T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-11-02T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-11-02",
@@ -2537,6 +2550,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-02T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-02",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-02T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Reminder",
       "description": "Remind Eizzat to prepare the minutes for the 2026-11-04 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
       "end": "2026-11-03T09:00:00+08:00",
@@ -2545,19 +2571,6 @@
       "start": "2026-11-03T08:45:00+08:00",
       "status": "confirmed",
       "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-03T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-03",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-03T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2575,6 +2588,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-03T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-03T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-11-03T20:00:00+08:00",
@@ -2583,19 +2609,6 @@
       "start": "2026-11-03T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-04T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-04",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-04T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2627,11 +2640,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-05T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-05",
+      "end": "2026-11-04T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-04",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-11-05T17:00:00+08:00",
+      "start": "2026-11-04T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -2651,6 +2664,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-05T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-05",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-05T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: presses or push-ups, lateral raises, rotator-cuff work, and scapular stability. Keep one to two repetitions in reserve.",
       "end": "2026-11-05T20:00:00+08:00",
@@ -2659,19 +2685,6 @@
       "start": "2026-11-05T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-06T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-06",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-06T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2714,6 +2727,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-06T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-06",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-06T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Personal",
       "description": "Two-hour gaming session with friends. Scheduled before an off Saturday so it does not interfere with work or recovery.",
       "end": "2026-11-07T00:00:00+08:00",
@@ -2751,19 +2777,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-09T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-09",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-09T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-11-09T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-11-09",
@@ -2772,6 +2785,19 @@
       "start": "2026-11-09T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-09T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-09",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-09T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2802,19 +2828,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-11T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-11",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-11T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-11-11T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-11-11",
@@ -2823,6 +2836,19 @@
       "start": "2026-11-11T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-11T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-11",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-11T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2853,19 +2879,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-13T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-13",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-13T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-11-13T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-11-13",
@@ -2887,6 +2900,19 @@
       "start": "2026-11-13T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-13T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-13",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-13T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2928,19 +2954,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-16T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-16",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-16T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-11-16T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-11-16",
@@ -2949,6 +2962,19 @@
       "start": "2026-11-16T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-16T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-16",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-16T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -2979,19 +3005,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-18T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-18",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-18T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-11-18T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-11-18",
@@ -3000,6 +3013,19 @@
       "start": "2026-11-18T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-18T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-18",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-18T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3030,19 +3056,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-20T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-20",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-20T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-11-20T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-11-20",
@@ -3064,6 +3077,19 @@
       "start": "2026-11-20T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-20T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-20",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-20T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3117,19 +3143,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-23T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-23",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-23T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-11-23T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-11-23",
@@ -3138,6 +3151,19 @@
       "start": "2026-11-23T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-23T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-23",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-23T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3180,19 +3206,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-25T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-25",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-25T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-11-25T10:15:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-11-25",
@@ -3213,6 +3226,19 @@
       "start": "2026-11-25T15:00:00+08:00",
       "status": "confirmed",
       "title": "IT Meeting"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-25T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-25",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-25T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3243,19 +3269,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-27T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-27",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-27T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-11-27T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-11-27",
@@ -3277,6 +3290,19 @@
       "start": "2026-11-27T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-27T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-27",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-27T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3318,19 +3344,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-11-30T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-11-30",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-11-30T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-11-30T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-11-30",
@@ -3339,6 +3352,19 @@
       "start": "2026-11-30T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-11-30T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-11-30",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-11-30T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3356,19 +3382,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-01T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-01T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
       "end": "2026-12-01T14:00:00+08:00",
       "id": "recurring-it-monthly-systems-2026-12-01",
@@ -3381,6 +3394,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-01T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-01T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-12-01T20:00:00+08:00",
@@ -3389,19 +3415,6 @@
       "start": "2026-12-01T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-02T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-02",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-02T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3421,11 +3434,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-03T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-03",
+      "end": "2026-12-02T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-02",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-12-03T17:00:00+08:00",
+      "start": "2026-12-02T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -3445,6 +3458,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-03T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-03",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-03T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: presses or push-ups, lateral raises, rotator-cuff work, and scapular stability. Keep one to two repetitions in reserve.",
       "end": "2026-12-03T20:00:00+08:00",
@@ -3453,19 +3479,6 @@
       "start": "2026-12-03T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-04T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-04",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-04T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3492,6 +3505,19 @@
       "start": "2026-12-04T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-04T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-04",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-04T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3545,19 +3571,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-07T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-07",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-07T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-12-07T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-12-07",
@@ -3596,6 +3609,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-07T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-07",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-07T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Reminder",
       "description": "Final check that Eizzat's appraisal for the 1 December 2026 cycle has been completed and recorded.",
       "end": "2026-12-08T09:15:00+08:00",
@@ -3604,19 +3630,6 @@
       "start": "2026-12-08T09:00:00+08:00",
       "status": "confirmed",
       "title": "Eizzat's Appraisal Deadline Today"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-08T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-08",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-08T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3634,6 +3647,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-08T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-08",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-08T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-12-08T20:00:00+08:00",
@@ -3642,19 +3668,6 @@
       "start": "2026-12-08T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-09T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-09",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-09T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3687,11 +3700,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-10T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-10",
+      "end": "2026-12-09T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-09",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-12-10T17:00:00+08:00",
+      "start": "2026-12-09T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -3711,6 +3724,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-10T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-10",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-10T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: presses or push-ups, lateral raises, rotator-cuff work, and scapular stability. Keep one to two repetitions in reserve.",
       "end": "2026-12-10T20:00:00+08:00",
@@ -3719,19 +3745,6 @@
       "start": "2026-12-10T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Push and Shoulder Stability"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-11T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-11",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-11T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3758,6 +3771,19 @@
       "start": "2026-12-11T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-11T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-11",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-11T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3799,19 +3825,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-14T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-14",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-14T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-12-14T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-12-14",
@@ -3820,6 +3833,19 @@
       "start": "2026-12-14T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-14T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-14",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-14T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3862,19 +3888,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-16T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-16",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-16T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-12-16T10:15:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-12-16",
@@ -3895,6 +3908,19 @@
       "start": "2026-12-16T15:00:00+08:00",
       "status": "confirmed",
       "title": "IT Meeting"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-16T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-16",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-16T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -3925,19 +3951,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-18T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-18",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-18T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review major network or recurring IT issues with Eizzat, then prepare the weekly IT progress update. Responsible: Adly and Eizzat.",
       "end": "2026-12-18T10:15:00+08:00",
       "id": "recurring-it-weekly-friday-review-2026-12-18",
@@ -3959,6 +3972,19 @@
       "start": "2026-12-18T16:30:00+08:00",
       "status": "confirmed",
       "title": "Personal Desk Clean Up"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-18T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-18",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-18T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -4012,19 +4038,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-21T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-21",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-21T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-12-21T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-12-21",
@@ -4033,6 +4046,19 @@
       "start": "2026-12-21T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly IT Issues and Task Planning"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-21T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-21",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-21T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -4063,19 +4089,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-23T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-23",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-23T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
       "end": "2026-12-23T16:00:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-12-23",
@@ -4084,6 +4097,19 @@
       "start": "2026-12-23T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-23T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-23",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-23T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": true,
@@ -4149,19 +4175,6 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-28T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-28",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-28T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
       "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
       "end": "2026-12-28T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-12-28",
@@ -4202,11 +4215,11 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-29T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-29",
+      "end": "2026-12-28T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-28",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-12-29T17:00:00+08:00",
+      "start": "2026-12-28T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
     },
@@ -4226,6 +4239,19 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-29T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-29",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-29T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Muscle-building session: squats or lunges, Romanian deadlifts, calf raises, and anti-rotation core. Use moderate load and avoid unnecessary grip fatigue.",
       "end": "2026-12-29T20:00:00+08:00",
@@ -4234,19 +4260,6 @@
       "start": "2026-12-29T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-12-30T17:30:00+08:00",
-      "id": "recurring-it-daily-operations-2026-12-30",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
-      "start": "2026-12-30T17:00:00+08:00",
-      "status": "planned",
-      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -4273,6 +4286,19 @@
       "start": "2026-12-30T15:00:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-12-30T17:30:00+08:00",
+      "id": "recurring-it-daily-operations-2026-12-30",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-12-30T17:00:00+08:00",
+      "status": "planned",
+      "title": "Daily IT Support Summary Report"
     },
     {
       "allDay": false,
@@ -4386,15 +4412,15 @@
       "allowOverlap": true
     },
     {
-      "id": "subscription-renewal-photography-plan-20gb-2027-06-01",
-      "title": "Renewal Reminder – Photography Plan (20GB)",
+      "id": "subscription-renewal-capcut-pro-2027-06-01",
+      "title": "Renewal Reminder – CapCut Pro",
       "start": "2027-06-01",
       "end": "2027-06-01",
       "allDay": true,
       "category": "Reminder",
       "priority": "high",
       "status": "confirmed",
-      "description": "One-month advance renewal reminder. Expiry: 2027-07-01. Supplier: Adobe. Cost: RM 345.33 annually. Users: 1 user. Assigned to: Social Media. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
+      "description": "One-month advance renewal reminder. Expiry: 2027-07-01. Supplier: CapCut. Cost: RM 209.00 annually. Users: 1 user. Assigned to: Social Media. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
       "allowOverlap": true
     },
     {
@@ -4410,18 +4436,6 @@
       "allowOverlap": true
     },
     {
-      "id": "subscription-renewal-capcut-pro-2027-06-01",
-      "title": "Renewal Reminder – CapCut Pro",
-      "start": "2027-06-01",
-      "end": "2027-06-01",
-      "allDay": true,
-      "category": "Reminder",
-      "priority": "high",
-      "status": "confirmed",
-      "description": "One-month advance renewal reminder. Expiry: 2027-07-01. Supplier: CapCut. Cost: RM 209.00 annually. Users: 1 user. Assigned to: Social Media. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
-      "allowOverlap": true
-    },
-    {
       "id": "subscription-renewal-linktree-2027-06-01",
       "title": "Renewal Reminder – Linktree",
       "start": "2027-06-01",
@@ -4431,6 +4445,18 @@
       "priority": "high",
       "status": "confirmed",
       "description": "One-month advance renewal reminder. Expiry: 2027-07-01. Supplier: Linktree. Cost: RM 336.00 annually. Users: 1 user. Assigned to: Social Media. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
+      "allowOverlap": true
+    },
+    {
+      "id": "subscription-renewal-photography-plan-20gb-2027-06-01",
+      "title": "Renewal Reminder – Photography Plan (20GB)",
+      "start": "2027-06-01",
+      "end": "2027-06-01",
+      "allDay": true,
+      "category": "Reminder",
+      "priority": "high",
+      "status": "confirmed",
+      "description": "One-month advance renewal reminder. Expiry: 2027-07-01. Supplier: Adobe. Cost: RM 345.33 annually. Users: 1 user. Assigned to: Social Media. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
       "allowOverlap": true
     },
     {
@@ -4468,24 +4494,11 @@
       "status": "confirmed",
       "description": "One-month advance renewal reminder. Expiry: 2028-08-16. Supplier: TrendMicro. Cost: RM 7,560.00 annually. Users: 28 users. Assigned to: IT. Review renewal requirements, confirm approval and budget, and start the renewal process before expiry.",
       "allowOverlap": true
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "First meeting for the KCC Youth Level Assessment. Agenda: feedback and review; members' tasks and responsibilities; competition format; tentative planning; and AOB. Microsoft Teams: https://teams.microsoft.com/meet/430733151389674?p=LFvr9pA8H5cpQqJbW2. Meeting ID: 430 733 151 389 674. Passcode: w5Lf6b9P.",
-      "end": "2026-08-27T11:00:00+08:00",
-      "id": "meeting-kcc-youth-level-assessment-first-2026-08-27",
-      "location": "Microsoft Teams",
-      "priority": "normal",
-      "start": "2026-08-27T10:00:00+08:00",
-      "status": "planned",
-      "title": "KCC Youth Level Assessment – First Meeting"
     }
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-08-22T11:55:06+08:00",
+    "lastUpdated": "2026-09-01T10:17:23.220+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
@@ -4504,5 +4517,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-08-27T09:09:27+08:00"
+  "updatedAt": "2026-09-01T10:17:23.220+08:00"
 }
