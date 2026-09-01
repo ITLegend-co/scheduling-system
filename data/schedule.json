@@ -488,18 +488,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-09-02 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-09-01T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-09-02",
-      "priority": "high",
-      "start": "2026-09-01T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Provide the Odoo trial accounts to the Accounts and Technical teams, confirm access, and explain what feedback to record during the trial.",
       "end": "2026-09-01T10:30:00+08:00",
@@ -597,18 +585,6 @@
       "start": "2026-09-02T13:00:00+08:00",
       "status": "planned",
       "title": "Configure KP Fixed IP Remotely"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-09-02T16:30:00+08:00",
-      "id": "meeting-it-2026-09-02",
-      "priority": "high",
-      "start": "2026-09-02T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -751,6 +727,18 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Remind Eizzat one day before the rescheduled IT Meeting to review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new minutes draft for 7 September 2026.",
+      "end": "2026-09-06T08:45:00+08:00",
+      "id": "reminder-eizzat-it-minutes-2026-09-02",
+      "priority": "high",
+      "start": "2026-09-06T08:30:00+08:00",
+      "status": "confirmed",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Training",
       "description": "Moderate full-body strength plus shoulder, hip, and thoracic mobility. Avoid training to failure so climbing performance and recovery are protected.",
       "end": "2026-09-06T10:00:00+08:00",
@@ -814,14 +802,26 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
-      "end": "2026-09-07T17:30:00+08:00",
+      "description": "Complete the daily IT support summary before the rescheduled 4:00 PM IT Meeting. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
+      "end": "2026-09-07T15:45:00+08:00",
       "id": "recurring-it-daily-operations-2026-09-07",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "normal",
-      "start": "2026-09-07T17:00:00+08:00",
+      "start": "2026-09-07T15:15:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "The IT Meeting originally scheduled for 2 September 2026 was rescheduled to 7 September 2026 at 4:00 PM. Review current IT support, projects, monitoring items, owners, deadlines, and next actions. This is a one-time date change; later meetings retain the existing three-week cycle.",
+      "end": "2026-09-07T17:30:00+08:00",
+      "id": "meeting-it-2026-09-02",
+      "priority": "normal",
+      "start": "2026-09-07T16:00:00+08:00",
+      "status": "confirmed",
+      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -4498,7 +4498,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-01T10:27:06.853+08:00",
+    "lastUpdated": "2026-09-01T10:52:25.462+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
@@ -4517,5 +4517,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-09-01T10:27:06.853+08:00"
+  "updatedAt": "2026-09-01T10:52:25.462+08:00"
 }

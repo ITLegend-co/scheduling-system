@@ -138,8 +138,8 @@
       "type": "meeting"
     },
     {
-      "date": "2026-09-02",
-      "details": "The IT Meeting repeats every three weeks. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes.",
+      "date": "2026-09-07",
+      "details": "The IT Meeting repeats every three weeks. The meeting originally scheduled for 2 September 2026 was rescheduled once to 7 September 2026 at 4:00 PM. Review the IT Minutes repository and remind Eizzat one day before the meeting to prepare the minutes. Later meetings retain the existing three-week cycle.",
       "id": "it-meeting-2026-09-02",
       "person": "Eizzat",
       "recurrence": {
@@ -148,7 +148,7 @@
       },
       "referenceUrl": "https://github.com/ITLegend-co/IT-Minutes.git",
       "section": "Meetings",
-      "startTime": "15:00",
+      "startTime": "16:00",
       "status": "confirmed",
       "title": "IT Meeting",
       "type": "meeting"
@@ -716,6 +716,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-01T10:27:06.853+08:00",
+  "updatedAt": "2026-09-01T10:52:25.462+08:00",
   "version": 1
 }
