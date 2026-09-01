@@ -127,6 +127,19 @@
       "type": "task"
     },
     {
+      "date": "2026-09-01",
+      "deadline": "2026-09-01",
+      "details": "Go to CIMB today to complete the required signing and collect the KCC QR.",
+      "endTime": "15:00",
+      "id": "kcc-cimb-sign-and-collect-qr",
+      "location": "CIMB",
+      "section": "Tasks",
+      "startTime": "14:00",
+      "status": "confirmed",
+      "title": "KCC CIMB – Sign and Collect QR",
+      "type": "task"
+    },
+    {
       "date": "2026-09-09",
       "details": "Review the presentation repository and create a preparation reminder one day before the meeting.",
       "id": "hod-meeting-2026-09-09",
@@ -716,6 +729,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-01T10:52:25.462+08:00",
+  "updatedAt": "2026-09-01T13:43:36.249+08:00",
   "version": 1
 }
