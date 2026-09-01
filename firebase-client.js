@@ -52,7 +52,7 @@ export function watchProfile(onData, onError) {
 async function readRequired(path, isValid, label) {
   const snapshot = await get(ref(database, path));
   if (!snapshot.exists()) throw new Error(`Firebase does not contain a ${label} yet.`);
-  const value = snapshot.val();
+  const value = restoreDocumentMetadata(snapshot.val());
   if (!isValid(value)) throw new Error(`Firebase returned an invalid ${label}.`);
   return value;
 }
@@ -62,9 +62,17 @@ function watchRequired(path, isValid, onData, onError) {
     ref(database, path),
     (snapshot) => {
       if (!snapshot.exists()) return;
-      const value = snapshot.val();
+      const value = restoreDocumentMetadata(snapshot.val());
       if (isValid(value)) onData(value);
     },
     onError,
   );
+}
+
+function restoreDocumentMetadata(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value) || !value.schemaUrl || value["$schema"]) {
+    return value;
+  }
+  const { schemaUrl, ...document } = value;
+  return { "$schema": schemaUrl, ...document };
 }

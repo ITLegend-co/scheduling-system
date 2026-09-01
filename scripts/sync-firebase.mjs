@@ -45,8 +45,8 @@ const database = getDatabase(app);
 try {
   await database.setRules(rulesText);
   await database.ref("smartSchedule").update({
-    schedule,
-    profile,
+    schedule: toFirebaseDocument(schedule),
+    profile: toFirebaseDocument(profile),
     meta: {
       projectId: PROJECT_ID,
       source: "ITLegend-co/scheduling-system",
@@ -57,4 +57,19 @@ try {
   console.log(`Firebase synchronized: ${schedule.events.length} events and ${profile.entries.length} profile entries.`);
 } finally {
   await deleteApp(app);
+}
+
+function toFirebaseDocument(value, path = "root") {
+  if (Array.isArray(value)) {
+    return value.map((item, index) => toFirebaseDocument(item, `${path}[${index}]`));
+  }
+  if (!value || typeof value !== "object") return value;
+
+  return Object.fromEntries(Object.entries(value).map(([key, item]) => {
+    const firebaseKey = key === "$schema" ? "schemaUrl" : key;
+    if (/[.#$\/\[\]]/.test(firebaseKey)) {
+      throw new Error(`Firebase cannot store key "${key}" at ${path}.`);
+    }
+    return [firebaseKey, toFirebaseDocument(item, `${path}.${firebaseKey}`)];
+  }));
 }
