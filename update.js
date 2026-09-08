@@ -9,6 +9,8 @@ const state = {
   editingId: null,
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),
+  submittedAt: "",
+  submittedRequestIds: [],
   profile: null,
 };
 
@@ -112,6 +114,7 @@ function applyProfile(profile, sourceLabel) {
     throw new Error("The master profile JSON has an unsupported format.");
   }
 
+  reconcileAppliedChanges(profile.updatedAt);
   state.profile = profile;
   elements.profileStatus.classList.remove("profile-status--error");
   elements.profileStatus.textContent = `${sourceLabel} · Updated ${formatProfileTimestamp(profile.updatedAt)}`;
@@ -276,6 +279,7 @@ function prefillFromProfile(entry) {
 
   if (queuedChange) {
     replaceMatchingUpdates(readForm(), queuedChange.requestId);
+    markChangeAsUnsubmitted(queuedChange.requestId);
     state.updatedAt = new Date().toISOString();
     render();
   }
@@ -351,6 +355,7 @@ function submitChange(event) {
         state.changes[index] = replacement;
       }
     }
+    markChangeAsUnsubmitted(state.editingId);
     showToast(mergedCount > 1 ? "Change updated and duplicate task updates merged" : "Change updated");
   } else {
     const existingIndex = state.changes.findIndex((item) => sameUpdateTarget(item, change));
@@ -588,6 +593,7 @@ function deleteChange(requestId) {
   const change = state.changes.find((item) => item.requestId === requestId);
   if (!change || !window.confirm(`Delete “${change.title}” from this update file?`)) return;
   state.changes = state.changes.filter((item) => item.requestId !== requestId);
+  markChangeAsUnsubmitted(requestId);
   if (state.editingId === requestId) resetForm(false);
   state.updatedAt = new Date().toISOString();
   saveDraft();
@@ -661,18 +667,18 @@ function renderPreview() {
 function downloadJson() {
   if (!ensureChanges()) return;
   state.updatedAt = new Date().toISOString();
-  saveDraft();
   const content = JSON.stringify(removeEmpty(buildExport()), null, 2) + "\n";
   const filename = `schedule-update-${localDateKey(new Date())}.json`;
   downloadBlob(filename, content, "application/json;charset=utf-8");
+  markChangesAsSubmitted();
+  saveDraft();
   renderPreview();
-  showToast("JSON update file downloaded");
+  showToast("JSON downloaded · this list will clear after GPT applies it");
 }
 
 async function copyJson() {
   if (!ensureChanges()) return;
   state.updatedAt = new Date().toISOString();
-  saveDraft();
   const content = JSON.stringify(removeEmpty(buildExport()), null, 2);
   try {
     await navigator.clipboard.writeText(content);
@@ -686,8 +692,60 @@ async function copyJson() {
     document.execCommand("copy");
     textarea.remove();
   }
+  markChangesAsSubmitted();
+  saveDraft();
   renderPreview();
-  showToast("JSON copied");
+  showToast("JSON copied · this list will clear after GPT applies it");
+}
+
+function markChangesAsSubmitted() {
+  state.submittedAt = state.updatedAt;
+  state.submittedRequestIds = state.changes.map((change) => change.requestId);
+}
+
+function markChangeAsUnsubmitted(requestId) {
+  state.submittedRequestIds = state.submittedRequestIds.filter((id) => id !== requestId);
+  if (!state.submittedRequestIds.length) state.submittedAt = "";
+}
+
+function reconcileAppliedChanges(profileUpdatedAt) {
+  if (!state.changes.length) return;
+
+  const appliedTime = Date.parse(profileUpdatedAt || "");
+  if (!Number.isFinite(appliedTime)) return;
+
+  const submittedTime = Date.parse(state.submittedAt || "");
+  if (state.submittedRequestIds.length && Number.isFinite(submittedTime)) {
+    if (appliedTime <= submittedTime) return;
+
+    const appliedRequestIds = new Set(state.submittedRequestIds);
+    state.changes = state.changes.filter((change) => !appliedRequestIds.has(change.requestId));
+    state.submittedAt = "";
+    state.submittedRequestIds = [];
+    finishAppliedReconciliation();
+    return;
+  }
+
+  // Drafts created before submission tracking was added can still be cleared
+  // when the published profile is newer than the draft that GPT processed.
+  const draftTime = Date.parse(state.updatedAt || "");
+  if (!Number.isFinite(draftTime) || appliedTime <= draftTime) return;
+  state.changes = [];
+  finishAppliedReconciliation();
+}
+
+function finishAppliedReconciliation() {
+  if (state.editingId && !state.changes.some((change) => change.requestId === state.editingId)) {
+    resetForm(false);
+  }
+  if (!state.changes.length) {
+    state.createdAt = new Date().toISOString();
+    state.updatedAt = state.createdAt;
+    elements.requestNote.value = "";
+  }
+  saveDraft();
+  render();
+  showToast("GPT-applied changes cleared from the list");
 }
 
 async function importJson(event) {
@@ -704,6 +762,8 @@ async function importJson(event) {
 
     state.changes = imported.changes.map(normalizeImportedChange);
     state.editingId = null;
+    state.submittedAt = "";
+    state.submittedRequestIds = [];
     state.createdAt = imported.createdAt || new Date().toISOString();
     state.updatedAt = new Date().toISOString();
     elements.autoSchedule.checked = imported.instructions?.autoScheduleMissingTimes !== false;
@@ -751,6 +811,8 @@ function clearDraft() {
   state.editingId = null;
   state.createdAt = new Date().toISOString();
   state.updatedAt = state.createdAt;
+  state.submittedAt = "";
+  state.submittedRequestIds = [];
   elements.autoSchedule.checked = true;
   elements.createDeadline.checked = true;
   elements.requestNote.value = "";
@@ -765,6 +827,8 @@ function saveDraft() {
     editingId: state.editingId,
     createdAt: state.createdAt,
     updatedAt: state.updatedAt,
+    submittedAt: state.submittedAt,
+    submittedRequestIds: state.submittedRequestIds,
     autoSchedule: elements.autoSchedule.checked,
     createDeadline: elements.createDeadline.checked,
     requestNote: elements.requestNote.value,
@@ -787,6 +851,8 @@ function loadDraft() {
     state.editingId = draft.editingId || null;
     state.createdAt = draft.createdAt || state.createdAt;
     state.updatedAt = draft.updatedAt || state.updatedAt;
+    state.submittedAt = draft.submittedAt || "";
+    state.submittedRequestIds = Array.isArray(draft.submittedRequestIds) ? draft.submittedRequestIds : [];
     elements.autoSchedule.checked = draft.autoSchedule !== false;
     elements.createDeadline.checked = draft.createDeadline !== false;
     elements.requestNote.value = draft.requestNote || "";

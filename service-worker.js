@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2026-09-01-1";
+const CACHE_VERSION = "2026-09-08-1";
 const STATIC_CACHE = `smart-schedule-static-${CACHE_VERSION}`;
 const DATA_CACHE = `smart-schedule-data-${CACHE_VERSION}`;
 const APP_SHELL = [
