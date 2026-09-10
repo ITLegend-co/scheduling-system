@@ -765,6 +765,20 @@
       "location": "Mountain Torq Climbing Gym, Level 3, Menara MAA",
       "referenceUrl": "https://itlegend-co.github.io/KCC_assessment/#/login",
       "details": "The assessment runs from 8:30 AM to 3:00 PM. Handle judging during the event."
+    },
+    {
+      "id": "make-kcc-ledger",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Make a Ledger for KCC",
+      "status": "planned",
+      "date": "2026-09-11",
+      "deadline": "2026-09-11",
+      "startTime": "14:15",
+      "endTime": "15:45",
+      "priority": "normal",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "details": "Create a soft-copy ledger for KCC."
     }
   ],
   "format": "smart-schedule-profile",
@@ -789,6 +803,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-08T11:10:23.983+08:00",
+  "updatedAt": "2026-09-10T08:31:42.745+08:00",
   "version": 1
 }
