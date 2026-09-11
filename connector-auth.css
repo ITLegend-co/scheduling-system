@@ -1,0 +1,141 @@
+.connector-shell {
+  display: grid;
+  width: min(100% - 32px, 680px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 40px 0;
+  place-items: center;
+}
+
+.connector-panel {
+  width: 100%;
+  padding: clamp(24px, 6vw, 44px);
+}
+
+.connector-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  place-items: center;
+  color: var(--mint);
+  background: rgba(29, 229, 190, 0.1);
+  border: 1px solid rgba(29, 229, 190, 0.22);
+  border-radius: 15px;
+}
+
+.connector-mark svg {
+  width: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.connector-panel h1 {
+  max-width: 520px;
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+.connector-intro {
+  margin: 18px 0 0;
+  color: var(--muted-strong);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.connector-permissions {
+  display: grid;
+  gap: 1px;
+  margin: 28px 0;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.connector-permissions > div {
+  display: grid;
+  gap: 4px;
+  padding: 15px 16px;
+  background: rgba(9, 19, 33, 0.96);
+}
+
+.connector-permissions strong {
+  font-size: 0.82rem;
+}
+
+.connector-permissions span,
+.connector-account p {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.connector-account {
+  padding: 15px 16px;
+  background: rgba(29, 229, 190, 0.055);
+  border: 1px solid rgba(29, 229, 190, 0.2);
+  border-radius: 14px;
+}
+
+.connector-account strong {
+  display: block;
+  font-size: 0.84rem;
+}
+
+.connector-account p {
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.connector-account--error {
+  background: rgba(255, 111, 145, 0.055);
+  border-color: rgba(255, 111, 145, 0.25);
+}
+
+.connector-account--error p {
+  color: var(--rose);
+}
+
+.connector-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.connector-actions .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.connector-error {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  color: var(--rose);
+  background: rgba(255, 111, 145, 0.07);
+  border: 1px solid rgba(255, 111, 145, 0.2);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+  .connector-shell {
+    width: min(100% - 20px, 680px);
+    padding: 10px 0;
+  }
+
+  .connector-actions {
+    display: grid;
+  }
+
+  .connector-actions .button {
+    width: 100%;
+  }
+}

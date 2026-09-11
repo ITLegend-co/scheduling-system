@@ -1,0 +1,13 @@
+{
+  "name": "smart-schedule-functions",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "firebase-admin": "14.4.0",
+    "firebase-functions": "7.3.2"
+  }
+}

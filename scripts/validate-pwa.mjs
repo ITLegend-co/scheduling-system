@@ -44,7 +44,16 @@ for (const page of ["index.html", "update.html"]) {
   check(!duplicates.length, `${page} has duplicate IDs: ${duplicates.join(", ")}`);
 }
 
-for (const path of ["firebase-client.js", "pwa.js", "service-worker.js", "offline.html", "icons/app-icon.svg"]) {
+for (const path of [
+  "firebase-client.js",
+  "pwa.js",
+  "service-worker.js",
+  "offline.html",
+  "connector-auth.html",
+  "connector-auth.css",
+  "connector-auth.js",
+  "icons/app-icon.svg",
+]) {
   check(exists(path), `${path} is missing`);
 }
 
@@ -52,10 +61,12 @@ const serviceWorker = readText("service-worker.js");
 for (const path of [
   "./index.html",
   "./update.html",
+  "./connector-auth.html",
   "./offline.html",
   "./styles.css",
   "./app.js",
   "./update.js",
+  "./connector-auth.js",
   "./firebase-client.js",
   "./pwa.js",
   "./manifest.webmanifest",
@@ -66,7 +77,17 @@ for (const path of [
 }
 
 const workflow = readText(".github/workflows/deploy-pages.yml");
-for (const asset of ["manifest.webmanifest", "service-worker.js", "firebase-client.js", "pwa.js", "offline.html", "_site/icons"]) {
+for (const asset of [
+  "manifest.webmanifest",
+  "service-worker.js",
+  "firebase-client.js",
+  "connector-auth.html",
+  "connector-auth.css",
+  "connector-auth.js",
+  "pwa.js",
+  "offline.html",
+  "_site/icons",
+]) {
   check(workflow.includes(asset), `Deployment workflow does not publish ${asset}`);
 }
 

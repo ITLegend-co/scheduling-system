@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -27,7 +27,14 @@ jobs:
           node-version: 22
 
       - name: Validate schedule data
-        run: node scripts/validate-schedule.mjs
+        run: |
+          node scripts/validate-schedule.mjs
+          node scripts/validate-profile.mjs
+
+      - name: Validate schedule request handling
+        run: |
+          node --check functions/index.js
+          node scripts/test-update-requests.mjs
 
       - name: Validate installable app assets
         run: node scripts/validate-pwa.mjs
@@ -35,7 +42,7 @@ jobs:
       - name: Prepare website and calendar feed
         run: |
           mkdir -p _site/data _site/icons
-          cp index.html styles.css app.js update.html update.css update.js firebase-client.js pwa.js service-worker.js offline.html manifest.webmanifest schedule-update.schema.json schedule-profile.schema.json _site/
+          cp index.html styles.css app.js update.html update.css update.js connector-auth.html connector-auth.css connector-auth.js firebase-client.js pwa.js service-worker.js offline.html manifest.webmanifest schedule-update.schema.json schedule-profile.schema.json _site/
           cp icons/app-icon.svg icons/*.png _site/icons/
           cp data/schedule.json data/schedule-profile.json _site/data/
           node scripts/generate-ics.mjs data/schedule.json _site/schedule.ics
@@ -64,7 +71,7 @@ jobs:
           node-version: 22
 
       - name: Install Firebase Admin SDK
-        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund firebase-admin@14.3.0
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund firebase-admin@14.4.0
 
       - name: Synchronize schedule and security rules
         env:
@@ -82,3 +89,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  confirm-applied:
+    runs-on: ubuntu-latest
+    needs: [sync-firebase, deploy]
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Firebase Admin SDK
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund firebase-admin@14.4.0
+
+      - name: Confirm deployed schedule requests
+        env:
+          FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8 }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/confirm-applied.mjs

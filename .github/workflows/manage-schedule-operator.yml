@@ -1,0 +1,41 @@
+name: Manage schedule operator
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Grant or revoke schedule submission access
+        required: true
+        type: choice
+        options:
+          - grant
+          - revoke
+      firebase_uid:
+        description: Firebase UID shown after Google sign-in
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  update-access:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Firebase Admin SDK
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund firebase-admin@14.4.0
+
+      - name: Update operator access
+        env:
+          FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8 }}
+          SCHEDULE_OPERATOR_ACTION: ${{ inputs.action }}
+          SCHEDULE_OPERATOR_UID: ${{ inputs.firebase_uid }}
+        run: node scripts/manage-operator.mjs "$SCHEDULE_OPERATOR_ACTION" "$SCHEDULE_OPERATOR_UID"

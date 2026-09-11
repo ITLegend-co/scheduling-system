@@ -536,3 +536,4 @@ function escapeHtml(value) {
 function safeFilename(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "event";
 }
+

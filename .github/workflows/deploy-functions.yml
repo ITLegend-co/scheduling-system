@@ -1,0 +1,48 @@
+name: Deploy schedule request functions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "functions/**"
+      - "firebase-hosting/**"
+      - "firebase.json"
+      - ".firebaserc"
+      - ".github/workflows/deploy-functions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-functions
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SCHEDULE_D2CE8 }}
+          project_id: schedule-d2ce8
+
+      - name: Install function dependencies
+        run: npm install --prefix functions --no-package-lock --ignore-scripts --no-audit --no-fund
+
+      - name: Test function routes and request validation
+        run: |
+          node scripts/test-update-requests.mjs
+          node scripts/test-connector.mjs
+
+      - name: Deploy Firebase functions and connector routes
+        run: npx --yes firebase-tools@15.30.0 deploy --only functions,hosting --project schedule-d2ce8 --non-interactive

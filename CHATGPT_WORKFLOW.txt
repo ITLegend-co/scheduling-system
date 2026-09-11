@@ -1,12 +1,38 @@
-SMART SCHEDULE — CHATGPT UPDATE INSTRUCTIONS
+SMART SCHEDULE — CHATGPT/CODEX UPDATE INSTRUCTIONS
 
-When sending a scheduling request to ChatGPT:
+SECURE CONNECTOR WORKFLOW
 
-1. Open update.html to view the current master profile. Select Create update on an existing profile item or add only what changed, then download the changes-only JSON update file. A clear plain-text scheduling request is still accepted as a fallback.
-2. Select the GitHub connector.
-3. Tell ChatGPT:
+When the user says that an update is waiting in Firebase or asks to use Smart Schedule without attaching JSON:
 
-   Update ITLegend-co/scheduling-system directly. Read data/schedule.json first, arrange my request in a suitable free date and time, validate it, update meta.lastUpdated, generate the calendar feed, and commit the change to main. Do not remove existing events unless I request it.
+1. Use list_pending_schedule_updates.
+2. Generate one new UUID claimId for this processing run. Claim the intended submission with claim_schedule_update before editing the repository. Reuse that same claimId only when retrying this exact claim; a different claimId is a different worker and must not take an active lease.
+3. Treat the returned payload exactly like a changes-only smart-schedule-update file.
+4. Read data/schedule.json and data/schedule-profile.json from ITLegend-co/scheduling-system before applying anything.
+5. Apply only the requested changes. Preserve all unmentioned events and profile entries. Ignore Event-Based Tasks unless the user explicitly reverses that instruction.
+6. Replace data/update-release.json with a receipt containing only the submission(s) handled by this release. Copy the exact claimId and every requestId returned by claim_schedule_update:
+
+   {
+     "format": "smart-schedule-release-receipt",
+     "version": 1,
+     "preparedAt": "CURRENT_ISO_DATE_TIME",
+     "submissions": [
+       {
+         "submissionId": "EXACT_CLAIMED_SUBMISSION_ID",
+         "claimId": "EXACT_CLAIM_UUID",
+         "requestIds": ["EXACT_REQUEST_ID"]
+       }
+     ]
+   }
+
+7. Validate the schedule, profile, PWA, and request handling; generate the calendar feed; then commit the intended changes directly to main.
+8. Never mark a Firebase request applied yourself. Only the post-deployment GitHub Actions job may change processing to applied after Firebase synchronization and GitHub Pages deployment both succeed.
+9. If processing cannot be completed safely, call release_schedule_update with the same claimId and a short reason. Do not leave a knowingly abandoned request claimed.
+
+The browser keeps submitted cards until it observes applied with the exact same request IDs. A build, synchronization, or deployment failure must not clear them.
+
+JSON FILE FALLBACK
+
+If the user attaches a smart-schedule-update JSON file instead, apply it using the same rules below. Leave data/update-release.json with an empty submissions array unless that update was actually claimed through the secure connector. A clear plain-text scheduling request is still accepted as a fallback.
 
 JSON UPDATE FILE RULES
 
@@ -17,6 +43,7 @@ JSON UPDATE FILE RULES
 - For update, complete, or remove, match existingEventId first. If it is missing, match using the exact title and date; ask if the match is ambiguous.
 - Use autoScheduleMissingTimes and createDeadlineWhenMissing from the file when arranging incomplete items.
 - Ignore requestId when generating the final schedule event ID; create or preserve a stable event ID instead.
+- Ignore Event-Based Tasks.
 
 MASTER PROFILE RULES
 
@@ -40,7 +67,10 @@ ARRANGEMENT RULES FOR CHATGPT
 - For all-day events, use YYYY-MM-DD and set allDay to true.
 - Update meta.lastUpdated every time the schedule changes.
 - Run: node scripts/validate-schedule.mjs
-- Run: node scripts/generate-ics.mjs
+- Run: node scripts/validate-profile.mjs
+- Run: node scripts/test-update-requests.mjs
+- Run: node scripts/validate-pwa.mjs
+- Run: node scripts/generate-ics.mjs data/schedule.json schedule.ics
 - Commit only the intended scheduling changes.
 
 EVENT FORMAT

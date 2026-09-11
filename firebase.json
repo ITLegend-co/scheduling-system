@@ -1,0 +1,60 @@
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ],
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "firebase-hosting",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/mcp",
+        "function": {
+          "functionId": "scheduleMcp",
+          "region": "asia-southeast1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/.well-known/**",
+        "function": {
+          "functionId": "scheduleMcp",
+          "region": "asia-southeast1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/oauth/**",
+        "function": {
+          "functionId": "scheduleMcp",
+          "region": "asia-southeast1",
+          "pinTag": true
+        }
+      },
+      {
+        "source": "/health",
+        "function": {
+          "functionId": "scheduleMcp",
+          "region": "asia-southeast1",
+          "pinTag": true
+        }
+      }
+    ]
+  }
+}

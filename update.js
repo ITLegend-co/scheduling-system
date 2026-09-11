@@ -3,14 +3,20 @@ const FORMAT_NAME = "smart-schedule-update";
 const FORMAT_VERSION = 1;
 const PROFILE_FORMAT_NAME = "smart-schedule-profile";
 const PROFILE_URL = "data/schedule-profile.json";
+const ACTIVE_SUBMISSION_STATUSES = new Set(["submitting", "pending", "processing", "retry"]);
+const SERVER_SUBMISSION_STATUSES = new Set(["pending", "processing", "applied", "failed"]);
+let firebaseClientPromise;
 
 const state = {
   changes: [],
   editingId: null,
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),
-  submittedAt: "",
-  submittedRequestIds: [],
+  submissions: [],
+  submissionWatchers: new Map(),
+  user: null,
+  authReady: false,
+  operatorAuthorized: false,
   profile: null,
 };
 
@@ -34,9 +40,16 @@ const elements = {
   importFile: document.querySelector("#importFile"),
   copyJsonButton: document.querySelector("#copyJsonButton"),
   downloadJsonButton: document.querySelector("#downloadJsonButton"),
+  submitFirebaseButton: document.querySelector("#submitFirebaseButton"),
+  submitFirebaseLabel: document.querySelector("#submitFirebaseLabel"),
   clearDraftButton: document.querySelector("#clearDraftButton"),
   draftStatus: document.querySelector("#draftStatus"),
   toast: document.querySelector("#toast"),
+  submissionAccess: document.querySelector(".submission-access"),
+  submissionStatus: document.querySelector("#submissionStatus"),
+  authHeading: document.querySelector("#authHeading"),
+  authStatus: document.querySelector("#authStatus"),
+  authButton: document.querySelector("#authButton"),
   profileStatus: document.querySelector("#profileStatus"),
   profileSearch: document.querySelector("#profileSearch"),
   profileCount: document.querySelector("#profileCount"),
@@ -53,6 +66,7 @@ bindEvents();
 updateConditionalFields();
 render();
 loadProfile();
+initializeSubmissionAccess();
 
 function bindEvents() {
   elements.form.addEventListener("submit", submitChange);
@@ -71,15 +85,270 @@ function bindEvents() {
   elements.importFile.addEventListener("change", importJson);
   elements.copyJsonButton.addEventListener("click", copyJson);
   elements.downloadJsonButton.addEventListener("click", downloadJson);
+  elements.submitFirebaseButton.addEventListener("click", submitQueuedChanges);
+  elements.authButton.addEventListener("click", toggleAuthentication);
   elements.clearDraftButton.addEventListener("click", clearDraft);
   elements.profileSearch.addEventListener("input", renderProfile);
   elements.copyProfileButton.addEventListener("click", copyProfileJson);
   elements.downloadProfileButton.addEventListener("click", downloadProfileJson);
 }
 
+function loadFirebaseClient() {
+  firebaseClientPromise ||= import("./firebase-client.js");
+  return firebaseClientPromise;
+}
+
+async function initializeSubmissionAccess() {
+  try {
+    const firebase = await loadFirebaseClient();
+    firebase.watchAuth(
+      (user) => handleAuthState(user),
+      (error) => showAuthError(error),
+    );
+  } catch (error) {
+    showAuthError(error);
+  }
+}
+
+async function handleAuthState(user) {
+  stopSubmissionWatchers();
+  state.user = user;
+  state.authReady = true;
+  state.operatorAuthorized = false;
+
+  if (!user) {
+    elements.submissionAccess.classList.remove("submission-access--error");
+    elements.authHeading.textContent = "Sign in to submit";
+    elements.authStatus.textContent = "Use your approved Google account. JSON download remains available as a backup.";
+    elements.authButton.textContent = "Sign in with Google";
+    elements.authButton.disabled = false;
+    render();
+    return;
+  }
+
+  elements.submissionAccess.classList.remove("submission-access--error");
+  elements.authHeading.textContent = `Signed in as ${user.displayName || user.email || "Google user"}`;
+  elements.authStatus.textContent = "Checking schedule submission access…";
+  elements.authButton.textContent = "Sign out";
+  elements.authButton.disabled = false;
+  render();
+
+  try {
+    const firebase = await loadFirebaseClient();
+    const result = await firebase.getScheduleOperatorStatus();
+    if (state.user?.uid !== user.uid) return;
+    state.operatorAuthorized = result.authorized === true;
+    if (state.operatorAuthorized) {
+      elements.authHeading.textContent = `Ready as ${user.displayName || user.email || "schedule operator"}`;
+      elements.authStatus.textContent = "Authenticated submissions are enabled for this account.";
+      elements.submissionAccess.classList.remove("submission-access--error");
+    } else {
+      elements.authHeading.textContent = "Operator approval needed";
+      elements.authStatus.textContent = `Signed in, but this account is not approved yet. Firebase UID: ${result.uid || user.uid}`;
+      elements.submissionAccess.classList.add("submission-access--error");
+    }
+    watchTrackedSubmissions();
+    render();
+  } catch (error) {
+    if (state.user?.uid === user.uid) showAuthError(error, true);
+  }
+}
+
+async function toggleAuthentication() {
+  elements.authButton.disabled = true;
+  try {
+    const firebase = await loadFirebaseClient();
+    if (state.user) {
+      await firebase.signOutUser();
+    } else {
+      await firebase.signInWithGoogle();
+    }
+  } catch (error) {
+    elements.authButton.disabled = false;
+    if (error?.code !== "auth/popup-closed-by-user") showAuthError(error, true);
+  }
+}
+
+function showAuthError(error, keepSignedIn = false) {
+  console.error("Firebase authentication is unavailable.", error);
+  state.authReady = true;
+  state.operatorAuthorized = false;
+  elements.submissionAccess.classList.add("submission-access--error");
+  elements.authHeading.textContent = keepSignedIn && state.user ? "Could not verify operator access" : "Secure submission unavailable";
+  elements.authStatus.textContent = friendlyFirebaseError(error);
+  elements.authButton.textContent = state.user ? "Sign out" : "Try sign-in again";
+  elements.authButton.disabled = false;
+  render();
+}
+
+async function submitQueuedChanges() {
+  if (!state.user) {
+    await toggleAuthentication();
+    return;
+  }
+  if (!state.operatorAuthorized) {
+    showToast(`Approve Firebase UID ${state.user.uid} before submitting.`, true);
+    return;
+  }
+
+  const retry = state.submissions.find((submission) =>
+    submission.status === "retry" && submission.ownerUid === state.user.uid && submission.payload,
+  );
+  if (retry) {
+    await sendSubmission(retry);
+    return;
+  }
+
+  const changes = state.changes.filter((change) => !isRequestLocked(change.requestId));
+  if (!changes.length) {
+    showToast(state.changes.length ? "All changes are already submitted" : "Add at least one change first", true);
+    return;
+  }
+
+  state.updatedAt = new Date().toISOString();
+  const submission = {
+    submissionId: createId(),
+    ownerUid: state.user.uid,
+    requestIds: changes.map((change) => change.requestId),
+    submittedAt: new Date().toISOString(),
+    status: "submitting",
+    payload: removeEmpty(buildExport(changes)),
+    error: "",
+  };
+  state.submissions.unshift(submission);
+  state.submissions = state.submissions.slice(0, 12);
+  saveDraft();
+  render();
+  await sendSubmission(submission);
+}
+
+async function sendSubmission(submission) {
+  submission.status = "submitting";
+  submission.error = "";
+  saveDraft();
+  render();
+
+  try {
+    const firebase = await loadFirebaseClient();
+    const result = await firebase.submitScheduleUpdate(submission.submissionId, submission.payload);
+    submission.status = SERVER_SUBMISSION_STATUSES.has(result.status) ? result.status : "pending";
+    submission.submittedAt = submission.submittedAt || new Date().toISOString();
+    submission.error = "";
+    attachSubmissionWatcher(submission);
+    saveDraft();
+    render();
+    showToast("Update submitted securely · draft kept until deployment is confirmed");
+  } catch (error) {
+    console.error("Schedule update submission failed.", error);
+    submission.status = "retry";
+    submission.error = friendlyFirebaseError(error);
+    saveDraft();
+    render();
+    showToast(`${submission.error} Retry uses the same request ID.`, true);
+  }
+}
+
+function watchTrackedSubmissions() {
+  state.submissions
+    .filter((submission) => submission.ownerUid === state.user?.uid && new Set(["pending", "processing"]).has(submission.status))
+    .forEach(attachSubmissionWatcher);
+}
+
+async function attachSubmissionWatcher(submission) {
+  if (!state.user || submission.ownerUid !== state.user.uid || state.submissionWatchers.has(submission.submissionId)) return;
+  try {
+    const firebase = await loadFirebaseClient();
+    const unsubscribe = firebase.watchUpdateRequest(
+      submission.submissionId,
+      (request) => handleSubmissionStatus(submission.submissionId, request),
+      (error) => {
+        if (state.user) console.warn(`Status listener stopped for ${submission.submissionId}.`, error);
+      },
+    );
+    state.submissionWatchers.set(submission.submissionId, unsubscribe);
+  } catch (error) {
+    console.warn(`Could not watch submission ${submission.submissionId}.`, error);
+  }
+}
+
+function handleSubmissionStatus(submissionId, request) {
+  const submission = state.submissions.find((item) => item.submissionId === submissionId);
+  if (!submission || !SERVER_SUBMISSION_STATUSES.has(request?.status)) return;
+
+  const serverRequestIds = Object.keys(request.requestIds || {});
+  if (!sameStringSet(serverRequestIds, submission.requestIds)) {
+    submission.status = "failed";
+    submission.error = "The server receipt did not match this local draft, so nothing was cleared.";
+    stopSubmissionWatcher(submissionId);
+    saveDraft();
+    render();
+    return;
+  }
+
+  submission.status = request.status;
+  submission.error = request.errorMessage || "";
+  submission.appliedAt = request.appliedAt || 0;
+  submission.appliedCommit = request.appliedCommit || "";
+
+  if (request.status === "applied") {
+    applyConfirmedSubmission(submission);
+    return;
+  }
+  if (request.status === "failed") stopSubmissionWatcher(submissionId);
+  saveDraft();
+  render();
+}
+
+function applyConfirmedSubmission(submission) {
+  const appliedIds = new Set(submission.requestIds);
+  const before = state.changes.length;
+  state.changes = state.changes.filter((change) => !appliedIds.has(change.requestId));
+  delete submission.payload;
+  submission.error = "";
+  stopSubmissionWatcher(submission.submissionId);
+
+  if (state.editingId && appliedIds.has(state.editingId)) resetForm(false);
+  if (!state.changes.length) {
+    state.createdAt = new Date().toISOString();
+    state.updatedAt = state.createdAt;
+    elements.requestNote.value = "";
+  }
+  saveDraft();
+  render();
+  if (before !== state.changes.length) showToast("Deployed changes confirmed and cleared from this browser");
+}
+
+function stopSubmissionWatcher(submissionId) {
+  const unsubscribe = state.submissionWatchers.get(submissionId);
+  if (unsubscribe) unsubscribe();
+  state.submissionWatchers.delete(submissionId);
+}
+
+function stopSubmissionWatchers() {
+  [...state.submissionWatchers.keys()].forEach(stopSubmissionWatcher);
+}
+
+function isRequestLocked(requestId) {
+  return state.submissions.some((submission) =>
+    ACTIVE_SUBMISSION_STATUSES.has(submission.status) && submission.requestIds.includes(requestId),
+  );
+}
+
+function requestStatus(requestId) {
+  return state.submissions.find((submission) =>
+    ACTIVE_SUBMISSION_STATUSES.has(submission.status) && submission.requestIds.includes(requestId),
+  )?.status || "";
+}
+
+function sameStringSet(first, second) {
+  if (first.length !== second.length) return false;
+  const expected = new Set(second);
+  return first.every((value) => expected.has(value));
+}
+
 async function loadProfile() {
   try {
-    const firebase = await import("./firebase-client.js");
+    const firebase = await loadFirebaseClient();
     const profile = await firebase.readProfile();
     applyProfile(profile, "Firebase");
 
@@ -114,7 +383,6 @@ function applyProfile(profile, sourceLabel) {
     throw new Error("The master profile JSON has an unsupported format.");
   }
 
-  reconcileAppliedChanges(profile.updatedAt);
   state.profile = profile;
   elements.profileStatus.classList.remove("profile-status--error");
   elements.profileStatus.textContent = `${sourceLabel} · Updated ${formatProfileTimestamp(profile.updatedAt)}`;
@@ -156,7 +424,20 @@ function renderProfile() {
   if (!state.profile) return;
   const query = elements.profileSearch.value.trim().toLocaleLowerCase();
   const entries = state.profile.entries.filter((entry) => !query || JSON.stringify(entry).toLocaleLowerCase().includes(query));
-  const sectionOrder = ["Work profile", "Tasks", "Ad hoc tasks", "Meetings", "Personal"];
+  const preferredSections = [
+    "Work profile",
+    "Tasks",
+    "Ad hoc tasks",
+    "Meetings",
+    "IT Recurring Tasks",
+    "Subscription Renewal Reminders",
+    "Personal",
+  ];
+  const availableSections = [...new Set(entries.map((entry) => entry.section || "Other"))];
+  const sectionOrder = [
+    ...preferredSections.filter((name) => availableSections.includes(name)),
+    ...availableSections.filter((name) => !preferredSections.includes(name)),
+  ];
   const sections = sectionOrder
     .map((name) => [name, entries.filter((entry) => entry.section === name)])
     .filter(([, items]) => items.length);
@@ -255,7 +536,7 @@ function prefillFromProfile(entry) {
     title: entry.title,
     existingEventId: entry.id || "",
   };
-  const matchingQueuedChanges = state.changes.filter((change) => sameUpdateTarget(change, target));
+  const matchingQueuedChanges = state.changes.filter((change) => sameUpdateTarget(change, target) && !isRequestLocked(change.requestId));
   const queuedChange = matchingQueuedChanges[matchingQueuedChanges.length - 1] || null;
 
   resetForm(false);
@@ -279,7 +560,6 @@ function prefillFromProfile(entry) {
 
   if (queuedChange) {
     replaceMatchingUpdates(readForm(), queuedChange.requestId);
-    markChangeAsUnsubmitted(queuedChange.requestId);
     state.updatedAt = new Date().toISOString();
     render();
   }
@@ -343,6 +623,10 @@ function submitChange(event) {
     showFormError(error.message, error.field);
     return;
   }
+  if (state.editingId && isRequestLocked(state.editingId)) {
+    showFormError("This change is already submitted and cannot be edited until processing finishes.", "title");
+    return;
+  }
 
   if (state.editingId) {
     const index = state.changes.findIndex((item) => item.requestId === state.editingId);
@@ -355,10 +639,9 @@ function submitChange(event) {
         state.changes[index] = replacement;
       }
     }
-    markChangeAsUnsubmitted(state.editingId);
     showToast(mergedCount > 1 ? "Change updated and duplicate task updates merged" : "Change updated");
   } else {
-    const existingIndex = state.changes.findIndex((item) => sameUpdateTarget(item, change));
+    const existingIndex = state.changes.findIndex((item) => sameUpdateTarget(item, change) && !isRequestLocked(item.requestId));
     if (existingIndex !== -1) {
       const requestId = state.changes[existingIndex].requestId;
       const mergedCount = replaceMatchingUpdates({ ...change, requestId }, requestId);
@@ -418,7 +701,8 @@ function validateChange(change) {
   }
   if (change.referenceUrl) {
     try {
-      new URL(change.referenceUrl);
+      const url = new URL(change.referenceUrl);
+      if (!new Set(["http:", "https:"]).has(url.protocol)) throw new Error("Unsupported protocol");
     } catch {
       return { message: "Enter a complete reference link beginning with http:// or https://.", field: "referenceUrl" };
     }
@@ -447,7 +731,7 @@ function replaceMatchingUpdates(change, requestId = change.requestId) {
   if (change?.action !== "update") return 0;
 
   const matchingIndexes = state.changes
-    .map((item, index) => sameUpdateTarget(item, change) ? index : -1)
+    .map((item, index) => sameUpdateTarget(item, change) && (!isRequestLocked(item.requestId) || item.requestId === requestId) ? index : -1)
     .filter((index) => index !== -1);
   if (!matchingIndexes.length) return 0;
 
@@ -466,15 +750,107 @@ function updateConditionalFields() {
 function render() {
   renderChanges();
   renderPreview();
+  renderSubmissionStatus();
+  updateSubmitButton();
   elements.changeCount.textContent = String(state.changes.length);
   elements.queueEmpty.hidden = state.changes.length > 0;
   elements.changeList.hidden = state.changes.length === 0;
+}
+
+function updateSubmitButton() {
+  const retry = state.submissions.some((submission) =>
+    submission.status === "retry" && submission.ownerUid === state.user?.uid && submission.payload,
+  );
+  const busy = state.submissions.some((submission) =>
+    submission.status === "submitting" && submission.ownerUid === state.user?.uid,
+  );
+  const readyCount = state.changes.filter((change) => !isRequestLocked(change.requestId)).length;
+
+  let label = readyCount === 1 ? "Submit 1 change" : `Submit ${readyCount} changes`;
+  if (!state.authReady) label = "Checking sign-in…";
+  else if (!state.user) label = "Sign in to submit";
+  else if (!state.operatorAuthorized) label = "Operator approval required";
+  else if (busy) label = "Submitting…";
+  else if (retry) label = "Retry submission";
+  else if (!readyCount) label = "Nothing new to submit";
+
+  elements.submitFirebaseLabel.textContent = label;
+  elements.submitFirebaseButton.disabled = !state.authReady
+    || !state.user
+    || !state.operatorAuthorized
+    || busy
+    || (!retry && !readyCount);
+}
+
+function renderSubmissionStatus() {
+  const readyCount = state.changes.filter((change) => !isRequestLocked(change.requestId)).length;
+  const lockedCount = state.changes.length - readyCount;
+  const submissions = state.submissions.slice(0, 6);
+  elements.submissionStatus.hidden = !state.changes.length && !submissions.length;
+  if (elements.submissionStatus.hidden) {
+    elements.submissionStatus.replaceChildren();
+    return;
+  }
+
+  const summary = document.createElement("p");
+  summary.className = "submission-status__summary";
+  const parts = [];
+  if (readyCount) parts.push(`${readyCount} change${readyCount === 1 ? "" : "s"} ready to submit`);
+  if (lockedCount) parts.push(`${lockedCount} awaiting deployment confirmation`);
+  if (!parts.length) parts.push("No unsent changes in this browser");
+  summary.textContent = parts.join(" · ");
+
+  const list = document.createElement("div");
+  list.className = "submission-status__list";
+  submissions.forEach((submission) => {
+    const item = document.createElement("div");
+    item.className = "submission-status__item";
+    if (submission.error) item.title = submission.error;
+
+    const detail = document.createElement("span");
+    const count = submission.requestIds.length;
+    detail.textContent = `${submission.submissionId.slice(0, 8)} · ${count} change${count === 1 ? "" : "s"} · ${formatSubmissionTime(submission.submittedAt)}`;
+
+    const badge = document.createElement("span");
+    badge.className = `request-status request-status--${submission.status}`;
+    badge.textContent = submissionStatusLabel(submission.status);
+    item.append(detail, badge);
+    list.append(item);
+  });
+
+  elements.submissionStatus.replaceChildren(summary, list);
+}
+
+function submissionStatusLabel(status) {
+  return ({
+    submitting: "Sending",
+    pending: "Pending",
+    processing: "Processing",
+    applied: "Applied",
+    failed: "Failed",
+    retry: "Retry needed",
+  })[status] || "Unknown";
+}
+
+function formatSubmissionTime(value) {
+  const date = new Date(value || 0);
+  if (Number.isNaN(date.getTime())) return "unknown time";
+  return new Intl.DateTimeFormat("en-MY", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "Asia/Kuala_Lumpur",
+  }).format(date);
 }
 
 function renderChanges() {
   const cards = state.changes.map((change) => {
     const card = document.createElement("article");
     card.className = "change-card";
+    const status = requestStatus(change.requestId);
+    const locked = Boolean(status);
+    if (locked) card.classList.add("change-card--submitted");
 
     const top = document.createElement("div");
     top.className = "change-card__top";
@@ -482,6 +858,7 @@ function renderChanges() {
     badges.className = "change-card__badges";
     badges.append(createBadge(change.action, `change-badge--${change.action}`));
     badges.append(createBadge(change.type));
+    if (status) badges.append(createBadge(status, `request-status request-status--${status}`));
     top.append(badges);
 
     const heading = document.createElement("h3");
@@ -503,9 +880,9 @@ function renderChanges() {
     const actions = document.createElement("div");
     actions.className = "change-card__actions";
     actions.append(
-      cardAction("Edit", () => editChange(change.requestId)),
+      cardAction("Edit", () => editChange(change.requestId), "", locked),
       cardAction("Duplicate", () => duplicateChange(change.requestId)),
-      cardAction("Delete", () => deleteChange(change.requestId), "danger"),
+      cardAction("Delete", () => deleteChange(change.requestId), "danger", locked),
     );
     card.append(actions);
     return card;
@@ -521,11 +898,13 @@ function createBadge(label, modifier = "") {
   return badge;
 }
 
-function cardAction(label, handler, className = "") {
+function cardAction(label, handler, className = "", disabled = false) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = className;
   button.textContent = label;
+  button.disabled = disabled;
+  if (disabled) button.title = "Submitted changes stay locked until deployment is confirmed.";
   button.addEventListener("click", handler);
   return button;
 }
@@ -552,6 +931,10 @@ function changeSummary(change) {
 function editChange(requestId) {
   const change = state.changes.find((item) => item.requestId === requestId);
   if (!change) return;
+  if (isRequestLocked(requestId)) {
+    showToast("This submitted change is locked until processing finishes", true);
+    return;
+  }
 
   state.editingId = requestId;
   setFormValue("action", change.action);
@@ -591,9 +974,12 @@ function duplicateChange(requestId) {
 
 function deleteChange(requestId) {
   const change = state.changes.find((item) => item.requestId === requestId);
+  if (change && isRequestLocked(requestId)) {
+    showToast("This submitted change cannot be deleted before deployment is confirmed", true);
+    return;
+  }
   if (!change || !window.confirm(`Delete “${change.title}” from this update file?`)) return;
   state.changes = state.changes.filter((item) => item.requestId !== requestId);
-  markChangeAsUnsubmitted(requestId);
   if (state.editingId === requestId) resetForm(false);
   state.updatedAt = new Date().toISOString();
   saveDraft();
@@ -617,7 +1003,7 @@ function updatePreferences() {
   renderPreview();
 }
 
-function buildExport() {
+function buildExport(changes = state.changes) {
   return {
     $schema: "https://itlegend-co.github.io/scheduling-system/schedule-update.schema.json",
     format: FORMAT_NAME,
@@ -632,7 +1018,7 @@ function buildExport() {
       createDeadlineWhenMissing: elements.createDeadline.checked,
     },
     note: elements.requestNote.value.trim(),
-    changes: state.changes.map(cleanChange),
+    changes: changes.map(cleanChange),
   };
 }
 
@@ -670,10 +1056,9 @@ function downloadJson() {
   const content = JSON.stringify(removeEmpty(buildExport()), null, 2) + "\n";
   const filename = `schedule-update-${localDateKey(new Date())}.json`;
   downloadBlob(filename, content, "application/json;charset=utf-8");
-  markChangesAsSubmitted();
   saveDraft();
   renderPreview();
-  showToast("JSON downloaded · this list will clear after GPT applies it");
+  showToast("Backup JSON downloaded · the local draft was kept");
 }
 
 async function copyJson() {
@@ -692,60 +1077,9 @@ async function copyJson() {
     document.execCommand("copy");
     textarea.remove();
   }
-  markChangesAsSubmitted();
   saveDraft();
   renderPreview();
-  showToast("JSON copied · this list will clear after GPT applies it");
-}
-
-function markChangesAsSubmitted() {
-  state.submittedAt = state.updatedAt;
-  state.submittedRequestIds = state.changes.map((change) => change.requestId);
-}
-
-function markChangeAsUnsubmitted(requestId) {
-  state.submittedRequestIds = state.submittedRequestIds.filter((id) => id !== requestId);
-  if (!state.submittedRequestIds.length) state.submittedAt = "";
-}
-
-function reconcileAppliedChanges(profileUpdatedAt) {
-  if (!state.changes.length) return;
-
-  const appliedTime = Date.parse(profileUpdatedAt || "");
-  if (!Number.isFinite(appliedTime)) return;
-
-  const submittedTime = Date.parse(state.submittedAt || "");
-  if (state.submittedRequestIds.length && Number.isFinite(submittedTime)) {
-    if (appliedTime <= submittedTime) return;
-
-    const appliedRequestIds = new Set(state.submittedRequestIds);
-    state.changes = state.changes.filter((change) => !appliedRequestIds.has(change.requestId));
-    state.submittedAt = "";
-    state.submittedRequestIds = [];
-    finishAppliedReconciliation();
-    return;
-  }
-
-  // Drafts created before submission tracking was added can still be cleared
-  // when the published profile is newer than the draft that GPT processed.
-  const draftTime = Date.parse(state.updatedAt || "");
-  if (!Number.isFinite(draftTime) || appliedTime <= draftTime) return;
-  state.changes = [];
-  finishAppliedReconciliation();
-}
-
-function finishAppliedReconciliation() {
-  if (state.editingId && !state.changes.some((change) => change.requestId === state.editingId)) {
-    resetForm(false);
-  }
-  if (!state.changes.length) {
-    state.createdAt = new Date().toISOString();
-    state.updatedAt = state.createdAt;
-    elements.requestNote.value = "";
-  }
-  saveDraft();
-  render();
-  showToast("GPT-applied changes cleared from the list");
+  showToast("JSON copied as a backup · the local draft was kept");
 }
 
 async function importJson(event) {
@@ -762,8 +1096,8 @@ async function importJson(event) {
 
     state.changes = imported.changes.map(normalizeImportedChange);
     state.editingId = null;
-    state.submittedAt = "";
-    state.submittedRequestIds = [];
+    stopSubmissionWatchers();
+    state.submissions = [];
     state.createdAt = imported.createdAt || new Date().toISOString();
     state.updatedAt = new Date().toISOString();
     elements.autoSchedule.checked = imported.instructions?.autoScheduleMissingTimes !== false;
@@ -804,15 +1138,44 @@ function normalizeImportedChange(change) {
   };
 }
 
+function normalizeSubmission(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  if (!/^[A-Za-z0-9_-]{1,180}$/.test(value.submissionId || "")) return null;
+  if (!/^[A-Za-z0-9_-]{1,128}$/.test(value.ownerUid || "")) return null;
+  if (!Array.isArray(value.requestIds) || !value.requestIds.length) return null;
+  if (value.requestIds.some((id) => !/^[A-Za-z0-9_-]{1,180}$/.test(id || ""))) return null;
+
+  const allowed = new Set(["submitting", "pending", "processing", "applied", "failed", "retry"]);
+  let status = allowed.has(value.status) ? value.status : "retry";
+  if (status === "submitting") status = "retry";
+  if (status === "retry" && (!value.payload || typeof value.payload !== "object")) status = "failed";
+
+  return {
+    submissionId: value.submissionId,
+    ownerUid: value.ownerUid,
+    requestIds: [...new Set(value.requestIds)],
+    submittedAt: value.submittedAt || new Date().toISOString(),
+    status,
+    payload: value.payload,
+    error: String(value.error || ""),
+    appliedAt: Number(value.appliedAt || 0),
+    appliedCommit: String(value.appliedCommit || ""),
+  };
+}
+
 function clearDraft() {
-  if (!window.confirm("Clear all changes and remove the locally saved draft?")) return;
+  const hasActiveSubmission = state.submissions.some((submission) => ACTIVE_SUBMISSION_STATUSES.has(submission.status));
+  const warning = hasActiveSubmission
+    ? "Some changes are still submitted. Clear the local copy anyway? Firebase processing will continue."
+    : "Clear all changes and remove the locally saved draft?";
+  if (!window.confirm(warning)) return;
+  stopSubmissionWatchers();
   localStorage.removeItem(STORAGE_KEY);
   state.changes = [];
   state.editingId = null;
   state.createdAt = new Date().toISOString();
   state.updatedAt = state.createdAt;
-  state.submittedAt = "";
-  state.submittedRequestIds = [];
+  state.submissions = [];
   elements.autoSchedule.checked = true;
   elements.createDeadline.checked = true;
   elements.requestNote.value = "";
@@ -827,8 +1190,7 @@ function saveDraft() {
     editingId: state.editingId,
     createdAt: state.createdAt,
     updatedAt: state.updatedAt,
-    submittedAt: state.submittedAt,
-    submittedRequestIds: state.submittedRequestIds,
+    submissions: state.submissions.slice(0, 12),
     autoSchedule: elements.autoSchedule.checked,
     createDeadline: elements.createDeadline.checked,
     requestNote: elements.requestNote.value,
@@ -851,8 +1213,7 @@ function loadDraft() {
     state.editingId = draft.editingId || null;
     state.createdAt = draft.createdAt || state.createdAt;
     state.updatedAt = draft.updatedAt || state.updatedAt;
-    state.submittedAt = draft.submittedAt || "";
-    state.submittedRequestIds = Array.isArray(draft.submittedRequestIds) ? draft.submittedRequestIds : [];
+    state.submissions = Array.isArray(draft.submissions) ? draft.submissions.map(normalizeSubmission).filter(Boolean) : [];
     elements.autoSchedule.checked = draft.autoSchedule !== false;
     elements.createDeadline.checked = draft.createDeadline !== false;
     elements.requestNote.value = draft.requestNote || "";
@@ -883,6 +1244,22 @@ function showFormError(message, fieldId) {
     field.setAttribute("aria-invalid", "true");
     field.focus();
   }
+}
+
+function friendlyFirebaseError(error) {
+  const code = String(error?.code || "").replace(/^functions\//, "");
+  const messages = {
+    "unauthenticated": "Sign in with Google first.",
+    "permission-denied": "This Google account is not approved for schedule submissions.",
+    "not-found": "The secure submission function has not been deployed yet.",
+    "unavailable": "Firebase is temporarily unavailable.",
+    "deadline-exceeded": "Firebase did not respond in time.",
+    "already-exists": "This request ID is already attached to different content.",
+    "invalid-argument": error?.message || "Firebase rejected an invalid update request.",
+    "auth/network-request-failed": "Google sign-in could not reach Firebase.",
+    "auth/unauthorized-domain": "This website domain is not authorized in Firebase Authentication.",
+  };
+  return messages[code] || error?.message || "The secure Firebase request failed.";
 }
 
 function clearFormError() {
@@ -928,7 +1305,11 @@ function removeEmpty(value) {
 
 function createId() {
   if (crypto.randomUUID) return crypto.randomUUID();
-  return `change-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = [...bytes].map((value) => value.toString(16).padStart(2, "0")).join("");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
 
 function structuredCloneSafe(value) {

@@ -914,14 +914,14 @@
     {
       "id": "task-finish-kcc-judging-system-2026-09-10",
       "title": "Finish KCC Judging System",
-      "start": "2026-09-10T13:00:00+08:00",
-      "end": "2026-09-10T16:00:00+08:00",
+      "start": "2026-09-14T10:15:00+08:00",
+      "end": "2026-09-14T12:15:00+08:00",
       "allDay": false,
       "category": "Work",
       "priority": "normal",
-      "status": "confirmed",
+      "status": "planned",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "description": "Finish the KCC judging system with Vince. Complete the remaining functions and prepare the system for final testing before 15 September 2026.",
+      "description": "Continue and finish the remaining KCC judging-system functions with Vince on the next working day. Prepare the system for the final testing and fixes scheduled later that day, and confirm readiness before 15 September 2026.",
       "url": "https://github.com/ITLegend-co/KCC_assessment",
       "allowOverlap": false
     },
@@ -962,19 +962,6 @@
       "start": "2026-09-11T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
-    },
-    {
-      "id": "task-kcc-cimb-sign-and-collect-qr-2026-09-01",
-      "title": "KCC CIMB Follow-Up Discussion",
-      "start": "2026-09-11T10:30:00+08:00",
-      "end": "2026-09-11T11:30:00+08:00",
-      "allDay": false,
-      "category": "Work",
-      "priority": "normal",
-      "status": "planned",
-      "location": "CIMB",
-      "description": "Discuss the KCC CIMB account and QR arrangements with the KCC President, Mountain Torq Accounts, and the auditor.",
-      "allowOverlap": false
     },
     {
       "id": "meeting-odoo-weekly-feedback-2026-09-11",
@@ -4606,20 +4593,33 @@
     {
       "id": "task-make-kcc-ledger-2026-09-11",
       "title": "Make a Ledger for KCC",
-      "start": "2026-09-11T14:15:00+08:00",
-      "end": "2026-09-11T15:45:00+08:00",
+      "start": "2026-09-14T15:15:00+08:00",
+      "end": "2026-09-14T16:45:00+08:00",
       "allDay": false,
       "category": "Work",
       "priority": "normal",
       "status": "planned",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "description": "Create a soft-copy ledger for KCC.",
+      "description": "Continue and finish the soft-copy ledger for KCC. The first work session was not completed, so use this new time to finish it.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-ask-approval-alarm-system-2026-09-15",
+      "title": "Ask for Approval for Alarm System",
+      "start": "2026-09-15T09:15:00+08:00",
+      "end": "2026-09-15T10:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "description": "Request approval to renew the Alarm System subscription before its expiry on 3 October 2026. Confirm the approval, budget, responsible person, and next renewal action.",
       "allowOverlap": false
     }
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-10T08:31:42.745+08:00",
+    "lastUpdated": "2026-09-11T17:50:32+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
@@ -4638,5 +4638,5 @@
       "start": "08:30"
     }
   },
-  "updatedAt": "2026-09-08T11:10:23.983+08:00"
+  "updatedAt": "2026-09-11T17:50:32+08:00"
 }

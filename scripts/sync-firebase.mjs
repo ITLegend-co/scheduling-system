@@ -73,3 +73,4 @@ function toFirebaseDocument(value, path = "root") {
     return [firebaseKey, toFirebaseDocument(item, `${path}.${firebaseKey}`)];
   }));
 }
+

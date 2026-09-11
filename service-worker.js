@@ -1,15 +1,18 @@
-const CACHE_VERSION = "2026-09-08-1";
+const CACHE_VERSION = "2026-09-11-1";
 const STATIC_CACHE = `smart-schedule-static-${CACHE_VERSION}`;
 const DATA_CACHE = `smart-schedule-data-${CACHE_VERSION}`;
 const APP_SHELL = [
   "./",
   "./index.html",
   "./update.html",
+  "./connector-auth.html",
   "./offline.html",
   "./styles.css",
   "./update.css",
+  "./connector-auth.css",
   "./app.js",
   "./update.js",
+  "./connector-auth.js",
   "./firebase-client.js",
   "./pwa.js",
   "./manifest.webmanifest",

@@ -93,3 +93,4 @@ function foldLine(line) {
   segments.push(`${first ? "" : " "}${remaining}`);
   return segments;
 }
+

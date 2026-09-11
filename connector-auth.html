@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="Approve secure Smart Schedule access for ChatGPT or Codex." />
+    <title>Connect Smart Schedule</title>
+    <link rel="icon" href="icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="connector-auth.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow--one" aria-hidden="true"></div>
+    <div class="background-glow background-glow--two" aria-hidden="true"></div>
+
+    <main class="connector-shell">
+      <section class="panel connector-panel" aria-labelledby="connectorTitle">
+        <span class="connector-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.9 8.2 7 10 4.1-1.8 7-5.2 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-5" /></svg>
+        </span>
+        <p class="eyebrow">SMART SCHEDULE CONNECTOR</p>
+        <h1 id="connectorTitle">Allow secure schedule access</h1>
+        <p class="connector-intro">
+          ChatGPT or Codex will be able to read and claim your pending update requests. It cannot mark a request applied; that happens only after the schedule is deployed successfully.
+        </p>
+
+        <div class="connector-permissions" aria-label="Requested permissions">
+          <div><strong>Read pending updates</strong><span>Only requests submitted by this Google account.</span></div>
+          <div><strong>Claim one for processing</strong><span>Prevents the same request from being handled twice.</span></div>
+          <div><strong>No direct schedule deployment</strong><span>GitHub validation and deployment remain required.</span></div>
+        </div>
+
+        <div class="connector-account" id="accountPanel">
+          <strong id="accountHeading">Checking Google sign-in…</strong>
+          <p id="accountStatus" role="status">Connecting securely to Firebase.</p>
+        </div>
+
+        <div class="connector-actions">
+          <button class="button button--secondary" id="signInButton" type="button" disabled>Sign in with Google</button>
+          <button class="button button--primary" id="approveButton" type="button" disabled>Allow access</button>
+          <button class="button button--ghost" id="denyButton" type="button">Cancel</button>
+        </div>
+        <p class="connector-error" id="connectorError" role="alert" hidden></p>
+      </section>
+    </main>
+
+    <script type="module" src="connector-auth.js"></script>
+  </body>
+</html>

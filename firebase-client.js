@@ -1,10 +1,24 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 import {
+  GoogleAuthProvider,
+  browserLocalPersistence,
+  getAuth,
+  onAuthStateChanged,
+  setPersistence,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+import {
   get,
   getDatabase,
   onValue,
   ref,
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+import {
+  getFunctions,
+  httpsCallable,
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-functions.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBh54Rf1LfxpLTIpaqRBbVCbk-98yu3QCY",
@@ -18,10 +32,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const database = getDatabase(app);
+const functions = getFunctions(app, "asia-southeast1");
+const authReady = setPersistence(auth, browserLocalPersistence).catch((error) => {
+  console.warn("Firebase Auth persistence could not be enabled.", error);
+});
 const paths = {
   schedule: "smartSchedule/schedule",
   profile: "smartSchedule/profile",
+  updateRequests: "smartSchedule/updateRequests",
 };
 
 export async function readSchedule() {
@@ -49,6 +69,52 @@ export function watchProfile(onData, onError) {
   );
 }
 
+export function watchAuth(onUser, onError) {
+  return onAuthStateChanged(auth, onUser, onError);
+}
+
+export async function signInWithGoogle() {
+  await authReady;
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: "select_account" });
+  try {
+    return await signInWithPopup(auth, provider);
+  } catch (error) {
+    if (new Set(["auth/popup-blocked", "auth/operation-not-supported-in-this-environment"]).has(error?.code)) {
+      await signInWithRedirect(auth, provider);
+      return null;
+    }
+    throw error;
+  }
+}
+
+export async function signOutUser() {
+  await signOut(auth);
+}
+
+export async function getScheduleOperatorStatus() {
+  const call = httpsCallable(functions, "getScheduleOperatorStatus");
+  const response = await call({});
+  return response.data;
+}
+
+export async function submitScheduleUpdate(submissionId, payload) {
+  const call = httpsCallable(functions, "submitScheduleUpdate", { timeout: 30_000 });
+  const response = await call({ submissionId, payload });
+  return response.data;
+}
+
+export function watchUpdateRequest(submissionId, onData, onError) {
+  if (!/^[A-Za-z0-9_-]{1,180}$/.test(submissionId || "")) throw new Error("Invalid submission ID.");
+  return onValue(
+    ref(database, `${paths.updateRequests}/${submissionId}`),
+    (snapshot) => {
+      if (snapshot.exists()) onData(restoreDocumentMetadata(snapshot.val()));
+    },
+    onError,
+  );
+}
+
 async function readRequired(path, isValid, label) {
   const snapshot = await get(ref(database, path));
   if (!snapshot.exists()) throw new Error(`Firebase does not contain a ${label} yet.`);
@@ -70,9 +136,9 @@ function watchRequired(path, isValid, onData, onError) {
 }
 
 function restoreDocumentMetadata(value) {
-  if (!value || typeof value !== "object" || Array.isArray(value) || !value.schemaUrl || value["$schema"]) {
-    return value;
-  }
-  const { schemaUrl, ...document } = value;
-  return { "$schema": schemaUrl, ...document };
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const restored = Object.fromEntries(Object.entries(value).map(([key, item]) => [key, restoreDocumentMetadata(item)]));
+  if (!restored.schemaUrl || restored.$schema) return restored;
+  const { schemaUrl, ...document } = restored;
+  return { $schema: schemaUrl, ...document };
 }

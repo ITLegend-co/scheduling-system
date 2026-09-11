@@ -114,19 +114,6 @@
       "type": "task"
     },
     {
-      "date": "2026-09-11",
-      "deadline": "2026-09-11",
-      "details": "Discuss the KCC CIMB account and QR arrangements with the KCC President, Mountain Torq Accounts, and the auditor.",
-      "endTime": "11:30",
-      "id": "kcc-cimb-sign-and-collect-qr",
-      "location": "CIMB",
-      "section": "Tasks",
-      "startTime": "10:30",
-      "status": "planned",
-      "title": "KCC CIMB Follow-Up Discussion",
-      "type": "task"
-    },
-    {
       "date": "2026-09-09",
       "details": "Review the presentation repository and create a preparation reminder one day before the meeting.",
       "id": "hod-meeting-2026-09-09",
@@ -731,13 +718,13 @@
       "type": "task",
       "title": "Finish and Test KCC Judging System",
       "status": "in-progress",
-      "date": "2026-09-10",
+      "date": "2026-09-14",
       "deadline": "2026-09-15",
-      "startTime": "13:00",
-      "endTime": "16:00",
+      "startTime": "10:15",
+      "endTime": "12:15",
       "person": "Vince",
       "referenceUrl": "https://github.com/ITLegend-co/KCC_assessment",
-      "details": "Finish the remaining judging-system functions on 10 September and run final testing and fixes on 14 September. Confirm that the system is ready before 15 September 2026."
+      "details": "Continue and finish the remaining judging-system functions with Vince on the next working day, 14 September 2026. Run the separately scheduled final testing and fixes later that day, and confirm that the system is ready before 15 September 2026."
     },
     {
       "id": "teach-kcc-judging-system",
@@ -771,14 +758,28 @@
       "section": "Tasks",
       "type": "task",
       "title": "Make a Ledger for KCC",
-      "status": "planned",
-      "date": "2026-09-11",
-      "deadline": "2026-09-11",
-      "startTime": "14:15",
-      "endTime": "15:45",
+      "status": "in-progress",
+      "date": "2026-09-14",
+      "deadline": "2026-09-14",
+      "startTime": "15:15",
+      "endTime": "16:45",
       "priority": "normal",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "details": "Create a soft-copy ledger for KCC."
+      "details": "Continue and finish the soft-copy ledger for KCC. The first work session was not completed, so use this new time to finish it."
+    },
+    {
+      "id": "ask-approval-alarm-system",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Ask for Approval for Alarm System",
+      "status": "planned",
+      "date": "2026-09-15",
+      "deadline": "2026-09-15",
+      "startTime": "09:15",
+      "endTime": "10:15",
+      "priority": "normal",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "details": "Request approval to renew the Alarm System subscription before its expiry on 3 October 2026. Confirm the approval, budget, responsible person, and next renewal action."
     }
   ],
   "format": "smart-schedule-profile",
@@ -803,6 +804,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-10T08:31:42.745+08:00",
+  "updatedAt": "2026-09-11T17:50:32+08:00",
   "version": 1
 }

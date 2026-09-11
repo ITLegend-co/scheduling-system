@@ -1,3 +1,9 @@
 _site/
+.sites-runtime/
+functions/node_modules/
+node_modules/
+firebase-debug.log
+firebase-debug.*.log
+gha-creds-*.json
 .DS_Store
 Thumbs.db

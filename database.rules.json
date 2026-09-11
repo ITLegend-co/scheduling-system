@@ -14,6 +14,27 @@
       "meta": {
         ".read": true,
         ".write": false
+      },
+      "operators": {
+        ".read": false,
+        ".write": false
+      },
+      "connectorAuth": {
+        ".read": false,
+        ".write": false
+      },
+      "updateRequests": {
+        ".read": false,
+        ".write": false,
+        ".indexOn": [
+          "status",
+          "ownerStatus",
+          "createdAt"
+        ],
+        "$submissionId": {
+          ".read": "auth != null && data.exists() && data.child('ownerUid').val() === auth.uid",
+          ".write": false
+        }
       }
     }
   }
