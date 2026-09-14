@@ -235,9 +235,15 @@ async function approveAuthorization(request, response) {
 
   const authRef = getDatabase().ref(`smartSchedule/connectorAuth/authorizationRequests/${authorizationRequestId}`);
   const now = Date.now();
+  const initialSnapshot = await authRef.get();
+  const initialAuthorization = initialSnapshot.val();
+  if (!initialAuthorization || Number(initialAuthorization.createdAt || 0) + AUTH_REQUEST_TTL < now) {
+    oauthError(400, "invalid_request", "This connection request expired. Start the connection again from ChatGPT.");
+  }
   const code = randomToken(32);
   let failure = "";
   const result = await authRef.transaction((current) => {
+    failure = "";
     if (!current || Number(current.createdAt || 0) + AUTH_REQUEST_TTL < now) {
       failure = "This connection request expired. Start the connection again from ChatGPT.";
       return;
@@ -310,9 +316,12 @@ async function exchangeAuthorizationCode(body, response) {
 
   const codeRef = getDatabase().ref(`smartSchedule/connectorAuth/codes/${hashToken(code)}`);
   const now = Date.now();
+  await codeRef.get();
   let failure = "";
   let authorization;
   const result = await codeRef.transaction((current) => {
+    failure = "";
+    authorization = undefined;
     if (!current || current.used || Number(current.expiresAt || 0) < now) {
       failure = "The authorization code is invalid or expired.";
       return;
@@ -529,8 +538,10 @@ async function claimUpdate(args, uid) {
   const leaseMinutes = args.leaseMinutes === undefined ? 60 : requireInteger(args.leaseMinutes, "leaseMinutes", 15, 240);
   const requestRef = getDatabase().ref(`smartSchedule/updateRequests/${submissionId}`);
   const now = Date.now();
+  await requestRef.get();
   let failure = "";
   const result = await requestRef.transaction((current) => {
+    failure = "";
     if (!current || current.ownerUid !== uid) {
       failure = "This schedule request was not found.";
       return;
@@ -583,8 +594,10 @@ async function releaseUpdate(args, uid) {
   const reason = requireText(args.reason, "reason", 500);
   const requestRef = getDatabase().ref(`smartSchedule/updateRequests/${submissionId}`);
   const now = Date.now();
+  await requestRef.get();
   let failure = "";
   const result = await requestRef.transaction((current) => {
+    failure = "";
     if (!current || current.ownerUid !== uid) {
       failure = "This schedule request was not found.";
       return;
