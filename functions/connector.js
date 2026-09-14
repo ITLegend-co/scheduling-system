@@ -10,7 +10,7 @@ const ISSUER = BASE_URL;
 const SCOPES = new Set(["schedule.read", "schedule.claim"]);
 const ACCESS_TOKEN_TTL = 60 * 60 * 1000;
 const REFRESH_TOKEN_TTL = 30 * 24 * 60 * 60 * 1000;
-const AUTH_REQUEST_TTL = 60 * 60 * 1000;
+const AUTH_REQUEST_TTL = 24 * 60 * 60 * 1000;
 const CODE_TTL = 5 * 60 * 1000;
 const PROCESSING_LEASE = 60 * 60 * 1000;
 
