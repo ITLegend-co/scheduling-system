@@ -146,8 +146,11 @@ function authorizationServerMetadata() {
 async function registerClient(request, response) {
   const body = requireObject(request.body, "registration request");
   const redirectUris = body.redirect_uris;
-  if (!Array.isArray(redirectUris) || redirectUris.length !== 1) {
-    oauthError(400, "invalid_client_metadata", "Exactly one trusted redirect URI is required.");
+  if (!Array.isArray(redirectUris) || redirectUris.length < 1 || redirectUris.length > 5) {
+    oauthError(400, "invalid_client_metadata", "One to five trusted redirect URIs are required.");
+  }
+  if (new Set(redirectUris).size !== redirectUris.length) {
+    oauthError(400, "invalid_client_metadata", "Redirect URIs must be unique.");
   }
   redirectUris.forEach(validateRedirectUri);
   if (body.token_endpoint_auth_method && body.token_endpoint_auth_method !== "none") {
@@ -642,12 +645,14 @@ function validateRedirectUri(value) {
   } catch {
     oauthError(400, "invalid_client_metadata", "A redirect URI is invalid.");
   }
+  const stableCallback = url.pathname === "/connector_platform_oauth_redirect";
+  const callbackSpecific = /^\/connector\/oauth\/[A-Za-z0-9_-]{1,200}$/.test(url.pathname);
   const openAiCallback = url.protocol === "https:"
     && url.hostname === "chatgpt.com"
-    && url.pathname === "/connector_platform_oauth_redirect"
+    && (stableCallback || callbackSpecific)
     && !url.search;
   if (url.username || url.password || url.hash || !openAiCallback) {
-    oauthError(400, "invalid_client_metadata", "Only the stable ChatGPT and Codex callback URL is allowed.");
+    oauthError(400, "invalid_client_metadata", "Only official ChatGPT and Codex callback URLs are allowed.");
   }
 }
 
