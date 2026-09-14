@@ -5,6 +5,8 @@ import { logger } from "firebase-functions";
 
 const BASE_URL = "https://schedule-d2ce8.web.app";
 const MCP_RESOURCE = `${BASE_URL}/mcp`;
+const MCP_RESOURCE_V2 = `${BASE_URL}/mcp-v2`;
+const MCP_RESOURCES = new Set([MCP_RESOURCE, MCP_RESOURCE_V2]);
 const AUTH_PAGE = "https://itlegend-co.github.io/scheduling-system/connector-auth.html";
 const ISSUER = BASE_URL;
 const SCOPES = new Set(["schedule.read", "schedule.claim"]);
@@ -89,8 +91,10 @@ export async function handleScheduleConnector(request, response) {
     if (request.method === "GET" && new Set([
       "/.well-known/oauth-protected-resource",
       "/.well-known/oauth-protected-resource/mcp",
+      "/.well-known/oauth-protected-resource/mcp-v2",
     ]).has(route)) {
-      return sendJson(response, 200, protectedResourceMetadata());
+      const resource = route.endsWith("/mcp-v2") ? MCP_RESOURCE_V2 : MCP_RESOURCE;
+      return sendJson(response, 200, protectedResourceMetadata(resource));
     }
     if (request.method === "GET" && route === "/.well-known/oauth-authorization-server") {
       return sendJson(response, 200, authorizationServerMetadata());
@@ -100,8 +104,9 @@ export async function handleScheduleConnector(request, response) {
     if (request.method === "POST" && route === "/oauth/approve") return await approveAuthorization(request, response);
     if (request.method === "POST" && route === "/oauth/deny") return await denyAuthorization(request, response);
     if (request.method === "POST" && route === "/oauth/token") return await exchangeToken(request, response);
-    if (new Set(["GET", "POST"]).has(request.method) && route === "/mcp") {
-      return await handleMcp(request, response);
+    if (new Set(["GET", "POST"]).has(request.method) && new Set(["/mcp", "/mcp-v2"]).has(route)) {
+      const resource = route === "/mcp-v2" ? MCP_RESOURCE_V2 : MCP_RESOURCE;
+      return await handleMcp(request, response, resource);
     }
     if (request.method === "GET" && route === "/health") return sendJson(response, 200, { ok: true });
     return sendJson(response, 404, { error: "not_found" });
@@ -119,9 +124,9 @@ export async function handleScheduleConnector(request, response) {
   }
 }
 
-function protectedResourceMetadata() {
+function protectedResourceMetadata(resource = MCP_RESOURCE) {
   return {
-    resource: MCP_RESOURCE,
+    resource,
     authorization_servers: [ISSUER],
     scopes_supported: [...SCOPES],
     resource_documentation: "https://github.com/ITLegend-co/scheduling-system#secure-chatgpt-connector",
@@ -193,7 +198,7 @@ async function beginAuthorization(request, response) {
   if (one(query.code_challenge_method) !== "S256" || !/^[A-Za-z0-9_-]{43,128}$/.test(codeChallenge)) {
     oauthError(400, "invalid_request", "A valid S256 PKCE challenge is required.");
   }
-  if (resource !== MCP_RESOURCE) oauthError(400, "invalid_target", "The resource parameter is invalid.");
+  if (!MCP_RESOURCES.has(resource)) oauthError(400, "invalid_target", "The resource parameter is invalid.");
   if (!state || state.length > 1000) oauthError(400, "invalid_request", "A valid state parameter is required.");
   requireScopes(scope);
 
@@ -301,7 +306,7 @@ async function exchangeAuthorizationCode(body, response) {
   const redirectUri = requireText(body.redirect_uri, "redirect_uri", 1000);
   const verifier = requireText(body.code_verifier, "code_verifier", 256);
   const resource = requireText(body.resource, "resource", 1000);
-  if (resource !== MCP_RESOURCE) oauthError(400, "invalid_target", "The resource parameter is invalid.");
+  if (!MCP_RESOURCES.has(resource)) oauthError(400, "invalid_target", "The resource parameter is invalid.");
 
   const codeRef = getDatabase().ref(`smartSchedule/connectorAuth/codes/${hashToken(code)}`);
   const now = Date.now();
@@ -337,7 +342,7 @@ async function exchangeRefreshToken(body, response) {
   const refreshToken = requireText(body.refresh_token, "refresh_token", 500);
   const clientId = requireSafeId(body.client_id, "client_id", 128);
   const resource = requireText(body.resource, "resource", 1000);
-  if (resource !== MCP_RESOURCE) oauthError(400, "invalid_target", "The resource parameter is invalid.");
+  if (!MCP_RESOURCES.has(resource)) oauthError(400, "invalid_target", "The resource parameter is invalid.");
 
   const snapshot = await getDatabase().ref(`smartSchedule/connectorAuth/tokens/refresh/${hashToken(refreshToken)}`).get();
   const token = snapshot.val();
@@ -382,9 +387,9 @@ async function issueTokens(authorization, clientId, includeRefreshToken) {
   return payload;
 }
 
-async function handleMcp(request, response) {
+async function handleMcp(request, response, resource = MCP_RESOURCE) {
   validateMcpOrigin(request);
-  const token = await authenticateMcp(request, response);
+  const token = await authenticateMcp(request, response, resource);
   if (!token) return;
   if (request.method === "GET") {
     response.set("Allow", "POST");
@@ -415,7 +420,7 @@ async function handleMcp(request, response) {
       const message = error instanceof ConnectorError ? error.body.error_description : error?.message || "Tool call failed.";
       const result = { isError: true, content: [{ type: "text", text: message }] };
       if (error instanceof ConnectorError && error.body.error === "insufficient_scope") {
-        result._meta = { "mcp/www_authenticate": [mcpChallenge("insufficient_scope", message)] };
+        result._meta = { "mcp/www_authenticate": [mcpChallenge("insufficient_scope", message, token.resource)] };
       }
       return rpcResult(response, id, result);
     }
@@ -423,26 +428,29 @@ async function handleMcp(request, response) {
   return rpcError(response, id, -32601, "Method not found.");
 }
 
-async function authenticateMcp(request, response) {
+async function authenticateMcp(request, response, resource = MCP_RESOURCE) {
   const match = String(request.get("authorization") || "").match(/^Bearer\s+(.+)$/i);
-  if (!match) return mcpUnauthorized(response);
+  if (!match) return mcpUnauthorized(response, resource);
   const snapshot = await getDatabase().ref(`smartSchedule/connectorAuth/tokens/access/${hashToken(match[1])}`).get();
   const token = snapshot.val();
-  if (!token || token.resource !== MCP_RESOURCE || Number(token.expiresAt || 0) < Date.now() || !(await isOperator(token.uid))) {
-    return mcpUnauthorized(response);
+  if (!token || token.resource !== resource || Number(token.expiresAt || 0) < Date.now() || !(await isOperator(token.uid))) {
+    return mcpUnauthorized(response, resource);
   }
   return token;
 }
 
-function mcpUnauthorized(response) {
-  response.set("WWW-Authenticate", mcpChallenge("invalid_token", "Connect an approved Smart Schedule Google account."));
+function mcpUnauthorized(response, resource = MCP_RESOURCE) {
+  response.set("WWW-Authenticate", mcpChallenge("invalid_token", "Connect an approved Smart Schedule Google account.", resource));
   sendJson(response, 401, { error: "unauthorized", error_description: "Connect an approved Smart Schedule Google account." });
   return null;
 }
 
-function mcpChallenge(error, description) {
+function mcpChallenge(error, description, resource = MCP_RESOURCE) {
   const safeDescription = String(description).replace(/[\\"\r\n]/g, " ");
-  return `Bearer resource_metadata="${BASE_URL}/.well-known/oauth-protected-resource", error="${error}", error_description="${safeDescription}", scope="schedule.read schedule.claim"`;
+  const metadataPath = resource === MCP_RESOURCE_V2
+    ? "/.well-known/oauth-protected-resource/mcp-v2"
+    : "/.well-known/oauth-protected-resource";
+  return `Bearer resource_metadata="${BASE_URL}${metadataPath}", error="${error}", error_description="${safeDescription}", scope="schedule.read schedule.claim"`;
 }
 
 function validateMcpOrigin(request) {

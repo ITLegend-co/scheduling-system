@@ -25,6 +25,13 @@ const pathMetadata = await request({
 assert.equal(pathMetadata.statusCode, 200);
 assert.equal(pathMetadata.json.resource, "https://schedule-d2ce8.web.app/mcp");
 
+const versionedMetadata = await request({
+  method: "GET",
+  path: "/.well-known/oauth-protected-resource/mcp-v2",
+});
+assert.equal(versionedMetadata.statusCode, 200);
+assert.equal(versionedMetadata.json.resource, "https://schedule-d2ce8.web.app/mcp-v2");
+
 const authorization = await request({
   method: "GET",
   path: "/.well-known/oauth-authorization-server",
@@ -43,6 +50,15 @@ const unauthorized = await request({
 assert.equal(unauthorized.statusCode, 401);
 assert.match(unauthorized.headers["www-authenticate"], /oauth-protected-resource/);
 assert.match(unauthorized.headers["www-authenticate"], /error="invalid_token"/);
+
+const versionedUnauthorized = await request({
+  method: "POST",
+  path: "/mcp-v2",
+  headers: { accept: "application/json, text/event-stream" },
+  body: { jsonrpc: "2.0", id: 2, method: "initialize", params: {} },
+});
+assert.equal(versionedUnauthorized.statusCode, 401);
+assert.match(versionedUnauthorized.headers["www-authenticate"], /oauth-protected-resource\/mcp-v2/);
 
 const invalidOrigin = await request({
   method: "POST",
