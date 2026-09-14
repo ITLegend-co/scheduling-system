@@ -10,7 +10,7 @@ const ISSUER = BASE_URL;
 const SCOPES = new Set(["schedule.read", "schedule.claim"]);
 const ACCESS_TOKEN_TTL = 60 * 60 * 1000;
 const REFRESH_TOKEN_TTL = 30 * 24 * 60 * 60 * 1000;
-const AUTH_REQUEST_TTL = 10 * 60 * 1000;
+const AUTH_REQUEST_TTL = 60 * 60 * 1000;
 const CODE_TTL = 5 * 60 * 1000;
 const PROCESSING_LEASE = 60 * 60 * 1000;
 
@@ -233,7 +233,7 @@ async function approveAuthorization(request, response) {
   const code = randomToken(32);
   let failure = "";
   const result = await authRef.transaction((current) => {
-    if (!current || Number(current.expiresAt || 0) < now) {
+    if (!current || Number(current.createdAt || 0) + AUTH_REQUEST_TTL < now) {
       failure = "This connection request expired. Start the connection again from ChatGPT.";
       return;
     }
