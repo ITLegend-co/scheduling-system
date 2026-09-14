@@ -647,12 +647,16 @@ function validateRedirectUri(value) {
   }
   const stableCallback = url.pathname === "/connector_platform_oauth_redirect";
   const callbackSpecific = /^\/connector\/oauth\/[A-Za-z0-9_-]{1,200}$/.test(url.pathname);
-  const openAiCallback = url.protocol === "https:"
+  const chatGptCallback = url.protocol === "https:"
     && url.hostname === "chatgpt.com"
     && (stableCallback || callbackSpecific)
     && !url.search;
-  if (url.username || url.password || url.hash || !openAiCallback) {
-    oauthError(400, "invalid_client_metadata", "Only official ChatGPT and Codex callback URLs are allowed.");
+  const codexCallback = url.protocol === "http:"
+    && url.hostname === "127.0.0.1"
+    && (url.pathname === "/callback" || /^\/callback\/[A-Za-z0-9_-]{1,200}$/.test(url.pathname))
+    && !url.search;
+  if (url.username || url.password || url.hash || (!chatGptCallback && !codexCallback)) {
+    oauthError(400, "invalid_client_metadata", "Only official ChatGPT callbacks and Codex loopback callbacks are allowed.");
   }
 }
 
