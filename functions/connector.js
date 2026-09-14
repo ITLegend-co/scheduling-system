@@ -215,6 +215,7 @@ async function beginAuthorization(request, response) {
     resource,
     scope,
     codeChallenge,
+    code: randomToken(32),
     createdAt: Date.now(),
     expiresAt: Date.now() + AUTH_REQUEST_TTL,
   });
@@ -235,29 +236,39 @@ async function approveAuthorization(request, response) {
 
   const authRef = getDatabase().ref(`smartSchedule/connectorAuth/authorizationRequests/${authorizationRequestId}`);
   const now = Date.now();
-  const initialSnapshot = await authRef.get();
-  const initialAuthorization = initialSnapshot.val();
-  if (!initialAuthorization || Number(initialAuthorization.createdAt || 0) + AUTH_REQUEST_TTL < now) {
-    oauthError(400, "invalid_request", "This connection request expired. Start the connection again from ChatGPT.");
+  const snapshot = await authRef.get();
+  let authorization = snapshot.val();
+  if (!authorization) {
+    oauthError(400, "invalid_request", "This connection request no longer exists. Start a new connection from Codex.");
   }
-  const code = randomToken(32);
-  let failure = "";
-  const result = await authRef.transaction((current) => {
-    failure = "";
-    if (!current || Number(current.createdAt || 0) + AUTH_REQUEST_TTL < now) {
-      failure = "This connection request expired. Start the connection again from ChatGPT.";
-      return;
-    }
-    if (current.status === "approved" && current.uid === decoded.uid && current.code) return current;
-    if (current.status !== "pending") {
-      failure = "This connection request has already been used.";
-      return;
-    }
-    return { ...current, status: "approved", uid: decoded.uid, approvedAt: now, code };
-  }, undefined, false);
-  if (failure || !result.committed) oauthError(400, "invalid_request", failure || "The connection request could not be approved.");
+  if (Number(authorization.createdAt || 0) + AUTH_REQUEST_TTL < now) {
+    oauthError(400, "invalid_request", "This connection request expired. Start a new connection from Codex.");
+  }
 
-  const authorization = result.snapshot.val();
+  if (authorization.status === "pending") {
+    const code = authorization.code || randomToken(32);
+    await authRef.update({
+      status: "approved",
+      uid: decoded.uid,
+      approvedAt: now,
+      code,
+    });
+    authorization = {
+      ...authorization,
+      status: "approved",
+      uid: decoded.uid,
+      approvedAt: now,
+      code,
+    };
+  } else if (authorization.status !== "approved" || authorization.uid !== decoded.uid || !authorization.code) {
+    oauthError(400, "invalid_request", "This connection request has already been used.");
+  }
+
+  if (!authorization.clientId || !authorization.redirectUri || !authorization.resource
+    || !authorization.scope || !authorization.codeChallenge || !authorization.state) {
+    oauthError(400, "invalid_request", "This connection request is incomplete. Start a new connection from Codex.");
+  }
+
   await getDatabase().ref(`smartSchedule/connectorAuth/codes/${hashToken(authorization.code)}`).set({
     authorizationRequestId,
     clientId: authorization.clientId,
