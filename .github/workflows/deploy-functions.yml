@@ -45,4 +45,4 @@ jobs:
           node scripts/test-connector.mjs
 
       - name: Deploy Firebase functions and connector routes
-        run: npx --yes firebase-tools@15.30.0 deploy --only functions,hosting --project schedule-d2ce8 --non-interactive
+        run: npx --yes firebase-tools@15.30.0 deploy --only functions,hosting --project schedule-d2ce8 --non-interactive --force
