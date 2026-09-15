@@ -327,34 +327,25 @@ async function exchangeAuthorizationCode(body, response) {
 
   const codeRef = getDatabase().ref(`smartSchedule/connectorAuth/codes/${hashToken(code)}`);
   const now = Date.now();
-  await codeRef.get();
-  let failure = "";
-  let authorization;
-  const result = await codeRef.transaction((current) => {
-    failure = "";
-    authorization = undefined;
-    if (!current || current.used || Number(current.expiresAt || 0) < now) {
-      failure = "The authorization code is invalid or expired.";
-      return;
-    }
-    if (current.clientId !== clientId || current.redirectUri !== redirectUri || current.resource !== resource) {
-      failure = "The authorization code does not match this client or resource.";
-      return;
-    }
-    if (!safeEqual(pkceChallenge(verifier), current.codeChallenge)) {
-      failure = "PKCE verification failed.";
-      return;
-    }
-    authorization = current;
-    return { ...current, used: true, usedAt: now };
-  }, undefined, false);
-  if (failure || !result.committed || !authorization) oauthError(400, "invalid_grant", failure || "The authorization code could not be used.");
+  const snapshot = await codeRef.get();
+  const authorization = snapshot.val();
+  if (!authorization || authorization.used || Number(authorization.expiresAt || 0) < now) {
+    oauthError(400, "invalid_grant", "The authorization code is invalid or expired.");
+  }
+  if (authorization.clientId !== clientId
+    || authorization.redirectUri !== redirectUri
+    || authorization.resource !== resource) {
+    oauthError(400, "invalid_grant", "The authorization code does not match this client or resource.");
+  }
+  if (!safeEqual(pkceChallenge(verifier), authorization.codeChallenge)) {
+    oauthError(400, "invalid_grant", "PKCE verification failed.");
+  }
 
+  await codeRef.remove();
   const tokens = await issueTokens(authorization, clientId, true);
-  await getDatabase().ref().update({
-    [`smartSchedule/connectorAuth/codes/${hashToken(code)}`]: null,
-    [`smartSchedule/connectorAuth/authorizationRequests/${authorization.authorizationRequestId}`]: null,
-  });
+  await getDatabase()
+    .ref(`smartSchedule/connectorAuth/authorizationRequests/${authorization.authorizationRequestId}`)
+    .remove();
   return sendJson(response, 200, tokens);
 }
 
