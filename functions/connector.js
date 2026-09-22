@@ -523,8 +523,10 @@ async function listPending(args, uid) {
     root.orderByChild("ownerStatus").equalTo(`${uid}:processing`).get(),
   ]);
   const now = Date.now();
-  const pending = Object.values(pendingSnapshot.val() || {});
-  const expired = Object.values(processingSnapshot.val() || {})
+  const pending = Object.entries(pendingSnapshot.val() || {})
+    .map(([submissionId, request]) => ({ ...request, submissionId }));
+  const expired = Object.entries(processingSnapshot.val() || {})
+    .map(([submissionId, request]) => ({ ...request, submissionId }))
     .filter((request) => Number(request.leaseUntil || 0) < now);
   const requests = [...pending, ...expired]
     .sort((a, b) => Number(a.createdAt || 0) - Number(b.createdAt || 0))
@@ -540,23 +542,16 @@ async function claimUpdate(args, uid) {
   const leaseMinutes = args.leaseMinutes === undefined ? 60 : requireInteger(args.leaseMinutes, "leaseMinutes", 15, 240);
   const requestRef = getDatabase().ref(`smartSchedule/updateRequests/${submissionId}`);
   const now = Date.now();
-  await requestRef.get();
-  let failure = "";
   const result = await requestRef.transaction((current) => {
-    failure = "";
-    if (!current || current.ownerUid !== uid) {
-      failure = "This schedule request was not found.";
-      return;
-    }
+    // The first callback can receive a temporary null before Firebase loads the server value.
+    // Returning that value lets the server resolve conflicts instead of aborting a valid claim.
+    if (!current || current.ownerUid !== uid) return current;
     if (current.status === "processing" && current.claimId === claimId && Number(current.leaseUntil || 0) >= now) {
       return current;
     }
     const canClaim = current.status === "pending"
       || (current.status === "processing" && Number(current.leaseUntil || 0) < now);
-    if (!canClaim) {
-      failure = `This schedule request is already ${current.status || "unavailable"}.`;
-      return;
-    }
+    if (!canClaim) return current;
     return {
       ...current,
       status: "processing",
@@ -569,8 +564,20 @@ async function claimUpdate(args, uid) {
       attemptCount: Number(current.attemptCount || 0) + 1,
     };
   }, undefined, false);
-  if (failure || !result.committed) throw new ConnectorError(409, "request_unavailable", failure || "The request could not be claimed.");
-  return { claimed: true, request: publicRequest(result.snapshot.val()) };
+  if (!result.committed) {
+    throw new ConnectorError(409, "request_unavailable", "The request could not be claimed.");
+  }
+  const stored = result.snapshot.val();
+  if (!stored || stored.ownerUid !== uid) {
+    throw new ConnectorError(409, "request_unavailable", "This schedule request was not found.");
+  }
+  const claimIsActive = stored.status === "processing"
+    && stored.claimId === claimId
+    && Number(stored.leaseUntil || 0) >= now;
+  if (!claimIsActive) {
+    throw new ConnectorError(409, "request_unavailable", `This schedule request is already ${stored.status || "unavailable"}.`);
+  }
+  return { claimed: true, request: publicRequest(stored) };
 }
 
 async function getUpdateStatus(args, uid) {
@@ -596,18 +603,11 @@ async function releaseUpdate(args, uid) {
   const reason = requireText(args.reason, "reason", 500);
   const requestRef = getDatabase().ref(`smartSchedule/updateRequests/${submissionId}`);
   const now = Date.now();
-  await requestRef.get();
-  let failure = "";
   const result = await requestRef.transaction((current) => {
-    failure = "";
-    if (!current || current.ownerUid !== uid) {
-      failure = "This schedule request was not found.";
-      return;
-    }
+    if (!current || current.ownerUid !== uid) return current;
     if (current.status === "pending") return current;
     if (current.status !== "processing" || current.processingBy !== `connector:${uid}` || current.claimId !== claimId) {
-      failure = "Only the exact connector claim can release this request.";
-      return;
+      return current;
     }
     const { claimedAt, leaseUntil, processingBy, claimId: storedClaimId, ...rest } = current;
     return {
@@ -619,8 +619,17 @@ async function releaseUpdate(args, uid) {
       lastReleaseReason: reason,
     };
   }, undefined, false);
-  if (failure || !result.committed) throw new ConnectorError(409, "request_unavailable", failure || "The request could not be released.");
-  return { released: true, submissionId, status: result.snapshot.val().status };
+  if (!result.committed) {
+    throw new ConnectorError(409, "request_unavailable", "The request could not be released.");
+  }
+  const stored = result.snapshot.val();
+  if (!stored || stored.ownerUid !== uid) {
+    throw new ConnectorError(409, "request_unavailable", "This schedule request was not found.");
+  }
+  if (stored.status !== "pending") {
+    throw new ConnectorError(409, "request_unavailable", "Only the exact connector claim can release this request.");
+  }
+  return { released: true, submissionId, status: stored.status };
 }
 
 function publicRequest(request) {

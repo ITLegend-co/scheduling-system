@@ -24,35 +24,13 @@ try {
   for (const entry of receipt.submissions) {
     validateReceiptEntry(entry);
     const requestRef = admin.database.ref(`smartSchedule/updateRequests/${entry.submissionId}`);
-    let validationError = "";
-    let alreadyApplied = false;
     const now = Date.now();
 
     const result = await requestRef.transaction((current) => {
-      if (!current) {
-        validationError = `Submission ${entry.submissionId} does not exist.`;
-        return;
-      }
-      if (!sameIds(Object.keys(current.requestIds || {}), entry.requestIds)) {
-        validationError = `Submission ${entry.submissionId} request IDs do not match the release receipt.`;
-        return;
-      }
-      if (current.status === "applied") {
-        if (current.appliedClaimId !== entry.claimId) {
-          validationError = `Submission ${entry.submissionId} was applied by a different claim.`;
-          return;
-        }
-        alreadyApplied = true;
-        return current;
-      }
-      if (current.status !== "processing") {
-        validationError = `Submission ${entry.submissionId} is ${current.status || "missing a status"}, not processing.`;
-        return;
-      }
-      if (current.claimId !== entry.claimId) {
-        validationError = `Submission ${entry.submissionId} is held by a different processing claim.`;
-        return;
-      }
+      if (!current) return current;
+      if (!sameIds(Object.keys(current.requestIds || {}), entry.requestIds)) return current;
+      if (current.status === "applied") return current;
+      if (current.status !== "processing" || current.claimId !== entry.claimId) return current;
 
       const { claimedAt, leaseUntil, processingBy, claimId, ...rest } = current;
       return {
@@ -66,11 +44,19 @@ try {
       };
     }, undefined, false);
 
-    if (validationError) throw new Error(validationError);
     if (!result.committed) throw new Error(`Submission ${entry.submissionId} could not be confirmed.`);
-    console.log(alreadyApplied
-      ? `Submission ${entry.submissionId} was already confirmed as applied.`
-      : `Confirmed submission ${entry.submissionId} as applied by ${commit}.`);
+    const stored = result.snapshot.val();
+    if (!stored) throw new Error(`Submission ${entry.submissionId} does not exist.`);
+    if (!sameIds(Object.keys(stored.requestIds || {}), entry.requestIds)) {
+      throw new Error(`Submission ${entry.submissionId} request IDs do not match the release receipt.`);
+    }
+    if (stored.status !== "applied") {
+      throw new Error(`Submission ${entry.submissionId} is ${stored.status || "missing a status"}, not applied.`);
+    }
+    if (stored.appliedClaimId !== entry.claimId) {
+      throw new Error(`Submission ${entry.submissionId} was applied by a different claim.`);
+    }
+    console.log(`Confirmed submission ${entry.submissionId} as applied by ${commit}.`);
   }
 } finally {
   await admin.close();

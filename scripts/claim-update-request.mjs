@@ -22,9 +22,12 @@ try {
     const leaseUntil = now + leaseMinutes * 60_000;
     const requestRef = root.child(submissionId);
     const result = await requestRef.transaction((current) => {
-      if (!current) return;
+      if (!current) return current;
+      if (current.status === "processing" && current.claimId === claimId && Number(current.leaseUntil || 0) >= now) {
+        return current;
+      }
       const leaseExpired = current.status === "processing" && Number(current.leaseUntil || 0) < now;
-      if (current.status !== "pending" && !leaseExpired) return;
+      if (current.status !== "pending" && !leaseExpired) return current;
       return {
         ...current,
         status: "processing",
@@ -38,8 +41,13 @@ try {
       };
     }, undefined, false);
 
-    if (!result.committed) throw new Error(`Submission ${submissionId} is no longer available to claim.`);
-    const request = restoreDocumentMetadata(result.snapshot.val());
+    if (!result.committed) throw new Error(`Submission ${submissionId} could not be claimed.`);
+    const stored = result.snapshot.val();
+    if (!stored) throw new Error(`Submission ${submissionId} does not exist.`);
+    if (stored.status !== "processing" || stored.claimId !== claimId || Number(stored.leaseUntil || 0) < now) {
+      throw new Error(`Submission ${submissionId} is no longer available to claim.`);
+    }
+    const request = restoreDocumentMetadata(stored);
     console.log(JSON.stringify({ found: true, submissionId, request }, null, 2));
   }
 } finally {
