@@ -1470,6 +1470,19 @@
       "title": "Workout – Push and Shoulder Stability"
     },
     {
+      "id": "task-fix-kp-thumbprint-2026-09-25",
+      "title": "Fix KP Thumbprint Connection",
+      "start": "2026-09-25T08:30:00+08:00",
+      "end": "2026-09-25T09:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "location": "KP Office",
+      "description": "Troubleshoot and fix the KP thumbprint system, which is unable to connect to the KK Office.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -4751,7 +4764,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-23T14:48:28+08:00",
+    "lastUpdated": "2026-09-23T14:57:28.108+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
