@@ -780,6 +780,16 @@
       "priority": "normal",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "details": "Request approval to renew the Alarm System subscription before its expiry on 3 October 2026. Confirm the approval, budget, responsible person, and next renewal action."
+    },
+    {
+      "id": "pody-system-2026-10-15",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Create Pody’s System",
+      "status": "in-progress",
+      "date": "2026-09-24",
+      "deadline": "2026-10-15",
+      "details": "Create Pody’s system through a phased plan: requirements and scope, architecture and data design, prototype, two core build sprints, integration, functional testing, user review and documentation, final fixes, and handover by 15 October 2026."
     }
   ],
   "format": "smart-schedule-profile",
@@ -804,6 +814,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-11T17:50:32+08:00",
+  "updatedAt": "2026-09-23T14:48:28+08:00",
   "version": 1
 }

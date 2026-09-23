@@ -1433,6 +1433,18 @@
       "title": "Daily IT Support Summary Report"
     },
     {
+      "id": "pody-system-requirements-2026-09-24",
+      "title": "Pody’s System – Requirements and Scope",
+      "start": "2026-09-24T09:15:00+08:00",
+      "end": "2026-09-24T11:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Define users, core workflows, required features, constraints, acceptance criteria, and the minimum viable scope. Produce a prioritized implementation backlog.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -1469,6 +1481,18 @@
       "start": "2026-09-25T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
+    },
+    {
+      "id": "pody-system-architecture-2026-09-25",
+      "title": "Pody’s System – Architecture and Data Design",
+      "start": "2026-09-25T10:30:00+08:00",
+      "end": "2026-09-25T12:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Design the system structure, data model, key screens, permissions, and technical approach based on the approved scope.",
+      "allowOverlap": false
     },
     {
       "id": "meeting-odoo-weekly-feedback-2026-09-25",
@@ -1595,6 +1619,18 @@
       "start": "2026-09-28T13:00:00+08:00",
       "status": "planned",
       "title": "Quarterly Preventive Maintenance Review"
+    },
+    {
+      "id": "pody-system-prototype-2026-09-28",
+      "title": "Pody’s System – Project Setup and Prototype",
+      "start": "2026-09-28T15:15:00+08:00",
+      "end": "2026-09-28T16:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Set up the project, implement the initial navigation and data flow, and create a working prototype for the highest-priority workflow.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -1736,6 +1772,18 @@
       "title": "My Appraisal – Complete Management Form"
     },
     {
+      "id": "pody-system-build-1-2026-10-01",
+      "title": "Pody’s System – Core Build Sprint 1",
+      "start": "2026-10-01T10:15:00+08:00",
+      "end": "2026-10-01T12:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Implement the first group of core features and validate each completed workflow against the acceptance criteria.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Meeting",
@@ -1784,6 +1832,18 @@
       "start": "2026-10-02T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
+    },
+    {
+      "id": "pody-system-build-2-2026-10-02",
+      "title": "Pody’s System – Core Build Sprint 2",
+      "start": "2026-10-02T10:30:00+08:00",
+      "end": "2026-10-02T12:30:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Continue the core implementation, complete the remaining priority workflows, and resolve issues found during the first build sprint.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -1874,6 +1934,18 @@
       "title": "Monthly IT Operations and Security Review"
     },
     {
+      "id": "pody-system-integration-2026-10-05",
+      "title": "Pody’s System – Integration and Workflow Completion",
+      "start": "2026-10-05T13:00:00+08:00",
+      "end": "2026-10-05T15:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Connect the completed components, finish end-to-end workflows, and verify data handling and permissions.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -1910,6 +1982,18 @@
       "start": "2026-10-06T19:00:00+08:00",
       "status": "confirmed",
       "title": "Workout – Lower Body and Core"
+    },
+    {
+      "id": "pody-system-testing-2026-10-07",
+      "title": "Pody’s System – Functional Testing",
+      "start": "2026-10-07T10:00:00+08:00",
+      "end": "2026-10-07T12:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Run functional and end-to-end tests, log defects, test edge cases, and prioritize fixes.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -2075,6 +2159,18 @@
       "title": "Weekly IT Issues and Task Planning"
     },
     {
+      "id": "pody-system-uat-docs-2026-10-12",
+      "title": "Pody’s System – User Review and Documentation",
+      "start": "2026-10-12T13:00:00+08:00",
+      "end": "2026-10-12T15:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Review the system from the user’s perspective, collect final feedback, and prepare essential operating and handover notes.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -2138,6 +2234,18 @@
       "title": "Midweek Project Review"
     },
     {
+      "id": "pody-system-final-fixes-2026-10-14",
+      "title": "Pody’s System – Final Fixes and Release Preparation",
+      "start": "2026-10-14T10:30:00+08:00",
+      "end": "2026-10-14T12:30:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Resolve final defects, complete regression testing, verify deployment readiness, and prepare the release package.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Meeting",
@@ -2161,6 +2269,18 @@
       "start": "2026-10-14T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "id": "pody-system-handoff-2026-10-15",
+      "title": "Pody’s System – Final Verification and Handover",
+      "start": "2026-10-15T09:15:00+08:00",
+      "end": "2026-10-15T10:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Complete final verification, deploy or deliver the finished system, confirm the handover, and close the project by the 15 October deadline.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -4631,7 +4751,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-22T13:50:00+08:00",
+    "lastUpdated": "2026-09-23T14:48:28+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
