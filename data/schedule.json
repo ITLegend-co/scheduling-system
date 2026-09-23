@@ -1360,18 +1360,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-09-23 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-09-22T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-09-23",
-      "priority": "high",
-      "start": "2026-09-22T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-09-22T17:30:00+08:00",
@@ -1406,18 +1394,6 @@
       "start": "2026-09-23T09:15:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-09-23T16:30:00+08:00",
-      "id": "meeting-it-2026-09-23",
-      "priority": "high",
-      "start": "2026-09-23T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -1724,6 +1700,19 @@
       "title": "Daily IT Support Summary Report"
     },
     {
+      "id": "reminder-eizzat-it-minutes-2026-09-30",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes",
+      "start": "2026-09-29T08:45:00+08:00",
+      "end": "2026-09-29T09:00:00+08:00",
+      "allDay": false,
+      "category": "Reminder",
+      "priority": "high",
+      "status": "confirmed",
+      "description": "Remind Eizzat one day before the rescheduled 30 September 2026 IT Meeting. Review the latest record in the IT Minutes repository and prepare the new minutes draft.",
+      "url": "https://github.com/ITLegend-co/IT-Minutes.git",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -1803,14 +1792,27 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
-      "end": "2026-09-30T16:00:00+08:00",
+      "description": "Moved earlier to make room for the rescheduled IT Meeting at 3:00 PM. Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and next steps.",
+      "end": "2026-09-30T14:45:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-09-30",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "high",
-      "start": "2026-09-30T15:00:00+08:00",
+      "start": "2026-09-30T13:45:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "id": "meeting-it-2026-09-30",
+      "title": "IT Meeting",
+      "start": "2026-09-30T15:00:00+08:00",
+      "end": "2026-09-30T15:30:00+08:00",
+      "allDay": false,
+      "category": "Meeting",
+      "priority": "normal",
+      "status": "confirmed",
+      "description": "One-time rescheduled IT Meeting. Review current IT support, projects, monitoring items, owners, deadlines, and next actions. Later meetings retain the existing three-week cycle.",
+      "url": "https://github.com/ITLegend-co/IT-Minutes.git",
+      "allowOverlap": false
     },
     {
       "id": "reminder-return-naqi-car-to-uca-1-2026-09-30",
@@ -4829,7 +4831,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-23T15:10:31.618+08:00",
+    "lastUpdated": "2026-09-23T15:21:31.267+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },

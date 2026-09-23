@@ -126,7 +126,7 @@
     },
     {
       "date": "2026-09-07",
-      "details": "The IT Meeting repeats every three weeks. The meeting originally scheduled for 2 September 2026 was rescheduled once to 7 September 2026 at 4:00 PM. Review the IT Minutes repository and remind Eizzat one day before the meeting to prepare the minutes. Later meetings retain the existing three-week cycle.",
+      "details": "The IT Meeting repeats every three weeks. The meeting originally scheduled for 2 September 2026 was rescheduled once to 7 September 2026 at 4:00 PM. The 23 September occurrence was rescheduled once to 30 September 2026 from 3:00 PM to 3:30 PM. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes. Later meetings retain the existing three-week cycle.",
       "id": "it-meeting-2026-09-02",
       "person": "Eizzat",
       "recurrence": {
@@ -823,6 +823,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-23T15:10:31.618+08:00",
+  "updatedAt": "2026-09-23T15:21:31.267+08:00",
   "version": 1
 }
