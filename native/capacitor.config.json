@@ -1,0 +1,19 @@
+{
+  "appId": "com.itlegend.smartschedule",
+  "appName": "Smart Schedule",
+  "webDir": "www",
+  "backgroundColor": "#070d18",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#070d18"
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_schedule",
+      "iconColor": "#62e6bd"
+    }
+  }
+}

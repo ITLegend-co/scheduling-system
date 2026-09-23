@@ -1,0 +1,105 @@
+name: Build Smart Schedule apps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "native/**"
+      - "desktop/**"
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "firebase-client.js"
+      - "pwa.js"
+      - "service-worker.js"
+      - "manifest.webmanifest"
+      - "icons/**"
+      - "data/schedule.json"
+      - ".github/workflows/build-native-apps.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-apps
+  cancel-in-progress: true
+
+jobs:
+  android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install Android wrapper dependencies
+        working-directory: native
+        run: npm install --no-package-lock --no-audit --no-fund
+
+      - name: Prepare web assets
+        working-directory: native
+        run: npm run build:web
+
+      - name: Create Android project
+        working-directory: native
+        run: |
+          npx cap add android
+          node scripts/configure-android.mjs
+          npx cap sync android
+
+      - name: Build installable APK
+        working-directory: native/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Name APK
+        run: cp native/android/app/build/outputs/apk/debug/app-debug.apk Smart-Schedule-Android.apk
+
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Smart-Schedule-Android
+          path: Smart-Schedule-Android.apk
+          if-no-files-found: error
+
+  windows:
+    name: Windows installer
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Windows wrapper dependencies
+        working-directory: desktop
+        run: npm install --no-package-lock --no-audit --no-fund
+
+      - name: Build Windows installer
+        working-directory: desktop
+        run: npm run dist
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Smart-Schedule-Windows
+          path: desktop/dist/*.exe
+          if-no-files-found: error
