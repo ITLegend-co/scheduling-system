@@ -1,14 +1,6 @@
 {
   "format": "smart-schedule-release-receipt",
   "version": 1,
-  "preparedAt": "2026-09-23T14:57:28.108+08:00",
-  "submissions": [
-    {
-      "submissionId": "73e26ffd-4f53-409d-b14d-2893b1a5de9b",
-      "claimId": "afb810e2-d4fd-4f1a-9b6a-f40e2cf3b3fe",
-      "requestIds": [
-        "e082f5c1-3e65-4275-bda2-fdf33228ac43"
-      ]
-    }
-  ]
+  "preparedAt": "2026-09-23T15:10:31.618+08:00",
+  "submissions": []
 }
