@@ -1649,17 +1649,17 @@
       "title": "Weekly IT Issues and Task Planning"
     },
     {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Review important software and service subscriptions and their expiry dates. Confirm renewal status, responsible persons, required approvals, and next actions. Responsible: Adly and Eizzat.",
-      "end": "2026-09-28T11:15:00+08:00",
-      "id": "recurring-it-monthly-systems-2026-09-01",
-      "location": "Menara MAA, Api-Api, Kota Kinabalu",
-      "priority": "normal",
+      "id": "create-it-sop-outline-2026-09-28",
+      "title": "Create Whole SOP for IT – Scope and Structure",
       "start": "2026-09-28T10:15:00+08:00",
-      "status": "planned",
-      "title": "Monthly Subscription Review"
+      "end": "2026-09-28T12:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "confirmed",
+      "location": "KK Office, Kota Kinabalu",
+      "description": "Define the complete IT SOP scope, audience, ownership, document structure, policies, escalation paths, and required operational procedures. Build a detailed outline and checklist for the full document.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -1675,15 +1675,16 @@
       "title": "Quarterly Preventive Maintenance Review"
     },
     {
-      "id": "pody-system-prototype-2026-09-28",
-      "title": "Pody’s System – Project Setup and Prototype",
+      "id": "create-it-sop-draft-2026-09-28",
+      "title": "Create Whole SOP for IT – Draft Procedures",
       "start": "2026-09-28T15:15:00+08:00",
       "end": "2026-09-28T16:45:00+08:00",
       "allDay": false,
       "category": "Work",
-      "priority": "normal",
-      "status": "planned",
-      "description": "Set up the project, implement the initial navigation and data flow, and create a working prototype for the highest-priority workflow.",
+      "priority": "high",
+      "status": "confirmed",
+      "location": "KK Office, Kota Kinabalu",
+      "description": "Draft the core IT procedures, including support intake, incident handling, access management, backups, security, assets, vendors, change control, maintenance, documentation, and reporting.",
       "allowOverlap": false
     },
     {
@@ -1698,6 +1699,19 @@
       "start": "2026-09-28T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "id": "create-it-sop-finalize-2026-09-28",
+      "title": "Create Whole SOP for IT – Review and Finalize",
+      "start": "2026-09-28T17:45:00+08:00",
+      "end": "2026-09-28T18:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "confirmed",
+      "location": "KK Office, Kota Kinabalu",
+      "description": "Review the complete IT SOP for missing steps and unclear ownership, standardize formatting, verify the escalation and approval flow, and prepare the final version for use.",
+      "allowOverlap": false
     },
     {
       "id": "reminder-eizzat-it-minutes-2026-09-30",
@@ -1724,6 +1738,19 @@
       "start": "2026-09-29T09:15:00+08:00",
       "status": "planned",
       "title": "Monthly Equipment and Asset Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Work",
+      "description": "Moved one day later to prioritize completion of the full IT SOP on 28 September. Review important software and service subscriptions, expiry dates, renewal status, responsible persons, required approvals, and next actions.",
+      "end": "2026-09-29T11:30:00+08:00",
+      "id": "recurring-it-monthly-systems-2026-09-01",
+      "location": "Menara MAA, Api-Api, Kota Kinabalu",
+      "priority": "normal",
+      "start": "2026-09-29T10:30:00+08:00",
+      "status": "planned",
+      "title": "Monthly Subscription Review"
     },
     {
       "allDay": false,
@@ -2037,6 +2064,18 @@
       "start": "2026-10-05T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "id": "pody-system-prototype-2026-09-28",
+      "title": "Pody’s System – Project Setup and Prototype",
+      "start": "2026-10-06T13:00:00+08:00",
+      "end": "2026-10-06T14:30:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Moved to 6 October to prioritize completion of the full IT SOP on 28 September. Set up the project, implement the initial navigation and data flow, and create a working prototype for the highest-priority workflow.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -4831,7 +4870,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-23T15:21:31.267+08:00",
+    "lastUpdated": "2026-09-28T10:25:14.942+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
