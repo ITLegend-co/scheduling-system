@@ -1803,17 +1803,17 @@
       "title": "Workout – Lower Body and Core"
     },
     {
+      "id": "meeting-it-2026-09-30",
+      "title": "IT Meeting",
+      "start": "2026-09-30T10:00:00+08:00",
+      "end": "2026-09-30T10:50:00+08:00",
       "allDay": false,
-      "allowOverlap": false,
-      "category": "Work",
-      "description": "Inspect NAS health and storage, review network infrastructure, and analyse recurring IT problems across all locations. Responsible: Adly and Eizzat.",
-      "end": "2026-09-30T11:15:00+08:00",
-      "id": "recurring-it-quarterly-infrastructure-2026-09-30",
-      "location": "All Locations",
+      "category": "Meeting",
       "priority": "high",
-      "start": "2026-09-30T09:15:00+08:00",
-      "status": "planned",
-      "title": "Quarterly NAS, Network and Recurring-Issue Review"
+      "status": "completed",
+      "description": "IT Meeting held on 30 September 2026 at 10:00 AM. Reviewed current IT support, projects, monitoring items, owners, deadlines, and next actions. The meeting concluded at approximately 10:50 AM.",
+      "url": "https://github.com/ITLegend-co/IT-Minutes.git",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -1827,19 +1827,6 @@
       "start": "2026-09-30T13:45:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
-    },
-    {
-      "id": "meeting-it-2026-09-30",
-      "title": "IT Meeting",
-      "start": "2026-09-30T15:00:00+08:00",
-      "end": "2026-09-30T15:30:00+08:00",
-      "allDay": false,
-      "category": "Meeting",
-      "priority": "normal",
-      "status": "confirmed",
-      "description": "One-time rescheduled IT Meeting. Review current IT support, projects, monitoring items, owners, deadlines, and next actions. Later meetings retain the existing three-week cycle.",
-      "url": "https://github.com/ITLegend-co/IT-Minutes.git",
-      "allowOverlap": false
     },
     {
       "id": "reminder-return-naqi-car-to-uca-1-2026-09-30",
@@ -1953,6 +1940,31 @@
       "allowOverlap": false
     },
     {
+      "id": "task-verify-kp-anviz-cctv-remote-access-2026-10-02",
+      "title": "Verify KP Anviz & CCTV Remote Access",
+      "start": "2026-10-02T13:30:00+08:00",
+      "end": "2026-10-02T14:15:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "location": "Remote – KP",
+      "description": "Verify remote CCTV and Anviz/CrossChex access after the latest Unifi/U Mobile network configuration. Test the working path, record which connection is active, and note any remaining bridge-mode or remote-access issue.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-send-kcc-assessment-access-to-madam-2026-10-02",
+      "title": "Send KCC Assessment System Access to Madam I-Gek",
+      "start": "2026-10-02T14:30:00+08:00",
+      "end": "2026-10-02T14:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Send Madam I-Gek the KCC Youth Assessment system link/access requested during the IT Meeting so she can review the system. Do not place passwords or other sensitive credentials in the public schedule.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Reminder",
@@ -2018,7 +2030,7 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review unresolved IT issues with Eizzat, prioritise important cases, and plan and assign the week's IT tasks. Responsible: Adly and Eizzat.",
+      "description": "Review unresolved IT issues with Eizzat and assign the week's work. Prioritise the latest pending items: spam/IPServerOne follow-up, KP Anviz/CCTV remote-access verification, IT equipment warranty review, finalising the preventive-maintenance plan, PH backup internet preparation, and the Info-Tech renewal. Responsible: Adly and Eizzat.",
       "end": "2026-10-05T10:00:00+08:00",
       "id": "recurring-it-weekly-planning-2026-10-05",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
@@ -2031,7 +2043,7 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Review IT support trends, IPServerOne email requirements, and TrendMicro security status. Responsible: Adly; TrendMicro check by Eizzat.",
+      "description": "Review IT support trends and security status. Specifically follow up the increased spam email reports with IPServerOne, monitor Madam I-Gek's intermittent Outlook issue, confirm TrendMicro has no major warnings, and add Outlook sender/display-name verification to maintenance checks. Responsible: Adly; TrendMicro check by Eizzat.",
       "end": "2026-10-05T11:15:00+08:00",
       "id": "recurring-it-monthly-operations-2026-10-05",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
@@ -2039,6 +2051,18 @@
       "start": "2026-10-05T10:15:00+08:00",
       "status": "planned",
       "title": "Monthly IT Operations and Security Review"
+    },
+    {
+      "id": "task-kcc-certificate-signature-grading-follow-up-2026-10-05",
+      "title": "Follow Up KCC Certificate Signature & Grading",
+      "start": "2026-10-05T11:30:00+08:00",
+      "end": "2026-10-05T12:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Check the remaining KCC Youth Level Assessment certificate requirements: KCC President signature and coaches' consolidated grading for participants/winners. Record what is still outstanding and the next action before certificate distribution.",
+      "allowOverlap": false
     },
     {
       "id": "pody-system-integration-2026-10-05",
@@ -2053,6 +2077,18 @@
       "allowOverlap": false
     },
     {
+      "id": "task-odoo-post-trial-follow-up-2026-10-05",
+      "title": "Odoo Trial Follow-Up & Recommendation",
+      "start": "2026-10-05T15:15:00+08:00",
+      "end": "2026-10-05T16:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Compile the internal Odoo feedback after the trial/review. Document useful functions, duplicated functions, unresolved questions, limitations, and the recommended next action before any subscription decision.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -2064,6 +2100,18 @@
       "start": "2026-10-05T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "id": "reminder-accounts-system-requirements-meeting-2026-10-06",
+      "title": "Accounts Meeting – System Requirements (Time TBC)",
+      "start": "2026-10-06",
+      "end": "2026-10-06",
+      "allDay": true,
+      "category": "Reminder",
+      "priority": "high",
+      "status": "tentative",
+      "description": "Join the Accounts meeting on 6 October 2026 when the time is confirmed. Gather the requested system's objective, inputs/data, workflow, access needs, reports/outputs, approval flow, and full scope before any development begins.",
+      "allowOverlap": true
     },
     {
       "id": "pody-system-prototype-2026-09-28",
@@ -2115,6 +2163,30 @@
       "allowOverlap": false
     },
     {
+      "id": "task-review-it-equipment-warranties-2026-10-07",
+      "title": "Review IT Equipment Warranties",
+      "start": "2026-10-07T13:00:00+08:00",
+      "end": "2026-10-07T14:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Review the IT inventory warranty records, identify equipment approaching expiry, and list any diagnostic checks that should be completed while equipment is still under warranty.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-prepare-system-scope-summary-2026-10-07",
+      "title": "Prepare New System Scope Summary for Management",
+      "start": "2026-10-07T14:15:00+08:00",
+      "end": "2026-10-07T14:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Consolidate Accounts/Admin/Operations system requests into a clear scope summary: problem, objective, data inputs, workflow, permissions, reports/outputs, and expected users. Prepare it for Madam I-Gek's review before development.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -2153,6 +2225,42 @@
       "title": "My Appraisal Form Deadline Today"
     },
     {
+      "id": "task-follow-up-info-tech-renewal-2026-10-08",
+      "title": "Follow Up Info-Tech Renewal Invoice",
+      "start": "2026-10-08T09:30:00+08:00",
+      "end": "2026-10-08T10:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "urgent",
+      "status": "planned",
+      "description": "Info-Tech renewal is due 16 October 2026. Follow up the requested invoice, verify the renewal amount/details, and arrange the required approval before the expiry date.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-review-m365-onedrive-consolidation-2026-10-08",
+      "title": "Review Microsoft 365 / OneDrive Consolidation",
+      "start": "2026-10-08T10:15:00+08:00",
+      "end": "2026-10-08T11:30:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Review the proposed consolidation of the Microsoft 365/OneDrive accounts used by Madam I-Gek, Ros and Mr. Wilfred. Check file migration, administrator-account needs, individual email continuity, access requirements, and any risks before making changes.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-review-pms-simplification-scope-2026-10-08",
+      "title": "Review Existing PMS & Simplification Scope",
+      "start": "2026-10-08T13:00:00+08:00",
+      "end": "2026-10-08T14:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Review the existing PMS and administrator-level functions. Identify useful, redundant, and removable functions. Do not start new PMS development until the scope is reviewed with Madam I-Gek.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -2189,6 +2297,30 @@
       "start": "2026-10-09T09:15:00+08:00",
       "status": "planned",
       "title": "Weekly Network Review and IT Progress Update"
+    },
+    {
+      "id": "task-review-preventive-maintenance-plan-2026-10-09",
+      "title": "Review & Finalize IT Preventive Maintenance Plan",
+      "start": "2026-10-09T10:30:00+08:00",
+      "end": "2026-10-09T11:30:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Review Eizzat's preventive-maintenance plan for KK, KP and PH. Confirm scope, checklist, tools, PICs and dates; keep KK Office maintenance on Saturdays where possible. Include Outlook sender/display-name verification in relevant computer maintenance checks.",
+      "allowOverlap": false
+    },
+    {
+      "id": "task-review-courier-equipment-shipment-sop-2026-10-09",
+      "title": "Review Courier / Equipment Shipment SOP with Admin",
+      "start": "2026-10-09T13:00:00+08:00",
+      "end": "2026-10-09T14:00:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "normal",
+      "status": "planned",
+      "description": "Review the current equipment-shipment workflow with Admin using the Fae monitor case as a reference. Clarify Requesting Department → IT → Management → Admin/Courier responsibilities and remove unnecessary duplicate approvals.",
+      "allowOverlap": false
     },
     {
       "allDay": false,
@@ -2305,14 +2437,15 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-10-14 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-10-13T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-10-14",
+      "category": "Work",
+      "description": "Rescheduled from 30 September because the actual IT Meeting was held at 10:00 AM. Inspect NAS health and storage, review network infrastructure, and analyse recurring IT problems across all locations. Responsible: Adly and Eizzat.",
+      "end": "2026-10-13T11:15:00+08:00",
+      "id": "recurring-it-quarterly-infrastructure-2026-09-30",
+      "location": "All Locations",
       "priority": "high",
-      "start": "2026-10-13T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
+      "start": "2026-10-13T09:15:00+08:00",
+      "status": "planned",
+      "title": "Quarterly NAS, Network and Recurring-Issue Review"
     },
     {
       "allDay": false,
@@ -2363,18 +2496,6 @@
       "status": "planned",
       "description": "Resolve final defects, complete regression testing, verify deployment readiness, and prepare the release package.",
       "allowOverlap": false
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-10-14T16:30:00+08:00",
-      "id": "meeting-it-2026-10-14",
-      "priority": "high",
-      "start": "2026-10-14T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -2515,6 +2636,18 @@
       "title": "Weekly IT Issues and Task Planning"
     },
     {
+      "id": "task-ph-backup-internet-readiness-check-2026-10-19",
+      "title": "PH Backup Internet Readiness Check",
+      "start": "2026-10-19T10:15:00+08:00",
+      "end": "2026-10-19T10:45:00+08:00",
+      "allDay": false,
+      "category": "Work",
+      "priority": "high",
+      "status": "planned",
+      "description": "Check Eizzat's readiness for the PH backup internet plan before the rough 21 October target. Confirm the TP-Link AC750, Maxis/Hotlink SIM/data plan, testing, required tools, approval, and deployment arrangements.",
+      "allowOverlap": false
+    },
+    {
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
@@ -2526,6 +2659,18 @@
       "start": "2026-10-19T17:00:00+08:00",
       "status": "planned",
       "title": "Daily IT Support Summary Report"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Remind Eizzat one day before the 2026-10-21 IT Meeting to review the latest IT Minutes repository record and prepare the new minutes draft.",
+      "end": "2026-10-20T08:45:00+08:00",
+      "id": "reminder-eizzat-it-minutes-2026-10-14",
+      "priority": "high",
+      "start": "2026-10-20T08:30:00+08:00",
+      "status": "confirmed",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
     },
     {
       "allDay": false,
@@ -2557,13 +2702,25 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
-      "end": "2026-10-21T16:00:00+08:00",
+      "end": "2026-10-21T11:30:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-10-21",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "high",
-      "start": "2026-10-21T15:00:00+08:00",
+      "start": "2026-10-21T10:30:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "Recurring IT Meeting on 21 October 2026, following the latest confirmed three-week cycle anchored to 21 October 2026 at 2:00 PM. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
+      "end": "2026-10-21T15:30:00+08:00",
+      "id": "meeting-it-2026-10-14",
+      "priority": "high",
+      "start": "2026-10-21T14:00:00+08:00",
+      "status": "confirmed",
+      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -2935,18 +3092,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-11-04 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-11-03T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-11-04",
-      "priority": "high",
-      "start": "2026-11-03T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-11-03T17:30:00+08:00",
@@ -2981,18 +3126,6 @@
       "start": "2026-11-04T09:15:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-11-04T16:30:00+08:00",
-      "id": "meeting-it-2026-11-04",
-      "priority": "high",
-      "start": "2026-11-04T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -3049,7 +3182,7 @@
       "allDay": false,
       "allowOverlap": false,
       "category": "Work",
-      "description": "Complete the three-month comparison of U Mobile and Unifi at KP. Decide whether U Mobile is stable enough and whether Unifi should be retained or terminated. Complete before 7 November 2026.",
+      "description": "Complete the three-month KP connectivity review before 7 November 2026. U Mobile is currently the primary connection and Unifi is backup. Review stability, confirm CCTV and Anviz remote access remains usable, and decide whether Unifi should be retained or terminated.",
       "end": "2026-11-06T15:30:00+08:00",
       "id": "task-kp-internet-final-review-2026-11-06",
       "priority": "high",
@@ -3148,6 +3281,18 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Remind Eizzat one day before the 2026-11-11 IT Meeting to review the latest IT Minutes repository record and prepare the new minutes draft.",
+      "end": "2026-11-10T08:45:00+08:00",
+      "id": "reminder-eizzat-it-minutes-2026-11-04",
+      "priority": "high",
+      "start": "2026-11-10T08:30:00+08:00",
+      "status": "confirmed",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-11-10T17:30:00+08:00",
@@ -3175,13 +3320,25 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
-      "end": "2026-11-11T16:00:00+08:00",
+      "end": "2026-11-11T11:30:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-11-11",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "high",
-      "start": "2026-11-11T15:00:00+08:00",
+      "start": "2026-11-11T10:30:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "Recurring IT Meeting on 11 November 2026, following the latest confirmed three-week cycle anchored to 21 October 2026 at 2:00 PM. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
+      "end": "2026-11-11T15:30:00+08:00",
+      "id": "meeting-it-2026-11-04",
+      "priority": "high",
+      "start": "2026-11-11T14:00:00+08:00",
+      "status": "confirmed",
+      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -3514,18 +3671,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-11-25 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-11-24T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-11-25",
-      "priority": "high",
-      "start": "2026-11-24T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-11-24T17:30:00+08:00",
@@ -3560,18 +3705,6 @@
       "start": "2026-11-25T09:15:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-11-25T16:30:00+08:00",
-      "id": "meeting-it-2026-11-25",
-      "priority": "high",
-      "start": "2026-11-25T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -3741,6 +3874,18 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Remind Eizzat one day before the 2026-12-02 IT Meeting to review the latest IT Minutes repository record and prepare the new minutes draft.",
+      "end": "2026-12-01T08:45:00+08:00",
+      "id": "reminder-eizzat-it-minutes-2026-11-25",
+      "priority": "high",
+      "start": "2026-12-01T08:30:00+08:00",
+      "status": "confirmed",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Work",
       "description": "Prepare and complete Eizzat's next six-month appraisal. No deadline was supplied, so the schedule sets a seven-day completion deadline of 8 December 2026.",
       "end": "2026-12-01T10:00:00+08:00",
@@ -3780,13 +3925,25 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
-      "end": "2026-12-02T16:00:00+08:00",
+      "end": "2026-12-02T11:30:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-12-02",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "high",
-      "start": "2026-12-02T15:00:00+08:00",
+      "start": "2026-12-02T10:30:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "Recurring IT Meeting on 2 December 2026, following the latest confirmed three-week cycle anchored to 21 October 2026 at 2:00 PM. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
+      "end": "2026-12-02T15:30:00+08:00",
+      "id": "meeting-it-2026-11-25",
+      "priority": "high",
+      "start": "2026-12-02T14:00:00+08:00",
+      "status": "confirmed",
+      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -4196,18 +4353,6 @@
     {
       "allDay": false,
       "allowOverlap": false,
-      "category": "Reminder",
-      "description": "Remind Eizzat to prepare the minutes for the 2026-12-16 IT Meeting. Review the latest record in ITLegend-co/IT-Minutes sample-data.js and prepare the new draft.",
-      "end": "2026-12-15T09:00:00+08:00",
-      "id": "reminder-eizzat-it-minutes-2026-12-16",
-      "priority": "high",
-      "start": "2026-12-15T08:45:00+08:00",
-      "status": "confirmed",
-      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-12-15T17:30:00+08:00",
@@ -4242,18 +4387,6 @@
       "start": "2026-12-16T09:15:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
-    },
-    {
-      "allDay": false,
-      "allowOverlap": false,
-      "category": "Meeting",
-      "description": "Recurring IT Meeting held every three weeks. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
-      "end": "2026-12-16T16:30:00+08:00",
-      "id": "meeting-it-2026-12-16",
-      "priority": "high",
-      "start": "2026-12-16T15:00:00+08:00",
-      "status": "confirmed",
-      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -4409,6 +4542,18 @@
     {
       "allDay": false,
       "allowOverlap": false,
+      "category": "Reminder",
+      "description": "Remind Eizzat one day before the 2026-12-23 IT Meeting to review the latest IT Minutes repository record and prepare the new minutes draft.",
+      "end": "2026-12-22T08:45:00+08:00",
+      "id": "reminder-eizzat-it-minutes-2026-12-16",
+      "priority": "high",
+      "start": "2026-12-22T08:30:00+08:00",
+      "status": "confirmed",
+      "title": "Remind Eizzat to Prepare IT Meeting Minutes"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
       "category": "Work",
       "description": "Compile all IT support work handled today and prepare a simple summary report. Include completed tasks, ongoing issues, important findings, responsible persons, blockers, follow-ups, and the next action required. Responsible: Adly, using updates from Eizzat.",
       "end": "2026-12-22T17:30:00+08:00",
@@ -4436,13 +4581,25 @@
       "allowOverlap": false,
       "category": "Work",
       "description": "Review active IT project progress, completed actions, current blockers, responsible persons, deadlines, and the next steps required. Responsible: Adly.",
-      "end": "2026-12-23T16:00:00+08:00",
+      "end": "2026-12-23T11:30:00+08:00",
       "id": "recurring-it-weekly-midweek-review-2026-12-23",
       "location": "Menara MAA, Api-Api, Kota Kinabalu",
       "priority": "high",
-      "start": "2026-12-23T15:00:00+08:00",
+      "start": "2026-12-23T10:30:00+08:00",
       "status": "planned",
       "title": "Midweek Project Review"
+    },
+    {
+      "allDay": false,
+      "allowOverlap": false,
+      "category": "Meeting",
+      "description": "Recurring IT Meeting on 23 December 2026, following the latest confirmed three-week cycle anchored to 21 October 2026 at 2:00 PM. Review current IT support, projects, monitoring items, owners, deadlines, and next actions.",
+      "end": "2026-12-23T15:30:00+08:00",
+      "id": "meeting-it-2026-12-16",
+      "priority": "high",
+      "start": "2026-12-23T14:00:00+08:00",
+      "status": "confirmed",
+      "title": "IT Meeting"
     },
     {
       "allDay": false,
@@ -4870,7 +5027,7 @@
   ],
   "meta": {
     "calendarFeedUrl": "https://itlegend-co.github.io/scheduling-system/schedule.ics",
-    "lastUpdated": "2026-09-28T10:25:14.942+08:00",
+    "lastUpdated": "2026-10-02T09:07:00+08:00",
     "timezone": "Asia/Kuala_Lumpur",
     "title": "Smart Schedule"
   },
