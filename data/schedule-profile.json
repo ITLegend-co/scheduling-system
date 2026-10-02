@@ -814,17 +814,6 @@
       "details": "Verify remote CCTV and Anviz/CrossChex access after the latest Unifi/U Mobile configuration and record any remaining bridge-mode or remote-access issue."
     },
     {
-      "id": "kcc-certificate-follow-up",
-      "section": "Tasks",
-      "type": "follow-up",
-      "title": "KCC Certificate Signature and Grading Follow-Up",
-      "status": "in-progress",
-      "date": "2026-10-05",
-      "startTime": "11:30",
-      "endTime": "12:00",
-      "details": "Follow up the KCC President signature and coaches' consolidated grading required before KCC Youth Level Assessment certificates can be distributed."
-    },
-    {
       "id": "system-development-scope-review",
       "section": "Tasks",
       "type": "task",
@@ -906,6 +895,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-10-02T09:07:00+08:00",
+  "updatedAt": "2026-10-02T09:30:18+08:00",
   "version": 1
 }
