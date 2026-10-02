@@ -78,7 +78,7 @@
       "type": "follow-up"
     },
     {
-      "details": "U Mobile has been installed at KP. Monitor it for three months to compare stability with Unifi and decide whether to terminate or keep Unifi. After one month, consider U Mobile as backup internet for the MOTOTRBO walkie-talkie system. Configure the KP Fixed IP remotely on 2 September 2026, test remote access and service stability, and record any remaining issue for Aiden Lee or U Mobile HQ. The existing KP backup is still under contract; identify which number can be terminated and replaced with the KP backup internet number.",
+      "details": "U Mobile is currently the primary KP internet connection and Unifi is the backup. Continue monitoring through 7 November 2026, verify remote CCTV and Anviz/CrossChex access remains usable, and then decide whether Unifi should be retained or terminated.",
       "id": "kp-internet-solution",
       "person": "Aiden Lee",
       "section": "Tasks",
@@ -86,18 +86,18 @@
       "title": "KP Internet Solution",
       "type": "follow-up",
       "date": "2026-09-02",
-      "deadline": "2026-09-02",
+      "deadline": "2026-11-07",
       "startTime": "13:00",
       "endTime": "14:00",
       "location": "Remote – KP"
     },
     {
       "date": "2026-09-01",
-      "details": "Give the Operations and Technical teams access to the one-month Odoo trial on 9 September 2026. Hold weekly feedback meetings on 11, 18, and 25 September to review issues encountered, questions, workflow feedback, responsible persons, and next actions. After the trial, meet the Odoo agent and both teams for the final review.",
+      "details": "The one-month Odoo trial has ended. Compile internal feedback from Accounts, Operations and Technical, document useful functions, duplicated functions, issues and limitations, and confirm the next action after the agent review before any subscription decision.",
       "endDate": "2026-09-30",
       "id": "odoo-pos-trial",
       "section": "Tasks",
-      "status": "planned",
+      "status": "in-progress",
       "title": "Odoo POS",
       "type": "task"
     },
@@ -125,8 +125,8 @@
       "type": "meeting"
     },
     {
-      "date": "2026-09-07",
-      "details": "The IT Meeting repeats every three weeks. The meeting originally scheduled for 2 September 2026 was rescheduled once to 7 September 2026 at 4:00 PM. The 23 September occurrence was rescheduled once to 30 September 2026 from 3:00 PM to 3:30 PM. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes. Later meetings retain the existing three-week cycle.",
+      "date": "2026-10-21",
+      "details": "The IT Meeting repeats every three weeks. The 30 September 2026 meeting was held at 10:00 AM. The next regular IT Meeting was confirmed for 21 October 2026 at 2:00 PM; later occurrences continue on the three-week cycle at 2:00 PM unless rescheduled. Review the IT Minutes repository and remind Eizzat one day before each meeting to prepare the minutes.",
       "id": "it-meeting-2026-09-02",
       "person": "Eizzat",
       "recurrence": {
@@ -135,7 +135,7 @@
       },
       "referenceUrl": "https://github.com/ITLegend-co/IT-Minutes.git",
       "section": "Meetings",
-      "startTime": "16:00",
+      "startTime": "14:00",
       "status": "confirmed",
       "title": "IT Meeting",
       "type": "meeting"
@@ -383,7 +383,7 @@
         "interval": 1
       },
       "person": "Adly and Eizzat",
-      "details": "Review IT support trends, IPServerOne email requirements, and TrendMicro security status."
+      "details": "Review IT support trends, IPServerOne email requirements, TrendMicro security status, increased spam-email reports, Madam I-Gek's intermittent Outlook issue, and Outlook sender/display-name checks. Responsible: Adly and Eizzat."
     },
     {
       "id": "recurring-it-monthly-systems",
@@ -529,23 +529,23 @@
       "type": "reminder",
       "title": "Renewal Reminder – Alarm System",
       "status": "confirmed",
-      "date": "2026-09-03",
-      "deadline": "2026-10-03",
+      "date": "2027-09-03",
+      "deadline": "2027-10-03",
       "relatedDate": "2026-10-03",
       "person": "IT",
-      "details": "Remind one month before expiry. Supplier: Global Surveillance Enterprise. Annual cost: RM 760.00. Users: 2 users. Assigned to: IT. Expiry: 2026-10-03."
+      "details": "The 2026 Alarm System renewal has been completed. Next annual renewal reminder is one month before 3 October 2027. Supplier: Global Surveillance Enterprise. Annual cost currently recorded as RM 760.00. Users: 2 users. Assigned to: IT."
     },
     {
       "id": "subscription-renewal-info-tech-hrms",
       "section": "Subscription Renewal Reminders",
       "type": "reminder",
       "title": "Renewal Reminder – Info-Tech HRMS",
-      "status": "confirmed",
+      "status": "in-progress",
       "date": "2026-09-16",
       "deadline": "2026-10-16",
       "relatedDate": "2026-10-16",
-      "person": "Aron",
-      "details": "Remind one month before expiry. Supplier: Info-Tech. Annual cost: RM 1,088.64. Users: 28 users. Assigned to: Aron. Expiry: 2026-10-16."
+      "person": "Adly / Aron",
+      "details": "Renewal due 16 October 2026. The invoice has been requested and is pending. Adly to follow up the invoice, verify renewal details/amount, and arrange approval before expiry. Supplier: Info-Tech. Annual cost currently recorded as RM 1,088.64. Users: 28 users."
     },
     {
       "id": "subscription-renewal-sql-payroll",
@@ -799,6 +799,89 @@
       "status": "active",
       "location": "KK Office: Kota Kinabalu; KP Office: Kundasang",
       "details": "KK Office is the normal workplace in Kota Kinabalu. KP Office is in Kundasang. Work at KP Office is an outstation trip and normally requires approximately 2 hours 15 minutes of travel each way from KK Office, plus suitable onsite work and return-travel blocks."
+    },
+    {
+      "id": "kp-anviz-remote-access-verification",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "Verify KP Anviz and CCTV Remote Access",
+      "status": "in-progress",
+      "date": "2026-10-02",
+      "deadline": "2026-10-02",
+      "startTime": "13:30",
+      "endTime": "14:15",
+      "person": "Adly / Eizzat",
+      "details": "Verify remote CCTV and Anviz/CrossChex access after the latest Unifi/U Mobile configuration and record any remaining bridge-mode or remote-access issue."
+    },
+    {
+      "id": "kcc-certificate-follow-up",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "KCC Certificate Signature and Grading Follow-Up",
+      "status": "in-progress",
+      "date": "2026-10-05",
+      "startTime": "11:30",
+      "endTime": "12:00",
+      "details": "Follow up the KCC President signature and coaches' consolidated grading required before KCC Youth Level Assessment certificates can be distributed."
+    },
+    {
+      "id": "system-development-scope-review",
+      "section": "Tasks",
+      "type": "task",
+      "title": "Department System Request Scope Review",
+      "status": "in-progress",
+      "date": "2026-10-06",
+      "details": "Accounts, Admin and Operations system requests must have a clear problem statement, objective, data inputs, workflow, permissions and expected reports/outputs. Review the scope with Madam I-Gek before development starts.",
+      "person": "Adly / Madam I-Gek"
+    },
+    {
+      "id": "microsoft-365-onedrive-consolidation",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "Microsoft 365 / OneDrive Consolidation Review",
+      "status": "planned",
+      "date": "2026-10-08",
+      "startTime": "10:15",
+      "endTime": "11:30",
+      "details": "Review the proposal to consolidate the Microsoft 365/OneDrive accounts currently used by Madam I-Gek, Ros and Mr. Wilfred into a shared administrative/OneDrive setup while retaining individual normal email addresses. Verify file migration and access requirements before changes.",
+      "person": "Adly / Management"
+    },
+    {
+      "id": "pms-simplification-review",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "PMS Simplification Review",
+      "status": "planned",
+      "date": "2026-10-08",
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "details": "Review the current PMS, including administrator-level functions and redundant features, before deciding whether a simplified replacement or improvement should be developed.",
+      "person": "Adly / Madam I-Gek"
+    },
+    {
+      "id": "courier-equipment-shipment-sop-review",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "Courier / Equipment Shipment SOP Review",
+      "status": "in-progress",
+      "date": "2026-10-09",
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "details": "Review the current equipment-shipment workflow with Admin and clarify responsibilities between the requesting department, IT, Management and Admin/Courier to remove unnecessary duplicate approvals.",
+      "person": "Adly / Admin"
+    },
+    {
+      "id": "ph-backup-internet",
+      "section": "Tasks",
+      "type": "follow-up",
+      "title": "PH Backup Internet",
+      "status": "planned",
+      "date": "2026-10-19",
+      "deadline": "2026-10-21",
+      "startTime": "10:15",
+      "endTime": "10:45",
+      "details": "Follow up Eizzat's PH backup internet plan using the existing TP-Link AC750 and a Maxis/Hotlink prepaid connection. Confirm equipment, SIM/data plan, approval, testing and deployment readiness before the rough 21 October 2026 target.",
+      "person": "Eizzat / Adly follow-up"
     }
   ],
   "format": "smart-schedule-profile",
@@ -823,6 +906,6 @@
     "name": "help update schedule.txt"
   },
   "timezone": "Asia/Kuala_Lumpur",
-  "updatedAt": "2026-09-23T15:21:31.267+08:00",
+  "updatedAt": "2026-10-02T09:07:00+08:00",
   "version": 1
 }
